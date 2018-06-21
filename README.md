@@ -1,4 +1,4 @@
-# Unshaky
+# Unshaky [Download](https://github.com/Aahung/Unshaky/releases)
 
 ![Menubar](README/menubar.png)
 
