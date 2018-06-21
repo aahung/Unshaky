@@ -47,9 +47,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let launcherAppId = "com.nestederror.UnshakyLaunchHelper"
-        SMLoginItemSetEnabled(launcherAppId as CFString, true)
-        
         let icon = NSImage(named: NSImage.Name(rawValue: "UnshakyTemplate"))
         statusItem.image = icon
         
