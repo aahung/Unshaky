@@ -33,6 +33,9 @@
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     CGEventType eventType = CGEventGetType(event);
     
+    // ignore space key, see issue https://github.com/Aahung/Unshaky/issues/1
+    if (keyCode == 49) return event;
+    
     if (lastPressedTimestamps[keyCode] == 0.0) {
         lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
         lastPressedEventTypes[keyCode] = eventType;
