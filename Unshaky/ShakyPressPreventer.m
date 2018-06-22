@@ -46,7 +46,7 @@
         }
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            && [[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode] < 0.05) {
+            && [[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode] < 0.04) {
             // dismiss the keydown event if it follows keyup event too soon
             NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
             if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];

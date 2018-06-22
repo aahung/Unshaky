@@ -4,7 +4,7 @@
 
 **Unshaky** tries to address an issue on the butterfly keyboard (Macbook & MacBook Pro 2016 or later): Double Key Press (See "User complaints" below). 
 
-Apple made it difficult to replace the keyboard only and it could cost hundreds of dollars. **Unshaky** might save your keyboard by dismissing such "second key hits" (any second key presses that occur no later than 50ms after the previous one).
+Apple made it difficult to replace the keyboard only and it could cost hundreds of dollars. **Unshaky** might save your keyboard by dismissing such "second key hits" (any second key presses that occur no later than 40ms after the previous one).
 
 ## User Complaints
 
