@@ -1,4 +1,4 @@
-# Unshaky [Download](https://github.com/Aahung/Unshaky/releases)
+# Unshaky
 
 ![Menubar](README/menubar.png)
 
@@ -14,6 +14,8 @@ Apple made it difficult to replace the keyboard only and it could cost hundreds 
 - [1 key - 2 letters macbook pro 2016 and 2017](https://apple.stackexchange.com/questions/293523/1-key-2-letters-macbook-pro-2016-and-2017)
 
 ## How-To
+
+[Download Unshaky.app here](https://github.com/Aahung/Unshaky/releases)
 
 First, move the "Unshaky.app" to your "/Applications" folder.
 
