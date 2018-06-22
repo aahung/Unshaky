@@ -40,6 +40,7 @@
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
             NSLog(@"DISMISSING KEYUP:%d", keyCode);
+            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
             dismissNextEvent[keyCode] = NO;
             return nil;
         }
@@ -48,6 +49,8 @@
             && [[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode] < 0.05) {
             // dismiss the keydown event if it follows keyup event too soon
             NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
+            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+            
             if (shakyPressDismissedHandler != nil) {
                 shakyPressDismissedHandler();
             }
@@ -58,6 +61,7 @@
         lastPressedEventTypes[keyCode] = eventType;
     }
     
+    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
     return event;
 }
 
@@ -85,6 +89,14 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 
 - (void)shakyPressDismissed:(Handler)handler {
     shakyPressDismissedHandler = handler;
+}
+
+- (void)appendToDebugTextView:(NSString*)text {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSAttributedString* attr = [[NSAttributedString alloc] initWithString:text];
+        
+        [[self.debugTextView textStorage] insertAttributedString:attr atIndex:0];
+    });
 }
 
 @end

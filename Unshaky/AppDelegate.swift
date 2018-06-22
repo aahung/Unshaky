@@ -60,4 +60,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set(dismissCount, forKey: "DISMISS_COUNT")
         defaults.synchronize()
     }
+    
+    //
+    // DEBUG Function
+    //
+
+    @IBAction func debugClicked(_ sender: Any) {
+        let windowStyleMaskRawValue = NSWindow.StyleMask.closable.rawValue | NSWindow.StyleMask.titled.rawValue | NSWindow.StyleMask.resizable.rawValue
+        let windowFrame = NSMakeRect(100, 100, 400, 400)
+        let window = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
+        _ = NSWindowController(window: window)
+        
+        // scroll view
+        let scrollView = NSScrollView(frame: windowFrame)
+        scrollView.hasVerticalScroller = true
+        let scrollViewContentSize = scrollView.contentSize
+        
+        // text vieww
+        let textView = NSTextView(frame: NSMakeRect(0, 0, scrollViewContentSize.width, scrollViewContentSize.height))
+        textView.isEditable = false
+        textView.isVerticallyResizable = true
+        textView.isHorizontallyResizable = false
+        
+        scrollView.documentView = textView
+        window.contentView = scrollView
+        window.orderFrontRegardless()
+        shakyPressPreventer.debugTextView = textView
+    }
 }

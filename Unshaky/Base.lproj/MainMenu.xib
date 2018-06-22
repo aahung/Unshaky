@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Unshaky" customModuleProvider="target">
             <connections>
                 <outlet property="dismissShakyPressCountMenuItem" destination="sJ6-3Q-q9Z" id="DQr-5y-106"/>
@@ -23,6 +23,12 @@
             <items>
                 <menuItem title="Item" enabled="NO" id="sJ6-3Q-q9Z">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Open debug window" id="Iv3-MX-v73">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="debugClicked:" target="Voe-Tx-rLC" id="UiC-RR-xbv"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="0yM-fz-Cxq"/>
                 <menuItem title="Quit" id="ypt-Mu-uzT">

@@ -6,12 +6,15 @@
 //  Copyright © 2018 Nested Error. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #include <ApplicationServices/ApplicationServices.h>
 
 typedef void (^Handler)(void);
 
 @interface ShakyPressPreventer : NSObject
+
+@property (weak) NSTextView *debugTextView;
 
 - (BOOL)setupInputDeviceListener;
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event;
