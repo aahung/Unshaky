@@ -65,12 +65,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //
     // DEBUG Function
     //
-
+    var debugWindowController: NSWindowController!
     @IBAction func debugClicked(_ sender: Any) {
         let windowStyleMaskRawValue = NSWindow.StyleMask.closable.rawValue | NSWindow.StyleMask.titled.rawValue | NSWindow.StyleMask.resizable.rawValue
         let windowFrame = NSMakeRect(100, 100, 400, 400)
         let window = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
-        _ = NSWindowController(window: window)
+        debugWindowController = NSWindowController(window: window)
         
         // scroll view
         let scrollView = NSScrollView(frame: windowFrame)
@@ -92,6 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //
     // Preference
     //
+    var preferenceWindowController: NSWindowController!
     @IBAction func preferenceClicked(_ sender: Any) {
         // prevent multiple preference windows
         for window in NSApplication.shared.windows {
@@ -102,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let preferencePanelStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Preference"), bundle: nil)
-        let preferenceWindowController = preferencePanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Preference")) as! NSWindowController
+        preferenceWindowController = preferencePanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Preference")) as! NSWindowController
         preferenceWindowController.showWindow(self)
         NSApp.activate(ignoringOtherApps: true)
     }
