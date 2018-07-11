@@ -1,4 +1,5 @@
 # Unshaky
+[![Github All Releases](https://img.shields.io/github/downloads/Aahung/Unshaky/total.svg)]()
 
 ![Menubar](README/menubar.png)
 
