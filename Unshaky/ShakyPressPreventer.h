@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Carbon/Carbon.h>
 #import <Foundation/Foundation.h>
 #include <ApplicationServices/ApplicationServices.h>
 
@@ -16,8 +17,10 @@ typedef void (^Handler)(void);
 
 @property (weak) NSTextView *debugTextView;
 
++ (ShakyPressPreventer *)sharedInstance;
 - (BOOL)setupInputDeviceListener;
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event;
 - (void)shakyPressDismissed:(Handler)handler;
+- (void)loadKeyDelays;
 
 @end

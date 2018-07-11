@@ -13,11 +13,23 @@
     NSTimeInterval lastPressedTimestamps[128];
     CGEventType lastPressedEventTypes[128];
     BOOL dismissNextEvent[128];
+    int keyDelays[128];
     Handler shakyPressDismissedHandler;
+}
+
++ (ShakyPressPreventer *)sharedInstance {
+    static ShakyPressPreventer *sharedInstance = nil;
+    static dispatch_once_t onceToken; // onceToken = 0
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[ShakyPressPreventer alloc] init];
+    });
+    
+    return sharedInstance;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
+        [self loadKeyDelays];
         for (int i = 0; i < 128; ++i) {
             lastPressedEventTypes[i] = 0.0;
             lastPressedEventTypes[i] = 0;
@@ -25,6 +37,16 @@
         }
     }
     return self;
+}
+
+- (void)loadKeyDelays {
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+    NSArray *delays = [defaults arrayForKey:@"delays"];
+    if (delays == nil) {
+        memset(keyDelays, 0, 128 * sizeof(int));
+    } else {
+        for (int i = 0; i < 128; ++i) keyDelays[i] = [(NSNumber *)[delays objectAtIndex:i] intValue];
+    }
 }
 
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
@@ -35,6 +57,8 @@
     
     // ignore space key, see issue https://github.com/Aahung/Unshaky/issues/1
     if (keyCode == 49) return event;
+    // ignore unconfigured keys
+    if (keyDelays[keyCode] == 0) return event;
     
     if (lastPressedTimestamps[keyCode] == 0.0) {
         lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
@@ -49,7 +73,7 @@
         }
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            && [[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode] < 0.04) {
+            && 1000 * ([[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
             // dismiss the keydown event if it follows keyup event too soon
             NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
             if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];

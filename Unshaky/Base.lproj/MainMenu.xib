@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="dismissShakyPressCountMenuItem" destination="sJ6-3Q-q9Z" id="DQr-5y-106"/>
                 <outlet property="menu" destination="WVM-FA-xFs" id="O1F-jR-Mww"/>
+                <outlet property="preferenceMenuItem" destination="TGg-Zy-iYa" id="Huo-bB-LCR"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -31,6 +32,13 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="0yM-fz-Cxq"/>
+                <menuItem title="Configure" id="TGg-Zy-iYa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferenceClicked:" target="Voe-Tx-rLC" id="jWl-yx-FFa"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="zeV-Zo-w6N"/>
                 <menuItem title="Quit" id="ypt-Mu-uzT">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

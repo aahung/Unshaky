@@ -18,11 +18,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     private var shakyPressPreventer : ShakyPressPreventer
     @IBOutlet weak var dismissShakyPressCountMenuItem: NSMenuItem!
+    @IBOutlet weak var preferenceMenuItem: NSMenuItem!
     
     private var dismissCount = 0
     
     override init() {
-        shakyPressPreventer = ShakyPressPreventer()
+        shakyPressPreventer = ShakyPressPreventer.sharedInstance()
         super.init()
         if (!shakyPressPreventer.setupInputDeviceListener()) {
             let alert = NSAlert()
@@ -87,4 +88,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.orderFrontRegardless()
         shakyPressPreventer.debugTextView = textView
     }
+    
+    //
+    // Preference
+    //
+    @IBAction func preferenceClicked(_ sender: Any) {
+        // prevent multiple preference windows
+        for window in NSApplication.shared.windows {
+            if window.title == "Unshaky Preference" {
+                NSApp.activate(ignoringOtherApps: true)
+                return
+            }
+        }
+        
+        let preferencePanelStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Preference"), bundle: nil)
+        let preferenceWindowController = preferencePanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Preference")) as! NSWindowController
+        preferenceWindowController.showWindow(self)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+    
 }
