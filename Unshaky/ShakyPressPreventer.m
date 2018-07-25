@@ -55,8 +55,6 @@
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     CGEventType eventType = CGEventGetType(event);
     
-    // ignore space key, see issue https://github.com/Aahung/Unshaky/issues/1
-    if (keyCode == 49) return event;
     // ignore unconfigured keys
     if (keyDelays[keyCode] == 0) return event;
     
