@@ -17,10 +17,16 @@ class PreferenceViewController: NSViewController,
     
     let defaults = UserDefaults.standard
     var delays: [Int]!
+    var keyCodes: [Int]!
     
     override func viewDidLoad() {
         loadPreference()
         super.viewDidLoad()
+        keyCodes = Array(0...127).filter({ (i) -> Bool in
+            return keyCodeToString[i] != nil
+        }).sorted { (a, b) -> Bool in
+            return keyCodeToString[a]! < keyCodeToString[b]!
+        }
     }
     
     func loadPreference() {
@@ -34,67 +40,67 @@ class PreferenceViewController: NSViewController,
     
     // MARK: NSTableViewDataSource
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 128
+        return keyCodes.count
     }
     
     // MARK: NSTableViewDelegate
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         if (tableColumn?.identifier)!.rawValue == "key" {
-            guard let keyString = keyCodeToString[row] else {
+            guard let keyString = keyCodeToString[keyCodes[row]] else {
                 return "UNDEFINED KEY"
             }
             return keyString
         }
         if (tableColumn?.identifier)!.rawValue == "delay" {
-            return delays[row]
+            return delays[keyCodes[row]]
         }
         return nil
     }
     
     @IBAction func delayEdited(_ sender: NSTextField) {
         let row = tableView.selectedRow
-        self.delays[row] = Int(sender.stringValue)!
+        self.delays[keyCodes[row]] = Int(sender.stringValue)!
         defaults.set(self.delays, forKey: "delays")
         ShakyPressPreventer.sharedInstance().loadKeyDelays()
     }
     
     // this list credits to the answer at https://stackoverflow.com/a/36901239/2361752
-    let keyCodeToString = [29:     "Zero",
-                           18:     "One",
-                           19:     "Two",
-                           20:     "Three",
-                           21:     "Four",
-                           23:     "Five",
-                           22:     "Six",
-                           26:     "Seven",
-                           28:     "Eight",
-                           25:     "Nine",
-                           0:      "A",
-                           11:     "B",
-                           8:      "C",
-                           2:      "D",
-                           14:     "E",
-                           3:      "F",
-                           5:      "G",
-                           4:      "H",
-                           34:     "I",
-                           38:     "J",
-                           40:     "K",
-                           37:     "L",
-                           46:     "M",
-                           45:     "N",
-                           31:     "O",
-                           35:     "P",
-                           12:     "Q",
-                           15:     "R",
-                           1:      "S",
-                           17:     "T",
-                           32:     "U",
-                           9:      "V",
-                           13:     "W",
-                           7:      "X",
-                           16:     "Y",
-                           6:      "Z",
+    let keyCodeToString = [29:     " 0",
+                           18:     " 1",
+                           19:     " 2",
+                           20:     " 3",
+                           21:     " 4",
+                           23:     " 5",
+                           22:     " 6",
+                           26:     " 7",
+                           28:     " 8",
+                           25:     " 9",
+                           0:      " A",
+                           11:     " B",
+                           8:      " C",
+                           2:      " D",
+                           14:     " E",
+                           3:      " F",
+                           5:      " G",
+                           4:      " H",
+                           34:     " I",
+                           38:     " J",
+                           40:     " K",
+                           37:     " L",
+                           46:     " M",
+                           45:     " N",
+                           31:     " O",
+                           35:     " P",
+                           12:     " Q",
+                           15:     " R",
+                           1:      " S",
+                           17:     " T",
+                           32:     " U",
+                           9:      " V",
+                           13:     " W",
+                           7:      " X",
+                           16:     " Y",
+                           6:      " Z",
                            10:     "SectionSign",
                            50:     "Grave",
                            27:     "Minus",
@@ -161,8 +167,8 @@ class PreferenceViewController: NSViewController,
                            119:    "End",
                            116:    "PageUp",
                            121:    "PageDown",
-                           123:    "LeftArrow",
-                           124:    "RightArrow",
-                           125:    "DownArrow",
-                           126:    "UpArrow"]
+                           123:    "Arrow Left",
+                           124:    "Arrow Right",
+                           125:    "Arrow Down",
+                           126:    "Arrow Up"]
 }

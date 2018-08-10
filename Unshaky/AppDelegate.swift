@@ -96,7 +96,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func preferenceClicked(_ sender: Any) {
         // prevent multiple preference windows
         for window in NSApplication.shared.windows {
-            if window.title == "Unshaky Preference" {
+            if window.title == "Unshaky Preference" && window.isVisible {
                 NSApp.activate(ignoringOtherApps: true)
                 return
             }
