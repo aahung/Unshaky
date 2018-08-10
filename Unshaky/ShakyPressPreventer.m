@@ -58,33 +58,6 @@
     // ignore unconfigured keys
     if (keyDelays[keyCode] == 0) return event;
     
-    {
-        // handle control, command, option and shift keys
-        CGEventFlags flags;
-        BOOL isModifierPressed;
-        switch (keyCode) {
-            case 54: // RightCommand
-            case 55: // Command
-            case 56: // Shift
-            case 58: // Option
-            case 59: // Control
-            case 60: // RightShift
-            case 61: // RightOption
-            case 62: // RightControl (this key does not exist on MacBook Pro's keyboard)
-            case 63: // Function
-                flags = CGEventGetFlags(event);
-                isModifierPressed = (flags & (kCGEventFlagMaskAlternate | kCGEventFlagMaskCommand | kCGEventFlagMaskControl | kCGEventFlagMaskShift | kCGEventFlagMaskSecondaryFn)) > 0;
-                if (isModifierPressed)
-                    eventType = kCGEventKeyDown;
-                else
-                    eventType = kCGEventKeyUp;
-                break;
-                
-            default:
-                break;
-        }
-    }
-    
     if (lastPressedTimestamps[keyCode] == 0.0) {
         lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
         lastPressedEventTypes[keyCode] = eventType;
