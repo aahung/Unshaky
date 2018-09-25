@@ -171,4 +171,17 @@ class PreferenceViewController: NSViewController,
                            124:    "Arrow Right",
                            125:    "Arrow Down",
                            126:    "Arrow Up"]
+    
+    
+    @IBOutlet weak var delayAllTextField: NSTextField!
+    
+    @IBAction func setAllDelays(_ sender: Any) {
+        let delayFoAll = Int(delayAllTextField.stringValue)!
+        for i in 0...(self.delays.count - 1) {
+            self.delays[i] = delayFoAll
+        }
+        self.tableView.reloadData()
+        defaults.set(self.delays, forKey: "delays")
+        ShakyPressPreventer.sharedInstance().loadKeyDelays()
+    }
 }
