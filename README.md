@@ -16,6 +16,14 @@ Good news, Apple just launched a [Keyboard Service Program for MacBook and MacBo
 - [MacBook Pro 13" 2016 Double Key Press](https://forums.macrumors.com/threads/macbook-pro-13-2016-double-key-press.2025843/)
 - [1 key - 2 letters macbook pro 2016 and 2017](https://apple.stackexchange.com/questions/293523/1-key-2-letters-macbook-pro-2016-and-2017)
 
+## How-To (Video Walkthrough)
+
+Click the image below to watch it on YouTube
+
+[![How to install and setup Unshaky](http://img.youtube.com/vi/ppaeCBLCfu0/0.jpg)](http://www.youtube.com/watch?v=ppaeCBLCfu0 "How to install and setup Unshaky")
+
+Can't watch by clicking the image above? [Download mp4 (13MB) file here](https://files.nestederror.cf/file/-public-/How%20to%20install%20and%20setup%20Unshaky.mp4)
+
 ## How-To
 
 [Download Unshaky.app here](https://github.com/Aahung/Unshaky/releases)
