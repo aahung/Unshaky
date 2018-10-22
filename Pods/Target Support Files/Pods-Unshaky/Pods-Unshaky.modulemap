@@ -1,0 +1,6 @@
+framework module Pods_Unshaky {
+  umbrella header "Pods-Unshaky-umbrella.h"
+
+  export *
+  module * { export * }
+}
