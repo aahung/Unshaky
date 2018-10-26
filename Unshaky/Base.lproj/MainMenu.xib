@@ -17,6 +17,7 @@
                 <outlet property="dismissShakyPressCountMenuItem" destination="sJ6-3Q-q9Z" id="DQr-5y-106"/>
                 <outlet property="menu" destination="WVM-FA-xFs" id="O1F-jR-Mww"/>
                 <outlet property="preferenceMenuItem" destination="TGg-Zy-iYa" id="Huo-bB-LCR"/>
+                <outlet property="versionMenuItem" destination="T9Q-qI-cKF" id="k5A-dC-6oT"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -39,6 +40,9 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Rle-jS-ha9"/>
+                <menuItem title="Item" enabled="NO" id="T9Q-qI-cKF">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
                 <menuItem title="Check for Updates..." id="f5l-nJ-ecO">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

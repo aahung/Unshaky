@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var shakyPressPreventer : ShakyPressPreventer
     @IBOutlet weak var dismissShakyPressCountMenuItem: NSMenuItem!
     @IBOutlet weak var preferenceMenuItem: NSMenuItem!
+    @IBOutlet weak var versionMenuItem: NSMenuItem!
     
     private var dismissCount = 0
     
@@ -55,6 +56,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         dismissCount = defaults.integer(forKey: "DISMISS_COUNT")
         updateDismissCountLabel()
+
+        // show version number
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        versionMenuItem.title = "Version \(version)"
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
