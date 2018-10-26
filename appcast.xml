@@ -11,7 +11,7 @@
                 https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.2.5
             </sparkle:releaseNotesLink>
             <!-- Sparkle 1.21+ uses sparkle::edSignature="ed25519" instead of sparkle::dsaSignature="deprecated DSA" -->
-            <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.2.5/Unshaky.app.zip" sparkle:version="11" sparkle:shortVersionString="0.2.5" length="5124189" type="application/octet-stream"/>
+            <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.2.5/Unshaky.app.zip" sparkle:version="12" sparkle:shortVersionString="0.2.5" length="5124228" type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
     </channel>
