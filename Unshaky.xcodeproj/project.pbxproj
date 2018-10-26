@@ -11,6 +11,7 @@
 		5B3168EE20DB9CF300185DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3168ED20DB9CF300185DE5 /* Assets.xcassets */; };
 		5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3168EF20DB9CF300185DE5 /* MainMenu.xib */; };
 		5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */; };
+		5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50712421839D5400A65B81 /* ExportImportViewController.swift */; };
 		5BCA730720F5AF4A00A1210E /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA730620F5AF4A00A1210E /* Preference.storyboard */; };
 		5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA730820F5B43300A1210E /* PreferenceViewController.swift */; };
 		8A8865A9A724FA97AF9FE132 /* Pods_Unshaky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210D714B742F537687136CC /* Pods_Unshaky.framework */; };
@@ -29,6 +30,7 @@
 		5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakyPressPreventer.h; sourceTree = "<group>"; };
 		5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakyPressPreventer.m; sourceTree = "<group>"; };
 		5B31691220DBC43400185DE5 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
 		5BCA730620F5AF4A00A1210E /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
 		5BCA730820F5B43300A1210E /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		FE12C965EC0C37A2C87000C1 /* Pods-Unshaky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unshaky.release.xcconfig"; path = "Target Support Files/Pods-Unshaky/Pods-Unshaky.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */,
 				5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */,
 				5BCA730820F5B43300A1210E /* PreferenceViewController.swift */,
+				5B50712421839D5400A65B81 /* ExportImportViewController.swift */,
 				5B3168F920DB9ED300185DE5 /* Unshaky-Bridging-Header.h */,
 			);
 			path = Unshaky;
@@ -245,6 +248,7 @@
 			files = (
 				5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */,
 				5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */,
+				5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */,
 				5B3168EC20DB9CF100185DE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

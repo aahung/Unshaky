@@ -184,4 +184,24 @@ class PreferenceViewController: NSViewController,
         defaults.set(self.delays, forKey: "delays")
         ShakyPressPreventer.sharedInstance().loadKeyDelays()
     }
+
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case NSStoryboard.SegueIdentifier(rawValue: "export"):
+            let destVC = segue.destinationController as! ExportImportViewController
+            destVC.preferenceViewController = self
+            destVC.mode = .Export
+        case NSStoryboard.SegueIdentifier(rawValue: "import"):
+            let destVC = segue.destinationController as! ExportImportViewController
+            destVC.preferenceViewController = self
+            destVC.mode = .Import
+        default:
+            break
+        }
+    }
+
+    func preferenceChanged(sender: Any?) {
+        loadPreference()
+        self.tableView.reloadData()
+    }
 }
