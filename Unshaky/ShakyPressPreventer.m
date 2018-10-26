@@ -118,7 +118,7 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 
 - (void)appendToDebugTextView:(NSString*)text {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSAttributedString* attr = [[NSAttributedString alloc] initWithString:text];
+        NSAttributedString* attr = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [NSColor textColor]}];
         
         [[self.debugTextView textStorage] insertAttributedString:attr atIndex:0];
     });
