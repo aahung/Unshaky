@@ -8,7 +8,7 @@
             <title>Version 0.2.5</title>
             <pubDate>Mon, 22 Oct 2018 14:17:11 -0700</pubDate>
             <sparkle:releaseNotesLink>
-                https://github.com/aahung/Unshaky/releases/tag/v0.2.5
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.2.5
             </sparkle:releaseNotesLink>
             <!-- Sparkle 1.21+ uses sparkle::edSignature="ed25519" instead of sparkle::dsaSignature="deprecated DSA" -->
             <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.2.5/Unshaky.app.zip" sparkle:version="11" sparkle:shortVersionString="0.2.5" length="5124189" type="application/octet-stream"/>
