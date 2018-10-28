@@ -14,6 +14,7 @@
     CGEventType lastPressedEventTypes[128];
     BOOL dismissNextEvent[128];
     int keyDelays[128];
+    BOOL ignoreExternalKeyboard;
     Handler shakyPressDismissedHandler;
 }
 
@@ -30,6 +31,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         [self loadKeyDelays];
+        [self loadIgnoreExternalKeyboard];
         for (int i = 0; i < 128; ++i) {
             lastPressedEventTypes[i] = 0.0;
             lastPressedEventTypes[i] = 0;
@@ -49,8 +51,19 @@
     }
 }
 
+- (void)loadIgnoreExternalKeyboard {
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+    ignoreExternalKeyboard = [defaults boolForKey:@"ignoreExternalKeyboard"]; // default No
+}
+
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
-    
+
+    // keyboard type, dismiss if it is not built-in keyboard
+    if (ignoreExternalKeyboard) {
+        int64_t type = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
+        if (type != 58) return event;
+    }
+
     // The incoming keycode.
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     CGEventType eventType = CGEventGetType(event);

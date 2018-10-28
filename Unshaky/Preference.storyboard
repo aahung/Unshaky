@@ -156,10 +156,10 @@
                                         </tableHeaderView>
                                     </scrollView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yre-7S-CXv">
-                                        <rect key="frame" x="20" y="45" width="261" height="21"/>
+                                        <rect key="frame" x="20" y="52" width="261" height="21"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-Mi-E0w">
-                                                <rect key="frame" x="-2" y="4" width="86" height="14"/>
+                                                <rect key="frame" x="-2" y="3" width="86" height="14"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Set ALL to (ms)" id="Qnt-tS-QWb">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -167,7 +167,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-6U-DVj">
-                                                <rect key="frame" x="90" y="3" width="120" height="16"/>
+                                                <rect key="frame" x="90" y="2" width="120" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Xe6-LV-3Se">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="J1t-Zg-ksZ"/>
                                                     <font key="font" metaFont="miniSystem"/>
@@ -197,8 +197,19 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T9y-cb-sJ7">
+                                        <rect key="frame" x="18" y="31" width="265" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Ignore external keyboard (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="dE9-oM-Tqa">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="ignoreExternalKeyboardToggled:" target="3EX-qe-haT" id="T1J-yf-F82"/>
+                                            <binding destination="0Xq-bq-pSr" name="value" keyPath="values.ignoreExternalKeyboard" id="GMd-iZ-EV7"/>
+                                        </connections>
+                                    </button>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="jD9-QU-ZMw">
-                                        <rect key="frame" x="0.0" y="31" width="301" height="5"/>
+                                        <rect key="frame" x="0.0" y="24" width="301" height="5"/>
                                     </box>
                                     <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrU-5N-05g">
                                         <rect key="frame" x="20" y="0.0" width="261" height="21"/>
@@ -239,6 +250,8 @@
                                     <constraint firstItem="jD9-QU-ZMw" firstAttribute="width" secondItem="6xP-AJ-FNM" secondAttribute="width" id="KMx-eQ-cXp"/>
                                     <constraint firstAttribute="trailing" secondItem="Yre-7S-CXv" secondAttribute="trailing" constant="20" symbolic="YES" id="WvH-wJ-eCH"/>
                                     <constraint firstAttribute="trailing" secondItem="wrU-5N-05g" secondAttribute="trailing" constant="20" symbolic="YES" id="fLr-4t-Ydd"/>
+                                    <constraint firstItem="T9y-cb-sJ7" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="ikj-eM-NFa"/>
+                                    <constraint firstItem="T9y-cb-sJ7" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="jx5-kT-dcd"/>
                                     <constraint firstItem="wrU-5N-05g" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="kwt-Ye-9ag"/>
                                     <constraint firstItem="Yre-7S-CXv" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="nMl-3p-w8k"/>
                                     <constraint firstItem="jD9-QU-ZMw" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="oae-KM-cE7"/>
@@ -250,8 +263,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -272,6 +287,7 @@
                     </connections>
                 </viewController>
                 <customObject id="pEw-Ap-3LF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="0Xq-bq-pSr"/>
             </objects>
             <point key="canvasLocation" x="527" y="-177.5"/>
         </scene>

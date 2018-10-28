@@ -22,5 +22,6 @@ typedef void (^Handler)(void);
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event;
 - (void)shakyPressDismissed:(Handler)handler;
 - (void)loadKeyDelays;
+- (void)loadIgnoreExternalKeyboard;
 
 @end

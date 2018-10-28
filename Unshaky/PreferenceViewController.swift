@@ -63,6 +63,11 @@ class PreferenceViewController: NSViewController,
         defaults.set(self.delays, forKey: "delays")
         ShakyPressPreventer.sharedInstance().loadKeyDelays()
     }
+
+    @IBAction func ignoreExternalKeyboardToggled(_ sender: Any) {
+        ShakyPressPreventer.sharedInstance()?.loadIgnoreExternalKeyboard()
+    }
+
     
     // this list credits to the answer at https://stackoverflow.com/a/36901239/2361752
     let keyCodeToString = [29:     " 0",
