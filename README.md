@@ -1,13 +1,13 @@
 # Unshaky
-[![Github All Releases](https://img.shields.io/github/downloads/Aahung/Unshaky/total.svg)](https://github.com/Aahung/Unshaky/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases)
 
 ![Menubar](README/menubar.png)
 
 **Unshaky** tries to address an issue on the butterfly keyboard (Macbook & MacBook Pro 2016 or later): Double Key Press (See "User complaints" below). 
 
-Apple made it difficult to replace the keyboard only and it could cost hundreds of dollars. **Unshaky** might save your keyboard by dismissing such "second key hits" (any second key presses that occur no later than 40ms after the previous one, the delay is configurable). My "w" key becomes normal with **Unshaky**, if it does not work for you, open an issue [here](https://github.com/Aahung/Unshaky/issues).
+Apple made it difficult to replace only the keyboard and it costs hundreds of dollars. **Unshaky** might save your keyboard by dismissing such "second key hits" (any key presses that occur no later than x milliseconds after the previous effective one). I fixed my "w" key with **Unshaky**, and if it does not work for you, open an issue [here](https://github.com/aahung/Unshaky/issues).
 
-Good news, Apple launched a [Keyboard Service Program for MacBook and MacBook Pro](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/), and go get your keyboard fixed, maybe temporarily.
+[June 2018] Good news, Apple launched a [Keyboard Service Program for MacBook and MacBook Pro](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/), and go get your keyboard fixed, maybe temporarily.
 
 ## User Complaints
 
@@ -29,13 +29,13 @@ Can't watch by clicking the image above? [Download mp4 (13MB) file here](https:/
 
 ## How-To
 
-[Download Unshaky.app here](https://github.com/Aahung/Unshaky/releases)
+[Download Unshaky.app here](https://github.com/aahung/Unshaky/releases)
 
 First, move the "Unshaky.app" to your "/Applications" folder.
 
 ### Grant Accessibility Permission
 
-Go to System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel) and add "Unshaky.app".
+Follow the instruction when you first open Unshaky. If the instruction does not work for you, go to System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel) and add "Unshaky.app." Make sure it is checked.
 
 ![Grant Accessibility Permission](README/how-to-1.png)
 
