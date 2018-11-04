@@ -12,7 +12,7 @@
 @implementation ShakyPressPreventer {
     NSTimeInterval lastPressedTimestamps[128];
     CGEventType lastPressedEventTypes[128];
-    CGEventFlags lastEventFlagsAboutModifierKeys[128];
+    //CGEventFlags lastEventFlagsAboutModifierKeys[128];
     BOOL dismissNextEvent[128];
     int keyDelays[128];
     BOOL ignoreExternalKeyboard;
@@ -57,58 +57,73 @@
     ignoreExternalKeyboard = [defaults boolForKey:@"ignoreExternalKeyboard"]; // default No
 }
 
-- (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
 
-    // keyboard type, dismiss if it is not built-in keyboard
-    if (ignoreExternalKeyboard) {
-        int64_t type = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
-        if (type != 58) return event;
-    }
+/** Current version (for fork/pull request): */
+- (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
 
     // The incoming keycode.
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     
     // ignore unconfigured keys
     if (keyDelays[keyCode] == 0) return event;
-
-    CGEventType eventType = CGEventGetType(event);
-    CGEventFlags eventFlagsAboutModifierKeys = (kCGEventFlagMaskShift | kCGEventFlagMaskControl |
-                                                kCGEventFlagMaskAlternate | kCGEventFlagMaskCommand |
-                                                kCGEventFlagMaskSecondaryFn) & CGEventGetFlags(event);
     
-    if (lastPressedTimestamps[keyCode] != 0.0) {
+    // keyboard type, dismiss if it is not built-in keyboard
+    if (ignoreExternalKeyboard) {
+        int64_t type = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
+        if (type != 58) return event;
+    }
+
+    double      stamp     = [[NSDate date] timeIntervalSince1970];
+    double      lastStamp = lastPressedTimestamps[keyCode];
+    CGEventType eventType = CGEventGetType(event);
+    
+    if (lastStamp != 0.0) {
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
             NSLog(@"DISMISSING KEYUP:%d", keyCode);
-            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", stamp, keyCode, eventType]];
             dismissNextEvent[keyCode] = NO;
             return nil;
         }
-        if (eventType == kCGEventKeyDown
-            && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            // Credit to @ghost711:
-            /** For some users, pressing button when holding CMD, will cause the event to be reported
-             twice in rapid succession (first without the flag, and then again with it). Unshaky should not
-             interfere in such case. So I add this following checking */
-            && lastEventFlagsAboutModifierKeys[keyCode] == eventFlagsAboutModifierKeys
-            && 1000 * ([[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
+        if (eventType == kCGEventKeyDown && lastPressedEventTypes[keyCode] == kCGEventKeyUp ) {
             // dismiss the keydown event if it follows keyup event too soon
-            NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
-            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
             
-            if (shakyPressDismissedHandler != nil) {
-                shakyPressDismissedHandler();
+            if( (keyCode == 49) && (CGEventGetFlags(event) & kCGEventFlagMaskCommand) ) {
+                /** CMD+Space was pressed, which causes a duplicate pair of down/up
+                 keyEvents to occur 1-5 msecs after the "real" pair of events.
+                 - If the CMD key is released first, it will look like:
+                        CMD+Space Down
+                            Space Up
+                        CMD+Space Down
+                        CMD+Space Up
+                 - Whereas if the space bar is released first, it will be:
+                        CMD+Space Down
+                        CMD+Space Up
+                        CMD+Space Down
+                        CMD+Space Up
+                 - The issue only appears to happen with CMD+Space,
+                   not CMD+<any other key>, or <any other modifier key>+Space.
+                 - So it looks like the simplest thing is to just ignore if both
+                   CMD and space are pressed at the same time. */
+                NSLog(@"%f\t Key(%d)\t Event(%d) NOT DISMISSING DOWN (CMD Pressed)\n",
+                                                            stamp, keyCode, eventType);
+                
+            } else if ((int)(1000.0 * (stamp - lastStamp)) < keyDelays[keyCode]) {
+                NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
+                if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", stamp, keyCode, eventType]];
+                
+                if (shakyPressDismissedHandler != nil) {
+                    shakyPressDismissedHandler();
+                }
+                dismissNextEvent[keyCode] = YES;
+                return nil;
             }
-            dismissNextEvent[keyCode] = YES;
-            return nil;
         }
     }
-
-    lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
+    lastPressedTimestamps[keyCode] = stamp;
     lastPressedEventTypes[keyCode] = eventType;
-    lastEventFlagsAboutModifierKeys[keyCode] = eventFlagsAboutModifierKeys;
     
-    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", stamp, keyCode, eventType]];
     return event;
 }
 
