@@ -85,11 +85,23 @@
         if (eventType == kCGEventKeyDown && lastPressedEventTypes[keyCode] == kCGEventKeyUp ) {
             // dismiss the keydown event if it follows keyup event too soon
             
-            CGEventFlags eventFlags = CGEventGetFlags( event );
-            if( eventFlags & kCGEventFlagMaskCommand ) {
-                /** The command key was pressed, which will cause the event to be reported
-                 twice in rapid succession (first without the flag, and then again with it).
-                 So just ignore. */
+            if( (keyCode == 49) && (CGEventGetFlags(event) & kCGEventFlagMaskCommand) ) {
+                /** CMD+Space was pressed, which causes a duplicate pair of down/up
+                 keyEvents to occur 1-5 msecs after the "real" pair of events.
+                 - If the CMD key is released first, it will look like:
+                        CMD+Space Down
+                            Space Up
+                        CMD+Space Down
+                        CMD+Space Up
+                 - Whereas if the space bar is released first, it will be:
+                        CMD+Space Down
+                        CMD+Space Up
+                        CMD+Space Down
+                        CMD+Space Up
+                 - The issue only appears to happen with CMD+Space,
+                   not CMD+<any other key>, or <any other modifier key>+Space.
+                 - So it looks like the simplest thing is to just ignore if both
+                   CMD and space are pressed at the same time. */
                 NSLog(@"%f\t Key(%d)\t Event(%d) NOT DISMISSING DOWN (CMD Pressed)\n",
                                                             stamp, keyCode, eventType);
                 
