@@ -70,11 +70,8 @@
     
     // ignore unconfigured keys
     if (keyDelays[keyCode] == 0) return event;
-    
-    if (lastPressedTimestamps[keyCode] == 0.0) {
-        lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
-        lastPressedEventTypes[keyCode] = eventType;
-    } else {
+
+    if (lastPressedTimestamps[keyCode] != 0.0) {
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
             NSLog(@"DISMISSING KEYUP:%d", keyCode);
@@ -95,9 +92,10 @@
             dismissNextEvent[keyCode] = YES;
             return nil;
         }
-        lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
-        lastPressedEventTypes[keyCode] = eventType;
     }
+
+    lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
+    lastPressedEventTypes[keyCode] = eventType;
     
     if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
     return event;
