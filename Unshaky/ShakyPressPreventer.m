@@ -66,11 +66,12 @@
 
     // The incoming keycode.
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
-    CGEventType eventType = CGEventGetType(event);
     
     // ignore unconfigured keys
     if (keyDelays[keyCode] == 0) return event;
 
+    CGEventType eventType = CGEventGetType(event);
+    
     if (lastPressedTimestamps[keyCode] != 0.0) {
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
