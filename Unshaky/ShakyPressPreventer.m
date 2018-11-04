@@ -12,6 +12,7 @@
 @implementation ShakyPressPreventer {
     NSTimeInterval lastPressedTimestamps[128];
     CGEventType lastPressedEventTypes[128];
+    CGEventFlags lastEventFlagsAboutModifierKeys[128];
     BOOL dismissNextEvent[128];
     int keyDelays[128];
     BOOL ignoreExternalKeyboard;
@@ -67,6 +68,9 @@
     // The incoming keycode.
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     CGEventType eventType = CGEventGetType(event);
+    CGEventFlags eventFlagsAboutModifierKeys = (kCGEventFlagMaskShift | kCGEventFlagMaskControl |
+                                                kCGEventFlagMaskAlternate | kCGEventFlagMaskCommand |
+                                                kCGEventFlagMaskSecondaryFn) & CGEventGetFlags(event);
     
     // ignore unconfigured keys
     if (keyDelays[keyCode] == 0) return event;
@@ -74,6 +78,7 @@
     if (lastPressedTimestamps[keyCode] == 0.0) {
         lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
         lastPressedEventTypes[keyCode] = eventType;
+        lastEventFlagsAboutModifierKeys[keyCode] = eventFlagsAboutModifierKeys;
     } else {
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
@@ -84,6 +89,11 @@
         }
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
+            // Credit to @ghost711:
+            /** For some users, pressing button when holding CMD, will cause the event to be reported
+             twice in rapid succession (first without the flag, and then again with it). Unshaky should not
+             interfere in such case. So I add this following checking */
+            && lastEventFlagsAboutModifierKeys[keyCode] == eventFlagsAboutModifierKeys
             && 1000 * ([[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
             // dismiss the keydown event if it follows keyup event too soon
             NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
@@ -97,6 +107,7 @@
         }
         lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
         lastPressedEventTypes[keyCode] = eventType;
+        lastEventFlagsAboutModifierKeys[keyCode] = eventFlagsAboutModifierKeys;
     }
     
     if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
