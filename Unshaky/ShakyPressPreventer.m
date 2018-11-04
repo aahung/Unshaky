@@ -67,13 +67,14 @@
 
     // The incoming keycode.
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
+    
+    // ignore unconfigured keys
+    if (keyDelays[keyCode] == 0) return event;
+
     CGEventType eventType = CGEventGetType(event);
     CGEventFlags eventFlagsAboutModifierKeys = (kCGEventFlagMaskShift | kCGEventFlagMaskControl |
                                                 kCGEventFlagMaskAlternate | kCGEventFlagMaskCommand |
                                                 kCGEventFlagMaskSecondaryFn) & CGEventGetFlags(event);
-    
-    // ignore unconfigured keys
-    if (keyDelays[keyCode] == 0) return event;
     
     if (lastPressedTimestamps[keyCode] != 0.0) {
         if (dismissNextEvent[keyCode]) {
