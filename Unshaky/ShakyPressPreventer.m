@@ -58,48 +58,57 @@
 
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
 
+    // The incoming keycode.
+    CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
+    
+    // ignore unconfigured keys
+    if (keyDelays[keyCode] == 0) return event;
+    
     // keyboard type, dismiss if it is not built-in keyboard
     if (ignoreExternalKeyboard) {
         int64_t type = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
         if (type != 58) return event;
     }
 
-    // The incoming keycode.
-    CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
+    double      stamp     = [[NSDate date] timeIntervalSince1970];
+    double      lastStamp = lastPressedTimestamps[keyCode];
     CGEventType eventType = CGEventGetType(event);
     
-    // ignore unconfigured keys
-    if (keyDelays[keyCode] == 0) return event;
-    
-    if (lastPressedTimestamps[keyCode] == 0.0) {
-        lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
-        lastPressedEventTypes[keyCode] = eventType;
-    } else {
+    if (lastStamp != 0.0) {
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
             NSLog(@"DISMISSING KEYUP:%d", keyCode);
-            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", stamp, keyCode, eventType]];
             dismissNextEvent[keyCode] = NO;
             return nil;
         }
-        if (eventType == kCGEventKeyDown
-            && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            && 1000 * ([[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
+        if (eventType == kCGEventKeyDown && lastPressedEventTypes[keyCode] == kCGEventKeyUp ) {
             // dismiss the keydown event if it follows keyup event too soon
-            NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
-            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
             
-            if (shakyPressDismissedHandler != nil) {
-                shakyPressDismissedHandler();
+            CGEventFlags eventFlags = CGEventGetFlags( event );
+            if( eventFlags & kCGEventFlagMaskCommand ) {
+                /** The command key was pressed, which will cause the event to be reported
+                 twice in rapid succession (first without the flag, and then again with it).
+                 So just ignore. */
+                NSLog(@"%f\t Key(%d)\t Event(%d) NOT DISMISSING DOWN (CMD Pressed)\n",
+                                                            stamp, keyCode, eventType);
+                
+            } else if( (int)(1000.0 * (stamp - lastStamp)) < keyDelays[keyCode] ) {
+                NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
+                if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", stamp, keyCode, eventType]];
+                
+                if (shakyPressDismissedHandler != nil) {
+                    shakyPressDismissedHandler();
+                }
+                dismissNextEvent[keyCode] = YES;
+                return nil;
             }
-            dismissNextEvent[keyCode] = YES;
-            return nil;
         }
-        lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
-        lastPressedEventTypes[keyCode] = eventType;
     }
+    lastPressedTimestamps[keyCode] = stamp;
+    lastPressedEventTypes[keyCode] = eventType;
     
-    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", stamp, keyCode, eventType]];
     return event;
 }
 
