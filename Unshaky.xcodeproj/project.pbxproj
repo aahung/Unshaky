@@ -12,12 +12,25 @@
 		5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3168EF20DB9CF300185DE5 /* MainMenu.xib */; };
 		5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */; };
 		5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50712421839D5400A65B81 /* ExportImportViewController.swift */; };
+		5BB68E1E21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */; };
 		5BCA730720F5AF4A00A1210E /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA730620F5AF4A00A1210E /* Preference.storyboard */; };
 		5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA730820F5B43300A1210E /* PreferenceViewController.swift */; };
+		5DDFCCEF1C53414916147497 /* Pods_UnshakyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C30C977EAB3365268D080 /* Pods_UnshakyTests.framework */; };
 		8A8865A9A724FA97AF9FE132 /* Pods_Unshaky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210D714B742F537687136CC /* Pods_Unshaky.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5BB68E1821A3413900CAA4B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B3168E020DB9CF100185DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B3168E720DB9CF100185DE5;
+			remoteInfo = Unshaky;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1F4C30C977EAB3365268D080 /* Pods_UnshakyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnshakyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3210D714B742F537687136CC /* Pods_Unshaky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unshaky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		345B717DD0B36C8846A13E3B /* Pods-Unshaky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unshaky.debug.xcconfig"; path = "Target Support Files/Pods-Unshaky/Pods-Unshaky.debug.xcconfig"; sourceTree = "<group>"; };
 		5B3168E820DB9CF100185DE5 /* Unshaky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unshaky.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,8 +44,13 @@
 		5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakyPressPreventer.m; sourceTree = "<group>"; };
 		5B31691220DBC43400185DE5 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
+		5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnshakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB68E1721A3413900CAA4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyPressPreventerSpec.swift; sourceTree = "<group>"; };
 		5BCA730620F5AF4A00A1210E /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
 		5BCA730820F5B43300A1210E /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		DC65E0327412179B1BD85998 /* Pods-UnshakyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnshakyTests.debug.xcconfig"; path = "Target Support Files/Pods-UnshakyTests/Pods-UnshakyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DDDDD71728B7B66F527D9565 /* Pods-UnshakyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnshakyTests.release.xcconfig"; path = "Target Support Files/Pods-UnshakyTests/Pods-UnshakyTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE12C965EC0C37A2C87000C1 /* Pods-Unshaky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unshaky.release.xcconfig"; path = "Target Support Files/Pods-Unshaky/Pods-Unshaky.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +63,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BB68E1021A3413900CAA4B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDFCCEF1C53414916147497 /* Pods_UnshakyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -52,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3168EA20DB9CF100185DE5 /* Unshaky */,
+				5BB68E1421A3413900CAA4B4 /* UnshakyTests */,
 				5B3168E920DB9CF100185DE5 /* Products */,
 				5B31691120DBC43300185DE5 /* Frameworks */,
 				F96D08A19C0BFF4E7FE460FC /* Pods */,
@@ -62,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3168E820DB9CF100185DE5 /* Unshaky.app */,
+				5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,8 +117,18 @@
 			children = (
 				5B31691220DBC43400185DE5 /* ServiceManagement.framework */,
 				3210D714B742F537687136CC /* Pods_Unshaky.framework */,
+				1F4C30C977EAB3365268D080 /* Pods_UnshakyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BB68E1421A3413900CAA4B4 /* UnshakyTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */,
+				5BB68E1721A3413900CAA4B4 /* Info.plist */,
+			);
+			path = UnshakyTests;
 			sourceTree = "<group>";
 		};
 		F96D08A19C0BFF4E7FE460FC /* Pods */ = {
@@ -98,6 +136,8 @@
 			children = (
 				345B717DD0B36C8846A13E3B /* Pods-Unshaky.debug.xcconfig */,
 				FE12C965EC0C37A2C87000C1 /* Pods-Unshaky.release.xcconfig */,
+				DC65E0327412179B1BD85998 /* Pods-UnshakyTests.debug.xcconfig */,
+				DDDDD71728B7B66F527D9565 /* Pods-UnshakyTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -125,13 +165,33 @@
 			productReference = 5B3168E820DB9CF100185DE5 /* Unshaky.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5BB68E1221A3413900CAA4B4 /* UnshakyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB68E1C21A3413900CAA4B4 /* Build configuration list for PBXNativeTarget "UnshakyTests" */;
+			buildPhases = (
+				63A7B0E478BADB58754CFBEC /* [CP] Check Pods Manifest.lock */,
+				5BB68E0F21A3413900CAA4B4 /* Sources */,
+				5BB68E1021A3413900CAA4B4 /* Frameworks */,
+				5BB68E1121A3413900CAA4B4 /* Resources */,
+				91EE32B2A21145C6F7CD02A5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB68E1921A3413900CAA4B4 /* PBXTargetDependency */,
+			);
+			name = UnshakyTests;
+			productName = UnshakyTests;
+			productReference = 5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5B3168E020DB9CF100185DE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Nested Error";
 				TargetAttributes = {
@@ -143,6 +203,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					5BB68E1221A3413900CAA4B4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 5B3168E720DB9CF100185DE5;
 					};
 				};
 			};
@@ -160,6 +224,7 @@
 			projectRoot = "";
 			targets = (
 				5B3168E720DB9CF100185DE5 /* Unshaky */,
+				5BB68E1221A3413900CAA4B4 /* UnshakyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -172,6 +237,13 @@
 				5B3168EE20DB9CF300185DE5 /* Assets.xcassets in Resources */,
 				5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */,
 				5BCA730720F5AF4A00A1210E /* Preference.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB68E1121A3413900CAA4B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +289,28 @@
 			shellPath = /bin/sh;
 			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# By default, use the configured code signing identity for the project/target\nIDENTITY=\"${CODE_SIGN_IDENTITY}\"\nIDENTITY=\"Mac Developer: Xinhong Liu (32BU6UVQ76)\"\nif [ \"$IDENTITY\" == \"\" ]\nthen\n# If a code signing identity is not specified, use ad hoc signing\nIDENTITY=\"-\"\nfi\ncodesign --verbose --force --deep -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A/Resources/AutoUpdate.app\"\ncodesign --verbose --force -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
 		};
+		63A7B0E478BADB58754CFBEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnshakyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		754ACF38B6C4124DB0E9DBFF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +333,30 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unshaky/Pods-Unshaky-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		91EE32B2A21145C6F7CD02A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnshakyTests/Pods-UnshakyTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnshakyTests/Pods-UnshakyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -253,7 +371,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BB68E0F21A3413900CAA4B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB68E1E21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BB68E1921A3413900CAA4B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B3168E720DB9CF100185DE5 /* Unshaky */;
+			targetProxy = 5BB68E1821A3413900CAA4B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5B3168EF20DB9CF300185DE5 /* MainMenu.xib */ = {
@@ -431,6 +565,61 @@
 			};
 			name = Release;
 		};
+		5BB68E1A21A3413900CAA4B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC65E0327412179B1BD85998 /* Pods-UnshakyTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 92D95TWTWQ;
+				INFOPLIST_FILE = UnshakyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nestederror.UnshakyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Unshaky/Unshaky-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unshaky.app/Contents/MacOS/Unshaky";
+			};
+			name = Debug;
+		};
+		5BB68E1B21A3413900CAA4B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDDDD71728B7B66F527D9565 /* Pods-UnshakyTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 92D95TWTWQ;
+				INFOPLIST_FILE = UnshakyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nestederror.UnshakyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Unshaky/Unshaky-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unshaky.app/Contents/MacOS/Unshaky";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,6 +637,15 @@
 			buildConfigurations = (
 				5B3168F720DB9CF300185DE5 /* Debug */,
 				5B3168F820DB9CF300185DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB68E1C21A3413900CAA4B4 /* Build configuration list for PBXNativeTarget "UnshakyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB68E1A21A3413900CAA4B4 /* Debug */,
+				5BB68E1B21A3413900CAA4B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

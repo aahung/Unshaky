@@ -1,16 +1,24 @@
 PODS:
+  - Nimble (7.3.1)
+  - Quick (1.3.2)
   - Sparkle (1.20.0)
 
 DEPENDENCIES:
+  - Nimble
+  - Quick
   - Sparkle
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
     - Sparkle
 
 SPEC CHECKSUMS:
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
   Sparkle: 48999e7ee032f05ca05e28451eadf4af8ede6b44
 
-PODFILE CHECKSUM: e77a8e5bd22575276150c8f3e6e610b4a64bed0a
+PODFILE CHECKSUM: dc28f491260ac536f53535d24f79b53d40aaad9b
 
 COCOAPODS: 1.6.0.beta.1

@@ -41,6 +41,20 @@
     return self;
 }
 
+// This initWithKeyDelays:ignoreExternalKeyboard: is used for testing purpose
+- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ {
+    if (self = [super init]) {
+        ignoreExternalKeyboard = ignoreExternalKeyboard_;
+        for (int i = 0; i < 128; ++i) {
+            keyDelays[i] = keyDelays_[i];
+            lastPressedTimestamps[i] = 0.0;
+            lastPressedEventTypes[i] = 0;
+            dismissNextEvent[i] = NO;
+        }
+    }
+    return self;
+}
+
 - (void)loadKeyDelays {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     NSArray *delays = [defaults arrayForKey:@"delays"];
@@ -57,7 +71,6 @@
 }
 
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
-
     // keyboard type, dismiss if it is not built-in keyboard
     if (ignoreExternalKeyboard) {
         int64_t type = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
