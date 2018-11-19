@@ -23,5 +23,7 @@ typedef void (^Handler)(void);
 - (void)shakyPressDismissed:(Handler)handler;
 - (void)loadKeyDelays;
 - (void)loadIgnoreExternalKeyboard;
+// This initWithKeyDelays:ignoreExternalKeyboard: is used for testing purpose
+- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_;
 
 @end

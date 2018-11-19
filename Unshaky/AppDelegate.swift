@@ -26,24 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     override init() {
         shakyPressPreventer = ShakyPressPreventer.sharedInstance()
         super.init()
-
-        // this following lines will add Unshaky.app to privacy->accessibility panel, unchecked
-        let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
-        let accessEnabled = AXIsProcessTrustedWithOptions([checkOptPrompt: false] as CFDictionary?)
-
-        if (!shakyPressPreventer.setupInputDeviceListener() || !accessEnabled) {
-            let alert = NSAlert()
-            alert.messageText = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. "
-            alert.runModal()
-            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
-            NSApplication.shared.terminate(self)
-        }
-        shakyPressPreventer.shakyPressDismissed {
-            self.dismissCount += 1
-            OperationQueue.main.addOperation {
-                self.updateDismissCountLabel()
-            }
-        }
     }
     
     @IBAction func quitClicked(_ sender: Any) {
@@ -66,6 +48,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // show version number
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionMenuItem.title = "Version \(version)"
+
+        // this following lines will add Unshaky.app to privacy->accessibility panel, unchecked
+        let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
+        let accessEnabled = AXIsProcessTrustedWithOptions([checkOptPrompt: false] as CFDictionary?)
+
+        if (!shakyPressPreventer.setupInputDeviceListener() || !accessEnabled) {
+            let alert = NSAlert()
+            alert.messageText = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. "
+            alert.runModal()
+            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
+            NSApplication.shared.terminate(self)
+        }
+        shakyPressPreventer.shakyPressDismissed {
+            self.dismissCount += 1
+            OperationQueue.main.addOperation {
+                self.updateDismissCountLabel()
+            }
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
