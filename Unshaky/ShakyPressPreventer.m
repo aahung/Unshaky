@@ -33,7 +33,7 @@
         [self loadKeyDelays];
         [self loadIgnoreExternalKeyboard];
         for (int i = 0; i < 128; ++i) {
-            lastPressedEventTypes[i] = 0.0;
+            lastPressedTimestamps[i] = 0.0;
             lastPressedEventTypes[i] = 0;
             dismissNextEvent[i] = NO;
         }
