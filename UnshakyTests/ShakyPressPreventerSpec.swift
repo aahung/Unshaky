@@ -150,20 +150,55 @@ class ShakyPressPreventerSpec: QuickSpec {
             }
         }
 
-        describe("Should not prevent double press beyond m sec for a configured key") {
-            for (_keyCode, keyName) in keyCodeToStringNormal.merging(keyCodeToStringModifier, uniquingKeysWith: { (current, _) in current }) {
+        describe("Should be able to prevent double press within m sec for a configured normal key") {
+            for (_keyCode, keyName) in keyCodeToStringNormal {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
-                    keyDelays[_keyCode] = 40 // 40ms
+                    keyDelays[_keyCode] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(41000) // sleep for 41ms, beyond 40ms
-                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
+                    usleep(18000) // sleep for 18ms, within 400ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
-                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
+                }
+            }
+        }
+
+        describe("Should be able to prevent double press beyond m sec for configured selective normal keys with holding CMD") {
+            let keyCodeToStringNormalSelective = [
+                49:     "Space",
+                36:     "Return"
+            ]
+            for (_keyCode, keyName) in keyCodeToStringNormalSelective {
+                let keyCode = CGKeyCode(_keyCode)
+                it(keyName) {
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    keyDelays[_keyCode] = 400 // 400ms
+
+                    let cmdKeyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: 55, keyDown: true)
+                    let cmdKeyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: 55, keyDown: false)
+
+                    let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
+                    keyDownEvent?.flags = CGEventFlags.maskCommand
+                    let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
+                    keyUpEvent?.flags = CGEventFlags.maskCommand
+
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
+                    expect{preventer.filterShakyPress(cmdKeyDownEvent) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyDownEvent) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyUpEvent) != nil}.to(beTrue())
+                    usleep(41000) // sleep for 41ms, within 400ms
+                    expect{preventer.filterShakyPress(keyDownEvent) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyUpEvent) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(cmdKeyUpEvent) != nil}.to(beTrue())
                 }
             }
         }
