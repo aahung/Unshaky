@@ -1,5 +1,5 @@
 # Unshaky
-[![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases) [![Build Status](https://travis-ci.org/aahung/Unshaky.svg?branch=master)](https://travis-ci.org/aahung/Unshaky)
 
 ![Menubar](README/menubar.png)
 

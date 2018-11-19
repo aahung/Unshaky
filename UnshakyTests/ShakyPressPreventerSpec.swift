@@ -137,12 +137,12 @@ class ShakyPressPreventerSpec: QuickSpec {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
-                    keyDelays[_keyCode] = 40 // 40ms
+                    keyDelays[_keyCode] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(18000) // sleep for 18ms, within 40ms
+                    usleep(18000) // sleep for 18ms, within 400ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
@@ -176,12 +176,12 @@ class ShakyPressPreventerSpec: QuickSpec {
                     for i in 0...128 {
                         keyDelays[i] = 0
                     }
-                    keyDelays[_keyCode + 1] = 40 // 40ms
+                    keyDelays[_keyCode + 1] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(11000) // sleep for 11ms, within 40 ms
+                    usleep(11000) // sleep for 11ms, within 400 ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -198,12 +198,12 @@ class ShakyPressPreventerSpec: QuickSpec {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
-                    keyDelays[_keyCode] = 40 // 40ms
+                    keyDelays[_keyCode] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(18000) // sleep for 18ms, within 40ms
+                    usleep(18000) // sleep for 18ms, within 400ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())

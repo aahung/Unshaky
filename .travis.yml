@@ -1,0 +1,4 @@
+language: swift
+os: osx
+osx_image: xcode10.1
+script: set -o pipefail && DONT_CODE_SIGN=YES xcodebuild -workspace Unshaky.xcworkspace -scheme Unshaky -destination platform\=macOS CODE_SIGN_IDENTITY=- ENABLE_HARDENED_RUNTIME=NO test | xcpretty
