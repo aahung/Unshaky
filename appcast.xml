@@ -24,5 +24,15 @@
             <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.2.6/Unshaky.app.zip" sparkle:version="14" sparkle:shortVersionString="0.2.6" length="5150637" type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
+        <item>
+            <title>Version 0.3.0</title>
+            <pubDate>Sun, 20 Nov 2018 2:12:11 -0700</pubDate>
+            <sparkle:releaseNotesLink>
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.3.0
+            </sparkle:releaseNotesLink>
+            <!-- Sparkle 1.21+ uses sparkle::edSignature="ed25519" instead of sparkle::dsaSignature="deprecated DSA" -->
+            <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.3.0/Unshaky_v0.3.0.app.zip" sparkle:version="17" sparkle:shortVersionString="0.3.0" length="5151920" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
