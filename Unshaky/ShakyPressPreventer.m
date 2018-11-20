@@ -12,6 +12,11 @@
 @implementation ShakyPressPreventer {
     NSTimeInterval lastPressedTimestamps[128];
     CGEventType lastPressedEventTypes[128];
+
+    CGEventFlags lastEventFlagsAboutModifierKeysForSpace;
+    BOOL cmdSpaceAllowance;
+    BOOL workaroundForCmdSpace;
+
     BOOL dismissNextEvent[128];
     int keyDelays[128];
     BOOL ignoreExternalKeyboard;
@@ -32,6 +37,7 @@
     if (self = [super init]) {
         [self loadKeyDelays];
         [self loadIgnoreExternalKeyboard];
+        [self loadWorkaroundForCmdSpace];
         for (int i = 0; i < 128; ++i) {
             lastPressedTimestamps[i] = 0.0;
             lastPressedEventTypes[i] = 0;
@@ -42,9 +48,10 @@
 }
 
 // This initWithKeyDelays:ignoreExternalKeyboard: is used for testing purpose
-- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ {
+- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ workaroundForCmdSpace:(BOOL)workaroundForCmdSpace_ {
     if (self = [super init]) {
         ignoreExternalKeyboard = ignoreExternalKeyboard_;
+        workaroundForCmdSpace = workaroundForCmdSpace_;
         for (int i = 0; i < 128; ++i) {
             keyDelays[i] = keyDelays_[i];
             lastPressedTimestamps[i] = 0.0;
@@ -70,6 +77,11 @@
     ignoreExternalKeyboard = [defaults boolForKey:@"ignoreExternalKeyboard"]; // default No
 }
 
+- (void)loadWorkaroundForCmdSpace {
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+    workaroundForCmdSpace = [defaults boolForKey:@"workaroundForCmdSpace"]; // default No
+}
+
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
     // keyboard type, dismiss if it is not built-in keyboard
     if (ignoreExternalKeyboard) {
@@ -84,34 +96,67 @@
     if (keyDelays[keyCode] == 0) return event;
 
     CGEventType eventType = CGEventGetType(event);
-    
+    CGEventFlags eventFlagsAboutModifierKeys = (kCGEventFlagMaskShift | kCGEventFlagMaskControl |
+                                                kCGEventFlagMaskAlternate | kCGEventFlagMaskCommand |
+                                                kCGEventFlagMaskSecondaryFn) & CGEventGetFlags(event);
+    double currentTimestamp = [[NSDate date] timeIntervalSince1970];
+
     if (lastPressedTimestamps[keyCode] != 0.0) {
+        /** @ghost711: CMD+Space was pressed, which causes a duplicate pair of down/up
+         keyEvents to occur 1-5 msecs after the "real" pair of events.
+         - If the CMD key is released first, it will look like:
+         CMD+Space Down
+         Space Up
+         CMD+Space Down
+         CMD+Space Up
+         - Whereas if the space bar is released first, it will be:
+         CMD+Space Down
+         CMD+Space Up
+         CMD+Space Down
+         CMD+Space Up
+         - The issue only appears to happen with CMD+Space,
+         not CMD+<any other key>, or <any other modifier key>+Space.*/
+        // So here we allow one double-press to slip away
+
+        // reset allowance to 1
+        if (keyCode == 49 && eventFlagsAboutModifierKeys && 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]) >= keyDelays[keyCode]) {
+            cmdSpaceAllowance = YES;
+        }
+
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
             NSLog(@"DISMISSING KEYUP:%d", keyCode);
-            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", currentTimestamp, keyCode, eventType]];
             dismissNextEvent[keyCode] = NO;
             return nil;
         }
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            && 1000 * ([[NSDate date] timeIntervalSince1970] - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
-            // dismiss the keydown event if it follows keyup event too soon
-            NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
-            if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
-            
-            if (shakyPressDismissedHandler != nil) {
-                shakyPressDismissedHandler();
-            }
-            dismissNextEvent[keyCode] = YES;
-            return nil;
-        }
-    }
+            && 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
 
-    lastPressedTimestamps[keyCode] = [[NSDate date] timeIntervalSince1970];
+            // let it slip away if allowance is 1 for CMD+SPACE
+            if (keyCode == 49 && lastEventFlagsAboutModifierKeysForSpace &&
+                eventFlagsAboutModifierKeys && workaroundForCmdSpace && cmdSpaceAllowance) {
+                cmdSpaceAllowance = NO;
+            } else {
+                // dismiss the keydown event if it follows keyup event too soon
+                NSLog(@"DISMISSING KEYDOWN:%d", keyCode);
+                if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d) DISMISSED\n", currentTimestamp, keyCode, eventType]];
+
+                if (shakyPressDismissedHandler != nil) {
+                    shakyPressDismissedHandler();
+                }
+                dismissNextEvent[keyCode] = YES;
+                return nil;
+            }
+        }
+    } else if (keyCode == 49 && eventFlagsAboutModifierKeys) cmdSpaceAllowance = YES;
+
+    lastPressedTimestamps[keyCode] = currentTimestamp;
     lastPressedEventTypes[keyCode] = eventType;
+    if (keyCode == 49) lastEventFlagsAboutModifierKeysForSpace = eventFlagsAboutModifierKeys;
     
-    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", [[NSDate date] timeIntervalSince1970], keyCode, eventType]];
+    if (_debugTextView != nil) [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d)\t Event(%d)\n", currentTimestamp, keyCode, eventType]];
     return event;
 }
 

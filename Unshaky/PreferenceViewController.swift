@@ -68,7 +68,10 @@ class PreferenceViewController: NSViewController,
         ShakyPressPreventer.sharedInstance()?.loadIgnoreExternalKeyboard()
     }
 
-    
+    @IBAction func workaroundForCmdSpaceToggled(_ sender: Any) {
+        ShakyPressPreventer.sharedInstance()?.loadWorkaroundForCmdSpace()
+    }
+
     // this list credits to the answer at https://stackoverflow.com/a/36901239/2361752
     let keyCodeToString = [29:     " 0",
                            18:     " 1",

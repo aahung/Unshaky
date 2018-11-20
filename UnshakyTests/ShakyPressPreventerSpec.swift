@@ -138,7 +138,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
                     keyDelays[_keyCode] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -156,7 +156,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
                     keyDelays[_keyCode] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -168,7 +168,7 @@ class ShakyPressPreventerSpec: QuickSpec {
             }
         }
 
-        describe("Should be able to prevent double press beyond m sec for configured selective normal keys with holding CMD") {
+        describe("Should be able to prevent double press within m sec for configured selective normal keys with holding CMD") {
             let keyCodeToStringNormalSelective = [
                 49:     "Space",
                 36:     "Return"
@@ -186,10 +186,48 @@ class ShakyPressPreventerSpec: QuickSpec {
                     keyDownEvent?.flags = CGEventFlags.maskCommand
                     let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
                     keyUpEvent?.flags = CGEventFlags.maskCommand
-
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
+                    
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(cmdKeyDownEvent) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyDownEvent) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyUpEvent) != nil}.to(beTrue())
+                    usleep(41000) // sleep for 41ms, within 400ms
+                    expect{preventer.filterShakyPress(keyDownEvent) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyUpEvent) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(cmdKeyUpEvent) != nil}.to(beTrue())
+                }
+            }
+        }
+
+        describe("Should be able to prevent 2nd double press within m sec for configured space key with holding CMD") {
+            let keyCodeToStringNormalSelective = [
+                49:     "Space"
+            ]
+            for (_keyCode, keyName) in keyCodeToStringNormalSelective {
+                let keyCode = CGKeyCode(_keyCode)
+                it(keyName) {
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    keyDelays[_keyCode] = 400 // 400ms
+
+                    let cmdKeyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: 55, keyDown: true)
+                    let cmdKeyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: 55, keyDown: false)
+
+                    let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
+                    keyDownEvent?.flags = CGEventFlags.maskCommand
+                    let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
+                    keyUpEvent?.flags = CGEventFlags.maskCommand
+
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: true)!
+                    expect{preventer.filterShakyPress(cmdKeyDownEvent) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyDownEvent) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(keyUpEvent) != nil}.to(beTrue())
+                    usleep(41000) // sleep for 41ms, within 400ms, but within allowance
                     expect{preventer.filterShakyPress(keyDownEvent) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(keyUpEvent) != nil}.to(beTrue())
@@ -212,7 +250,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                         keyDelays[i] = 0
                     }
                     keyDelays[_keyCode + 1] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -234,7 +272,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
                     keyDelays[_keyCode] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
