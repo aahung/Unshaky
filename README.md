@@ -5,7 +5,9 @@
 
 **Unshaky** tries to address an issue on the butterfly keyboard (Macbook & MacBook Pro 2016 or later): Double Key Press (See "User complaints" below). 
 
-Apple made it difficult to replace only the keyboard and it costs hundreds of dollars. **Unshaky** might save your keyboard by dismissing such "second key hits" (any key presses that occur no later than x milliseconds after the previous effective one). I fixed my "w" key with **Unshaky**, and if it does not work for you, open an issue [here](https://github.com/aahung/Unshaky/issues).
+Apple made it difficult to replace only the keyboard and it costs hundreds of dollars. **Unshaky** might save your keyboard by dismissing such "second key hits" (any key presses that occur no later than x milliseconds after the previous effective one). I fixed my "w" key with **Unshaky**, and if it does not work for you, open an issue [here](https://github.com/aahung/Unshaky/issues). The image below illustrates how Unshaky works.
+
+![How Unshaky works](README/how-unshaky-works.png)
 
 [June 2018] Good news, Apple launched a [Keyboard Service Program for MacBook and MacBook Pro](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/), and go get your keyboard fixed, maybe temporarily.
 
