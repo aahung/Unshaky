@@ -35,6 +35,6 @@
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/aahung/Unshaky/master/appcast.xml</string>
 	<key>SUScheduledCheckInterval</key>
-	<integer>3600</integer>
+	<integer>86400</integer>
 </dict>
 </plist>
