@@ -59,7 +59,11 @@ class PreferenceViewController: NSViewController,
     
     @IBAction func delayEdited(_ sender: NSTextField) {
         let row = tableView.selectedRow
-        self.delays[keyCodes[row]] = Int(sender.stringValue)!
+        guard let delayValue = Int(sender.stringValue) else {
+            alertInvalidValue(invalidValue: sender.stringValue)
+            return
+        }
+        self.delays[keyCodes[row]] = delayValue
         defaults.set(self.delays, forKey: "delays")
         ShakyPressPreventer.sharedInstance().loadKeyDelays()
     }
@@ -184,13 +188,22 @@ class PreferenceViewController: NSViewController,
     @IBOutlet weak var delayAllTextField: NSTextField!
     
     @IBAction func setAllDelays(_ sender: Any) {
-        let delayFoAll = Int(delayAllTextField.stringValue)!
+        guard let delayFoAll = Int(delayAllTextField.stringValue) else {
+            alertInvalidValue(invalidValue: delayAllTextField.stringValue)
+            return
+        }
         for i in 0...(self.delays.count - 1) {
             self.delays[i] = delayFoAll
         }
         self.tableView.reloadData()
         defaults.set(self.delays, forKey: "delays")
         ShakyPressPreventer.sharedInstance().loadKeyDelays()
+    }
+
+    func alertInvalidValue(invalidValue: String) {
+        let alert = NSAlert()
+        alert.messageText = "\"\(invalidValue)\" is not a valid delay. Please input an integer value."
+        alert.runModal()
     }
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
