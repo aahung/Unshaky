@@ -34,5 +34,14 @@
             <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.3.0/Unshaky_v0.3.0.app.zip" sparkle:version="17" sparkle:shortVersionString="0.3.0" length="5151920" type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
+        <item>
+            <title>Version 0.3.1</title>
+            <pubDate>Sat, 1 Dec 2018 16:25:11 -0700</pubDate>
+            <sparkle:releaseNotesLink>
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.3.1
+            </sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.3.1/Unshaky_v0.3.1.app.zip" sparkle:version="18" sparkle:shortVersionString="0.3.1" length="5152209" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
