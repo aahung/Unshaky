@@ -11,7 +11,7 @@ Apple made it difficult to replace only the keyboard and it costs hundreds of do
 
 [June 2018] Good news, Apple launched a [Keyboard Service Program for MacBook and MacBook Pro](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/), and go get your keyboard fixed, maybe temporarily.
 
-## User Complaints
+## Complaints about this issue
 
 - [Keyboard 'B' key double hit problem](https://www.ifixit.com/Answers/View/402016/Keyboard+%27B%27+key+double+hit+problem)
 - [MacBook Pro 2016 Random Key Repeat Keyboard Issue](https://discussions.apple.com/thread/7840547)
@@ -20,6 +20,8 @@ Apple made it difficult to replace only the keyboard and it costs hundreds of do
 - [The new and improved MacBook keyboards have the same old problems](https://theoutline.com/post/6409/the-new-and-improved-macbook-keyboards-have-the-same-old-problems?zd=1&zi=4qyu5ngi)
 - [Reddit: MBP 2018 15" Sticky Key Problem!](https://www.reddit.com/r/macbook/comments/9n8qkg/mbp_2018_15_sticky_key_problem/)
 - [Reddit: My Experience with Macbook Pro 2018 Keyboard](https://www.reddit.com/r/macbook/comments/9n8hgi/my_experience_with_macbook_pro_2018_keyboard/)
+- [Reddit: Anyone. with heir MBP 2018. keyboard. that. had. problems but is getting worse? Does a keyboard cover fix this?](https://www.reddit.com/r/macbookpro/comments/a1yul8/anyone_with_heir_mbp_2018_keyboard_that_had/)
+- [Reddit: 2018 Known Keyboard Issue - repeating/sticky keys, silicone covers, compressed air](https://www.reddit.com/r/macbookpro/comments/a5jzyu/2018_known_keyboard_issue_repeatingsticky_keys/)
 
 ## How-To (Video Walkthrough)
 
