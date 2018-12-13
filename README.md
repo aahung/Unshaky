@@ -48,3 +48,11 @@ Follow the instruction when you first open Unshaky. If the instruction does not 
 Go to System Preferences -> Users & Groups -> Login Items (Tab) and add "Unshaky.app".
 
 ![Grant Accessibility Permission](README/how-to-2.png)
+
+### Configure delays for your defective keys
+
+Click Unshaky icon in the menu bar and select "Configure" to configure delays for the defective keys.
+
+#### How to pick an appropriate delay?
+
+I don't think there is a universal delay value for all people. If you type very fast, you might want to have a shorter delay. I use 40 ms since I am a fast typer. With a long delay, I cannot type "apple" because the second "p" is likely to be blocked. Some users found 60 ms a sweet spot and some have no issue with 80 ms. My suggestion is to start with a short delay (like 40 ms) and gradually increase it.
