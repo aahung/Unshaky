@@ -41,6 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         
         statusItem.menu = menu
+        statusItem.behavior = .removalAllowed
         
         dismissCount = defaults.integer(forKey: "DISMISS_COUNT")
         updateDismissCountLabel()
@@ -71,6 +72,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         defaults.set(dismissCount, forKey: "DISMISS_COUNT")
         defaults.synchronize()
+    }
+
+    // applicationDidBecomeActive is only called if Unshaky is opened
+    // again when it is already running. So I can make the status bar item
+    // show up again here.
+    func applicationDidBecomeActive(_ notification: Notification) {
+        statusItem.isVisible = true
     }
     
     //
