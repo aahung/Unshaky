@@ -23,7 +23,7 @@ class PreferenceViewController: NSViewController,
     override func viewDidLoad() {
         loadPreference()
         super.viewDidLoad()
-        keyCodes = Array(0...(nVirtualKey - 1)).filter({ (i) -> Bool in
+        keyCodes = Array(0..<nVirtualKey).filter({ (i) -> Bool in
             return keyCodeToString[i] != nil
         }).sorted { (a, b) -> Bool in
             return keyCodeToString[a]! < keyCodeToString[b]!
@@ -37,7 +37,7 @@ class PreferenceViewController: NSViewController,
             return
         }
         self.delays = [Int](repeating: 0, count: nVirtualKey)
-        for i in 0...(nVirtualKey - 1) {
+        for i in 0..<nVirtualKey {
             self.delays[i] = i >= delays.count ? 0 : delays[i] as! Int
         }
     }
@@ -200,7 +200,7 @@ class PreferenceViewController: NSViewController,
             alertInvalidValue(invalidValue: delayAllTextField.stringValue)
             return
         }
-        for i in 0...(self.delays.count - 1) {
+        for i in 0..<self.delays.count {
             self.delays[i] = delayFoAll
         }
         self.tableView.reloadData()
