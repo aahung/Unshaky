@@ -1,5 +1,5 @@
 # Unshaky
-[![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases) [![Build Status](https://travis-ci.org/aahung/Unshaky.svg?branch=master)](https://travis-ci.org/aahung/Unshaky)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JLLGBFQKTTX9W&source=url) [![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases) [![Build Status](https://travis-ci.org/aahung/Unshaky.svg?branch=master)](https://travis-ci.org/aahung/Unshaky)
 
 ![Menubar](README/menubar.png)
 
