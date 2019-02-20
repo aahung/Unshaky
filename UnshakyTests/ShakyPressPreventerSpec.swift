@@ -114,7 +114,11 @@ let keyCodeToStringNormal = [
     123:    "Arrow Left",
     124:    "Arrow Right",
     125:    "Arrow Down",
-    126:    "Arrow Up"
+    126:    "Arrow Up",
+    145:    "Brightness Down",
+    144:    "Brightness Up",
+    130:    "Dashboard",
+    131:    "LaunchPad"
 ]
 
 let keyCodeToStringModifier = [

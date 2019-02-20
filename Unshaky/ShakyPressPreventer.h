@@ -10,6 +10,7 @@
 #import <Carbon/Carbon.h>
 #import <Foundation/Foundation.h>
 #include <ApplicationServices/ApplicationServices.h>
+#define N_VIRTUAL_KEY 146
 
 typedef void (^Handler)(void);
 

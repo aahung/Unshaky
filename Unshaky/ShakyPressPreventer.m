@@ -8,17 +8,16 @@
 
 #import "ShakyPressPreventer.h"
 
-
 @implementation ShakyPressPreventer {
-    NSTimeInterval lastPressedTimestamps[128];
-    CGEventType lastPressedEventTypes[128];
+    NSTimeInterval lastPressedTimestamps[N_VIRTUAL_KEY];
+    CGEventType lastPressedEventTypes[N_VIRTUAL_KEY];
 
     CGEventFlags lastEventFlagsAboutModifierKeysForSpace;
     BOOL cmdSpaceAllowance;
     BOOL workaroundForCmdSpace;
 
-    BOOL dismissNextEvent[128];
-    int keyDelays[128];
+    BOOL dismissNextEvent[N_VIRTUAL_KEY];
+    int keyDelays[N_VIRTUAL_KEY];
     BOOL ignoreExternalKeyboard;
     Handler shakyPressDismissedHandler;
 }
@@ -38,7 +37,7 @@
         [self loadKeyDelays];
         [self loadIgnoreExternalKeyboard];
         [self loadWorkaroundForCmdSpace];
-        for (int i = 0; i < 128; ++i) {
+        for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
             lastPressedTimestamps[i] = 0.0;
             lastPressedEventTypes[i] = 0;
             dismissNextEvent[i] = NO;
@@ -52,7 +51,7 @@
     if (self = [super init]) {
         ignoreExternalKeyboard = ignoreExternalKeyboard_;
         workaroundForCmdSpace = workaroundForCmdSpace_;
-        for (int i = 0; i < 128; ++i) {
+        for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
             keyDelays[i] = keyDelays_[i];
             lastPressedTimestamps[i] = 0.0;
             lastPressedEventTypes[i] = 0;
@@ -66,9 +65,11 @@
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     NSArray *delays = [defaults arrayForKey:@"delays"];
     if (delays == nil) {
-        memset(keyDelays, 0, 128 * sizeof(int));
+        memset(keyDelays, 0, N_VIRTUAL_KEY * sizeof(int));
     } else {
-        for (int i = 0; i < 128; ++i) keyDelays[i] = [(NSNumber *)[delays objectAtIndex:i] intValue];
+        for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
+            keyDelays[i] = i >= [delays count] ? 0 : [(NSNumber *)[delays objectAtIndex:i] intValue];
+        }
     }
 }
 
@@ -93,7 +94,7 @@
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     
     // ignore unconfigured keys
-    if (keyDelays[keyCode] == 0) return event;
+    if (keyCode >= N_VIRTUAL_KEY || keyDelays[keyCode] == 0) return event;
 
     CGEventType eventType = CGEventGetType(event);
     CGEventFlags eventFlagsAboutModifierKeys = (kCGEventFlagMaskShift | kCGEventFlagMaskControl |

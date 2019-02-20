@@ -18,11 +18,12 @@ class PreferenceViewController: NSViewController,
     let defaults = UserDefaults.standard
     var delays: [Int]!
     var keyCodes: [Int]!
+    let nVirtualKey = Int(N_VIRTUAL_KEY)
     
     override func viewDidLoad() {
         loadPreference()
         super.viewDidLoad()
-        keyCodes = Array(0...127).filter({ (i) -> Bool in
+        keyCodes = Array(0...(nVirtualKey - 1)).filter({ (i) -> Bool in
             return keyCodeToString[i] != nil
         }).sorted { (a, b) -> Bool in
             return keyCodeToString[a]! < keyCodeToString[b]!
@@ -31,11 +32,14 @@ class PreferenceViewController: NSViewController,
     
     func loadPreference() {
         guard let delays = defaults.array(forKey: "delays") else {
-            defaults.set([Int](repeating: 0, count: 128), forKey: "delays")
+            defaults.set([Int](repeating: 0, count: nVirtualKey), forKey: "delays")
             loadPreference()
             return
         }
-        self.delays = delays as! [Int]
+        self.delays = [Int](repeating: 0, count: nVirtualKey)
+        for i in 0...(nVirtualKey - 1) {
+            self.delays[i] = i >= delays.count ? 0 : delays[i] as! Int
+        }
     }
     
     // MARK: NSTableViewDataSource
@@ -182,7 +186,11 @@ class PreferenceViewController: NSViewController,
                            123:    "Arrow Left",
                            124:    "Arrow Right",
                            125:    "Arrow Down",
-                           126:    "Arrow Up"]
+                           126:    "Arrow Up",
+                           145:    "Brightness Down",
+                           144:    "Brightness Up",
+                           130:    "Dashboard",
+                           131:    "LaunchPad"]
     
     
     @IBOutlet weak var delayAllTextField: NSTextField!
