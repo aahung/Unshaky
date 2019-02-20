@@ -135,12 +135,13 @@ let keyCodeToStringModifier = [
 ]
 
 class ShakyPressPreventerSpec: QuickSpec {
+    let nVirtualKey = Int(N_VIRTUAL_KEY)
     override func spec() {
         describe("Should be able to prevent double press within m sec for a configured normal key") {
             for (_keyCode, keyName) in keyCodeToStringNormal {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
@@ -158,7 +159,7 @@ class ShakyPressPreventerSpec: QuickSpec {
             for (_keyCode, keyName) in keyCodeToStringNormal {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
@@ -180,7 +181,7 @@ class ShakyPressPreventerSpec: QuickSpec {
             for (_keyCode, keyName) in keyCodeToStringNormalSelective {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
 
                     let cmdKeyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: 55, keyDown: true)
@@ -214,7 +215,7 @@ class ShakyPressPreventerSpec: QuickSpec {
             for (_keyCode, keyName) in keyCodeToStringNormalSelective {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
 
                     let cmdKeyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: 55, keyDown: true)
@@ -249,8 +250,8 @@ class ShakyPressPreventerSpec: QuickSpec {
             for (_keyCode, keyName) in keyCodeToStringNormal.merging(keyCodeToStringModifier, uniquingKeysWith: { (current, _) in current }) {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
-                    for i in 0...128 {
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
+                    for i in 0..<self.nVirtualKey {
                         keyDelays[i] = 0
                     }
                     keyDelays[_keyCode + 1] = 400 // 400ms
@@ -274,7 +275,7 @@ class ShakyPressPreventerSpec: QuickSpec {
             for (_keyCode, keyName) in keyCodeToStringModifier {
                 let keyCode = CGKeyCode(_keyCode)
                 it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: 128)
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
                     let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
