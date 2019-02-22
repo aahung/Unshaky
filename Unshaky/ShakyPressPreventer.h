@@ -16,6 +16,7 @@ typedef void (^Handler)(void);
 
 @interface ShakyPressPreventer : NSObject
 
+@property (class) NSDictionary<NSNumber *, NSString *> *keyCodeToString;
 @property (weak) NSTextView *debugTextView;
 
 + (ShakyPressPreventer *)sharedInstance;
