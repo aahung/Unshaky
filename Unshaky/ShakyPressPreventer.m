@@ -198,10 +198,11 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 - (void)appendEventToDebugTextview:(double)timestamp keyCode:(CGKeyCode)keyCode eventType:(CGEventType)eventType dismissed:(BOOL)dismissed {
     NSDictionary<NSNumber *, NSString *> *keyCodeToString = [ShakyPressPreventer keyCodeToString];
     NSString *keyDescription = keyCodeToString[[[NSNumber alloc] initWithInt:keyCode]];
-    if (dismissed)
-        [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d|%@)\t Event(%d) DISMISSED\n", timestamp, keyCode, keyDescription, eventType]];
-    else
-        [self appendToDebugTextView:[NSString stringWithFormat:@"%f\t Key(%d|%@)\t Event(%d)\n", timestamp, keyCode, keyDescription, eventType]];
+    NSString *eventString = [NSString stringWithFormat:@"%f\t Key(%d|%@|%d)\t Event(%d)", timestamp, keyCode, keyDescription, keyDelays[keyCode], eventType];
+    if (dismissed) {
+        eventString = [eventString stringByAppendingString:@"DISMISSED"];
+    }
+    [self appendToDebugTextView:[eventString stringByAppendingString:@"\n"]];
 }
 
 + (NSDictionary<NSNumber *, NSString *> *)keyCodeToString {
