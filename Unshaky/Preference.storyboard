@@ -221,7 +221,7 @@
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-13-i8C">
                                         <rect key="frame" x="18" y="30" width="304" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Aggressive Mode (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="Zqq-UB-oIK">
+                                        <buttonCell key="cell" type="check" title="Aggressive mode (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="Zqq-UB-oIK">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
