@@ -283,11 +283,11 @@ class ShakyPressPreventerSpec: QuickSpec {
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(18000) // sleep for 18ms, within 100ms
+                    usleep(50000) // sleep for 50ms, within 100ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
-                    usleep(70000) // sleep for 70ms, beyond 100ms
+                    usleep(70000) // sleep for another 70ms, beyond 100ms, but within 100ms since last keyUp
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beFalse())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beFalse())
@@ -306,11 +306,11 @@ class ShakyPressPreventerSpec: QuickSpec {
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(18000) // sleep for 18ms, within 100ms
+                    usleep(50000) // sleep for 50ms, within 100ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
-                    usleep(70000) // sleep for 70ms, beyond 100ms, but within 100ms since last keyUp
+                    usleep(70000) // sleep for another 70ms, beyond 100ms, but within 100ms since last keyUp
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
