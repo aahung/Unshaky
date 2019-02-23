@@ -143,25 +143,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
-                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
-                    usleep(20000) // sleep for 20ms
-                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
-                    usleep(18000) // sleep for 18ms, within 400ms
-                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
-                    usleep(20000) // sleep for 20ms
-                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
-                }
-            }
-        }
-
-        describe("Should be able to prevent double press within m sec for a configured normal key") {
-            for (_keyCode, keyName) in keyCodeToStringNormal {
-                let keyCode = CGKeyCode(_keyCode)
-                it(keyName) {
-                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
-                    keyDelays[_keyCode] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false, aggressiveMode: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -192,7 +174,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                     let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
                     keyUpEvent?.flags = CGEventFlags.maskCommand
                     
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false, aggressiveMode: false)!
                     expect{preventer.filterShakyPress(cmdKeyDownEvent) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(keyDownEvent) != nil}.to(beTrue())
@@ -226,7 +208,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                     let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
                     keyUpEvent?.flags = CGEventFlags.maskCommand
 
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: true)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: true, aggressiveMode: false)!
                     expect{preventer.filterShakyPress(cmdKeyDownEvent) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(keyDownEvent) != nil}.to(beTrue())
@@ -255,7 +237,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                         keyDelays[i] = 0
                     }
                     keyDelays[_keyCode + 1] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false, aggressiveMode: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -277,7 +259,7 @@ class ShakyPressPreventerSpec: QuickSpec {
                 it(keyName) {
                     let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
                     keyDelays[_keyCode] = 400 // 400ms
-                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false)!
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false, aggressiveMode: false)!
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
@@ -285,6 +267,53 @@ class ShakyPressPreventerSpec: QuickSpec {
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
                     usleep(20000) // sleep for 20ms
                     expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
+                }
+            }
+        }
+
+
+        // cannot deal with triple presses without aggressiveMode
+        describe("Should not be able to prevent third press beyond m sec since first key up but within m sec since second key up for a configured normal key without aggressiveMode") {
+            for (_keyCode, keyName) in keyCodeToStringNormal {
+                let keyCode = CGKeyCode(_keyCode)
+                it(keyName) {
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
+                    keyDelays[_keyCode] = 100 // 100ms
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false, aggressiveMode: false)!
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
+                    usleep(18000) // sleep for 18ms, within 100ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
+                    usleep(70000) // sleep for 70ms, beyond 100ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beFalse())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beFalse())
+                }
+            }
+        }
+
+        // can deal with triple presses with aggressiveMode
+        describe("Should be able to prevent third press beyond m sec since first key up but within m sec since second key up for a configured normal key with aggressiveMode") {
+            for (_keyCode, keyName) in keyCodeToStringNormal {
+                let keyCode = CGKeyCode(_keyCode)
+                it(keyName) {
+                    let keyDelays = UnsafeMutablePointer<Int32>.allocate(capacity: self.nVirtualKey)
+                    keyDelays[_keyCode] = 100 // 100ms
+                    let preventer = ShakyPressPreventer(keyDelays: keyDelays, ignoreExternalKeyboard: false, workaroundForCmdSpace: false, aggressiveMode: true)!
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) != nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) != nil}.to(beTrue())
+                    usleep(18000) // sleep for 18ms, within 100ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
+                    usleep(70000) // sleep for 70ms, beyond 100ms, but within 100ms since last keyUp
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)) == nil}.to(beTrue())
+                    usleep(20000) // sleep for 20ms
+                    expect{preventer.filterShakyPress(CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)) == nil}.to(beTrue())
                 }
             }
         }

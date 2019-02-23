@@ -26,7 +26,8 @@ typedef void (^Handler)(void);
 - (void)loadKeyDelays;
 - (void)loadIgnoreExternalKeyboard;
 - (void)loadWorkaroundForCmdSpace;
-// This initWithKeyDelays:ignoreExternalKeyboard: is used for testing purpose
-- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ workaroundForCmdSpace:(BOOL)workaroundForCmdSpace_;
+- (void)loadAggressiveMode;
+// This initWithKeyDelays:ignoreExternalKeyboard ...: is used for testing purpose
+- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ workaroundForCmdSpace:(BOOL)workaroundForCmdSpace_ aggressiveMode:(BOOL)aggressiveMode_;
 
 @end

@@ -34,14 +34,14 @@
             <objects>
                 <viewController id="3EX-qe-haT" customClass="PreferenceViewController" customModule="Unshaky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="i2z-o9-oTw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="390"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="equalSpacing" orientation="vertical" alignment="trailing" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6xP-AJ-FNM">
-                                <rect key="frame" x="0.0" y="5" width="320" height="366"/>
+                                <rect key="frame" x="0.0" y="5" width="320" height="385"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpH-1y-ZAh">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="270"/>
+                                        <rect key="frame" x="0.0" y="115" width="320" height="270"/>
                                         <clipView key="contentView" id="Tcy-ho-Dak">
                                             <rect key="frame" x="1" y="0.0" width="318" height="269"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
                                         </tableHeaderView>
                                     </scrollView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yre-7S-CXv">
-                                        <rect key="frame" x="20" y="70" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="89" width="280" height="21"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-Mi-E0w">
                                                 <rect key="frame" x="-2" y="4" width="16" height="14"/>
@@ -198,7 +198,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T9y-cb-sJ7">
-                                        <rect key="frame" x="18" y="49" width="284" height="18"/>
+                                        <rect key="frame" x="18" y="68" width="284" height="18"/>
                                         <buttonCell key="cell" type="check" title="Ignore external keyboard (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="dE9-oM-Tqa">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -209,7 +209,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3iQ-NN-mBR">
-                                        <rect key="frame" x="18" y="30" width="304" height="18"/>
+                                        <rect key="frame" x="18" y="49" width="304" height="18"/>
                                         <buttonCell key="cell" type="check" title="Fix if CMD+SPACE not work (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="I7x-fY-0vx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -217,6 +217,17 @@
                                         <connections>
                                             <action selector="workaroundForCmdSpaceToggled:" target="3EX-qe-haT" id="kL3-lt-oo8"/>
                                             <binding destination="0Xq-bq-pSr" name="value" keyPath="values.workaroundForCmdSpace" id="Swb-ZR-C8F"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-13-i8C">
+                                        <rect key="frame" x="18" y="30" width="304" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Aggressive Mode (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="Zqq-UB-oIK">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="aggressiveModeToggled:" target="3EX-qe-haT" id="XsO-Ah-SSv"/>
+                                            <binding destination="0Xq-bq-pSr" name="value" keyPath="values.aggressiveMode" id="gH4-FX-ICS"/>
                                         </connections>
                                     </button>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="jD9-QU-ZMw">
@@ -261,6 +272,7 @@
                                     <constraint firstAttribute="width" constant="320" id="6gX-hh-XK8"/>
                                     <constraint firstItem="jD9-QU-ZMw" firstAttribute="width" secondItem="6xP-AJ-FNM" secondAttribute="width" id="KMx-eQ-cXp"/>
                                     <constraint firstItem="3iQ-NN-mBR" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="LIM-mY-EZY"/>
+                                    <constraint firstItem="Q3t-13-i8C" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="Phx-g0-ydc"/>
                                     <constraint firstAttribute="trailing" secondItem="Yre-7S-CXv" secondAttribute="trailing" constant="20" symbolic="YES" id="WvH-wJ-eCH"/>
                                     <constraint firstAttribute="trailing" secondItem="wrU-5N-05g" secondAttribute="trailing" constant="20" symbolic="YES" id="fLr-4t-Ydd"/>
                                     <constraint firstItem="T9y-cb-sJ7" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="ikj-eM-NFa"/>
@@ -278,8 +290,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>

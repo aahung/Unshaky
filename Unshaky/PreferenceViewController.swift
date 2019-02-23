@@ -85,8 +85,12 @@ class PreferenceViewController: NSViewController,
 
     @IBAction func workaroundForCmdSpaceToggled(_ sender: Any) {
         ShakyPressPreventer.sharedInstance()?.loadWorkaroundForCmdSpace()
-    }    
-    
+    }
+
+    @IBAction func aggressiveModeToggled(_ sender: Any) {
+        ShakyPressPreventer.sharedInstance()?.loadAggressiveMode()
+    }
+
     @IBOutlet weak var delayAllTextField: NSTextField!
     
     @IBAction func setAllDelays(_ sender: Any) {

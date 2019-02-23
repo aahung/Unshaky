@@ -15,6 +15,7 @@
     CGEventFlags lastEventFlagsAboutModifierKeysForSpace;
     BOOL cmdSpaceAllowance;
     BOOL workaroundForCmdSpace;
+    BOOL aggressiveMode;
 
     BOOL dismissNextEvent[N_VIRTUAL_KEY];
     int keyDelays[N_VIRTUAL_KEY];
@@ -39,6 +40,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
         [self loadKeyDelays];
         [self loadIgnoreExternalKeyboard];
         [self loadWorkaroundForCmdSpace];
+        [self loadAggressiveMode];
         for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
             lastPressedTimestamps[i] = 0.0;
             lastPressedEventTypes[i] = 0;
@@ -49,10 +51,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 }
 
 // This initWithKeyDelays:ignoreExternalKeyboard: is used for testing purpose
-- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ workaroundForCmdSpace:(BOOL)workaroundForCmdSpace_ {
+- (instancetype)initWithKeyDelays:(int*)keyDelays_ ignoreExternalKeyboard:(BOOL)ignoreExternalKeyboard_ workaroundForCmdSpace:(BOOL)workaroundForCmdSpace_ aggressiveMode:(BOOL)aggressiveMode_ {
     if (self = [super init]) {
         ignoreExternalKeyboard = ignoreExternalKeyboard_;
         workaroundForCmdSpace = workaroundForCmdSpace_;
+        aggressiveMode = aggressiveMode_;
         for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
             keyDelays[i] = keyDelays_[i];
             lastPressedTimestamps[i] = 0.0;
@@ -83,6 +86,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 - (void)loadWorkaroundForCmdSpace {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     workaroundForCmdSpace = [defaults boolForKey:@"workaroundForCmdSpace"]; // default No
+}
+
+- (void)loadAggressiveMode {
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+    aggressiveMode = [defaults boolForKey:@"aggressiveMode"]; // default No
 }
 
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
@@ -128,8 +136,9 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
-            if (_debugTextView != nil) if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:YES];
+            if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:YES];
             dismissNextEvent[keyCode] = NO;
+            if (aggressiveMode) lastPressedTimestamps[keyCode] = currentTimestamp;
             return nil;
         }
         if (eventType == kCGEventKeyDown
@@ -142,7 +151,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                 cmdSpaceAllowance = NO;
             } else {
                 // dismiss the keydown event if it follows keyup event too soon
-                if (_debugTextView != nil) if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:YES];
+                if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:YES];
 
                 if (shakyPressDismissedHandler != nil) {
                     shakyPressDismissedHandler();
