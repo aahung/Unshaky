@@ -43,7 +43,7 @@
 "Vl3-75-cL7.title" = "-";
 
 /* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
-"Zqq-UB-oIK.title" = "アグレッシブモード (试行)";
+"Zqq-UB-oIK.title" = "アグレッシブモード (実験)";
 
 /* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
 "acO-QS-DTH.title" = "ペースト";
