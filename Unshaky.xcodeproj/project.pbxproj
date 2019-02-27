@@ -56,6 +56,9 @@
 		5B7118572226183400B03575 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		5B7118582226183400B03575 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Preference.strings"; sourceTree = "<group>"; };
 		5B7118592226183400B03575 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5B71185D22261A2D00B03575 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5B71185E22261A2E00B03575 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Preference.strings; sourceTree = "<group>"; };
+		5B71185F22261A2E00B03575 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnshakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB68E1721A3413900CAA4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyPressPreventerSpec.swift; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 				"zh-Hans",
 				"zh-HK",
 				"zh-Hant",
+				ja,
 			);
 			mainGroup = 5B3168DF20DB9CF100185DE5;
 			productRefGroup = 5B3168E920DB9CF100185DE5 /* Products */;
@@ -413,6 +417,7 @@
 				5B71184D222608F200B03575 /* zh-Hans */,
 				5B7118542226182500B03575 /* zh-HK */,
 				5B7118572226183400B03575 /* zh-Hant */,
+				5B71185D22261A2D00B03575 /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				5B71184E222608F200B03575 /* zh-Hans */,
 				5B7118552226182600B03575 /* zh-HK */,
 				5B7118582226183400B03575 /* zh-Hant */,
+				5B71185E22261A2E00B03575 /* ja */,
 			);
 			name = Preference.storyboard;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				5B711852222610F000B03575 /* zh-Hans */,
 				5B7118562226182600B03575 /* zh-HK */,
 				5B7118592226183400B03575 /* zh-Hant */,
+				5B71185F22261A2E00B03575 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
