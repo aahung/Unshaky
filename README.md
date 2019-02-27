@@ -60,4 +60,6 @@ I don't think there is a universal delay value for all people. If you type very 
 
 ## Contributors
 
+Please help to translate Unshaky into more languages. [Open an issue](https://github.com/aahung/Unshaky/issues/new/choose) to propose a new translation if you are interested.
+
 - [aahung](https://nestederror.com): Main program, Chinese translation.
