@@ -61,3 +61,4 @@ I don't think there is a universal delay value for all people. If you type very 
 ## Contributors
 
 - [aahung](https://nestederror.com): Main program, Chinese translation.
+- [forgazer]: Japanese translation.
