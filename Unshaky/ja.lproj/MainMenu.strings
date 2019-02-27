@@ -13,7 +13,7 @@
 "T9Q-qI-cKF.title" = "-";
 
 /* Class = "NSMenuItem"; title = "Configure"; ObjectID = "TGg-Zy-iYa"; */
-"TGg-Zy-iYa.title" = "コンフィグ";
+"TGg-Zy-iYa.title" = "設定";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "f5l-nJ-ecO"; */
 "f5l-nJ-ecO.title" = "アプデートを確認...";
