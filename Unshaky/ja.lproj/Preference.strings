@@ -55,7 +55,7 @@
 "dE9-oM-Tqa.title" = "外付けのキーボードを無視します (実験)";
 
 /* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
-"juW-NR-znR.title" = "セット";
+"juW-NR-znR.title" = "適用";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
 "mDf-Gh-GmX.title" = "キャンセル";
