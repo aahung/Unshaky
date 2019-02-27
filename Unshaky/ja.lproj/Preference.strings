@@ -52,7 +52,7 @@
 "asf-bP-xrf.headerCell.title" = "キー";
 
 /* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
-"dE9-oM-Tqa.title" = "外付けキーボードを無視します (试行)";
+"dE9-oM-Tqa.title" = "外付けのキーボードを無視します (実験)";
 
 /* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
 "juW-NR-znR.title" = "セット";
