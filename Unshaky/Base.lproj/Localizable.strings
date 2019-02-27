@@ -19,3 +19,5 @@
 "Paste Configuration here" = "Paste the configuration here";
 
 "Invalid inputs" = "Invalid inputs";
+
+"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
