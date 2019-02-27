@@ -36,6 +36,11 @@ class PreferenceViewController: NSViewController,
             return keyCodeToString[a]! < keyCodeToString[b]!
         }
     }
+
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        view.window?.title = NSLocalizedString("Configuration Window Title", comment: "")
+    }
     
     func loadPreference() {
         guard let delays = defaults.array(forKey: "delays") else {
@@ -108,7 +113,7 @@ class PreferenceViewController: NSViewController,
 
     func alertInvalidValue(invalidValue: String) {
         let alert = NSAlert()
-        alert.messageText = "\"\(invalidValue)\" is not a valid delay. Please input an integer value."
+        alert.messageText = String(format: NSLocalizedString("Invalid Delay", comment: ""), invalidValue)
         alert.runModal()
     }
 

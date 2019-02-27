@@ -1,0 +1,57 @@
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
+"3Kr-1X-5AZ.title" = "导入";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "5My-Lz-UmR"; */
+"5My-Lz-UmR.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
+"BTT-FQ-Yii.title" = "复制";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
+"CUy-rX-LgD.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
+"Dr8-2D-to4.title" = "导出";
+
+/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
+"I7x-fY-0vx.title" = "解决 CMD+SPACE 失效问题 (实验)";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "IhC-d3-H6r"; */
+"IhC-d3-H6r.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
+"JiA-hI-REz.headerCell.title" = "延迟 (毫秒), 推荐值: 40";
+
+/* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
+"KI8-Ox-xeb.title" = "配置 Unshaky";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "NxQ-OB-lir"; */
+"NxQ-OB-lir.title" = "-";
+
+/* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
+"Qnt-tS-QWb.title" = "设置所有延迟 (毫秒)";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Vl3-75-cL7"; */
+"Vl3-75-cL7.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
+"Zqq-UB-oIK.title" = "激进模式 (实验)";
+
+/* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
+"acO-QS-DTH.title" = "粘贴";
+
+/* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "asf-bP-xrf"; */
+"asf-bP-xrf.headerCell.title" = "按键";
+
+/* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
+"dE9-oM-Tqa.title" = "无视外接键盘 (实验)";
+
+/* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
+"juW-NR-znR.title" = "应用";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
+"mDf-Gh-GmX.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
+"yJt-he-X2q.title" = "导入";

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -23,7 +23,7 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="WVM-FA-xFs">
             <items>
-                <menuItem title="Item" enabled="NO" id="sJ6-3Q-q9Z">
+                <menuItem title="-" enabled="NO" id="sJ6-3Q-q9Z">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem title="Open debug window" id="Iv3-MX-v73">
@@ -40,7 +40,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Rle-jS-ha9"/>
-                <menuItem title="Item" enabled="NO" id="T9Q-qI-cKF">
+                <menuItem title="-" enabled="NO" id="T9Q-qI-cKF">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem title="Check for Updates..." id="f5l-nJ-ecO">

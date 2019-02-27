@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func updateDismissCountLabel() {
-        dismissShakyPressCountMenuItem.title = "Dismiss shaky key \(dismissCount) times"
+        dismissShakyPressCountMenuItem.title = String(format: NSLocalizedString("Overall Statistic", comment: ""), dismissCount)
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // show version number
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        versionMenuItem.title = "Version \(version)"
+        versionMenuItem.title = String(format: NSLocalizedString("Version", comment: ""), version)
 
         // this following lines will add Unshaky.app to privacy->accessibility panel, unchecked
         let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         if (!shakyPressPreventer.setupInputDeviceListener() || !accessEnabled) {
             let alert = NSAlert()
-            alert.messageText = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. "
+            alert.messageText = NSLocalizedString("Accessibility Help", comment: "")
             alert.runModal()
             NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
             NSApplication.shared.terminate(self)
@@ -115,7 +115,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func preferenceClicked(_ sender: Any) {
         // prevent multiple preference windows
         for window in NSApplication.shared.windows {
-            if window.title == "Unshaky Preference" && window.isVisible {
+            if window.title == NSLocalizedString("Configuration Window Title", comment: "") && window.isVisible {
                 NSApp.activate(ignoringOtherApps: true)
                 return
             }

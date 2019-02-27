@@ -35,7 +35,7 @@ class ExportImportViewController: NSViewController {
             loadPreference()
         case .Import?:
             exportButtons.isHidden = true
-            textView.string = "Paste the configuration here"
+            textView.string = NSLocalizedString("Paste the configuration here", comment: "")
             textView.selectAll(textView)
         case .none:
             break
@@ -68,7 +68,7 @@ class ExportImportViewController: NSViewController {
     @IBAction func applyConfig(_ sender: Any) {
         guard let config = try? JSONDecoder().decode(Configuration.self, from: textView.string.data(using: .utf8)!) else {
             let alert = NSAlert()
-            alert.messageText = "Invalid inputs"
+            alert.messageText = NSLocalizedString("Invalid inputs", comment: "")
             alert.runModal()
             return
         }
@@ -76,7 +76,7 @@ class ExportImportViewController: NSViewController {
         // validate length
         guard config.delays.count == 128 else {
             let alert = NSAlert()
-            alert.messageText = "Invalid inputs, length does not match"
+            alert.messageText = NSLocalizedString("Invalid inputs, length does not match", comment: "")
             alert.runModal()
             return
         }

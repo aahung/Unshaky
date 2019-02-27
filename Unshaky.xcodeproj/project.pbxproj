@@ -12,8 +12,9 @@
 		5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3168EF20DB9CF300185DE5 /* MainMenu.xib */; };
 		5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */; };
 		5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50712421839D5400A65B81 /* ExportImportViewController.swift */; };
+		5B71184C222608B100B03575 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184A222608B100B03575 /* Preference.storyboard */; };
+		5B711851222610C400B03575 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184F222610C400B03575 /* Localizable.strings */; };
 		5BB68E1E21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */; };
-		5BCA730720F5AF4A00A1210E /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA730620F5AF4A00A1210E /* Preference.storyboard */; };
 		5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA730820F5B43300A1210E /* PreferenceViewController.swift */; };
 		5DDFCCEF1C53414916147497 /* Pods_UnshakyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C30C977EAB3365268D080 /* Pods_UnshakyTests.framework */; };
 		8A8865A9A724FA97AF9FE132 /* Pods_Unshaky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210D714B742F537687136CC /* Pods_Unshaky.framework */; };
@@ -44,10 +45,14 @@
 		5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakyPressPreventer.m; sourceTree = "<group>"; };
 		5B31691220DBC43400185DE5 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
+		5B71184B222608B100B03575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
+		5B71184D222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		5B71184E222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preference.strings"; sourceTree = "<group>"; };
+		5B711850222610C400B03575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B711852222610F000B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnshakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB68E1721A3413900CAA4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyPressPreventerSpec.swift; sourceTree = "<group>"; };
-		5BCA730620F5AF4A00A1210E /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
 		5BCA730820F5B43300A1210E /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		DC65E0327412179B1BD85998 /* Pods-UnshakyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnshakyTests.debug.xcconfig"; path = "Target Support Files/Pods-UnshakyTests/Pods-UnshakyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDDDD71728B7B66F527D9565 /* Pods-UnshakyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnshakyTests.release.xcconfig"; path = "Target Support Files/Pods-UnshakyTests/Pods-UnshakyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,7 +105,7 @@
 				5B3168EB20DB9CF100185DE5 /* AppDelegate.swift */,
 				5B3168ED20DB9CF300185DE5 /* Assets.xcassets */,
 				5B3168EF20DB9CF300185DE5 /* MainMenu.xib */,
-				5BCA730620F5AF4A00A1210E /* Preference.storyboard */,
+				5B71184A222608B100B03575 /* Preference.storyboard */,
 				5B3168F220DB9CF300185DE5 /* Info.plist */,
 				5B3168F320DB9CF300185DE5 /* Unshaky.entitlements */,
 				5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */,
@@ -108,6 +113,7 @@
 				5BCA730820F5B43300A1210E /* PreferenceViewController.swift */,
 				5B50712421839D5400A65B81 /* ExportImportViewController.swift */,
 				5B3168F920DB9ED300185DE5 /* Unshaky-Bridging-Header.h */,
+				5B71184F222610C400B03575 /* Localizable.strings */,
 			);
 			path = Unshaky;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5B3168DF20DB9CF100185DE5;
 			productRefGroup = 5B3168E920DB9CF100185DE5 /* Products */;
@@ -235,8 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3168EE20DB9CF300185DE5 /* Assets.xcassets in Resources */,
+				5B711851222610C400B03575 /* Localizable.strings in Resources */,
 				5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */,
-				5BCA730720F5AF4A00A1210E /* Preference.storyboard in Resources */,
+				5B71184C222608B100B03575 /* Preference.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,8 +402,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B3168F020DB9CF300185DE5 /* Base */,
+				5B71184D222608F200B03575 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5B71184A222608B100B03575 /* Preference.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B71184B222608B100B03575 /* Base */,
+				5B71184E222608F200B03575 /* zh-Hans */,
+			);
+			name = Preference.storyboard;
+			sourceTree = "<group>";
+		};
+		5B71184F222610C400B03575 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B711850222610C400B03575 /* Base */,
+				5B711852222610F000B03575 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -405,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -466,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
