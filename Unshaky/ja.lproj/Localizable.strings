@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by forgazer on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "バージョン: %@";
+
+"Overall Statistic" = "二重入力の取り消し %d 回";
+
+"Configuration Window Title" = "Unshakyの設定";
+
+"Accessibility Help" = "アクセス権限が必要です。只今、Unshakyが設定画面を開こうとしています。 開かない場合、システム環境設定 -> セキュリティとプライバシー -> プライバシー -> アクセシビリティで Unshaky.app をリストに追加し、許可にしてください。 ";
+
+"Invalid Delay" = "\"%@\" は無効なディレイです。整数を入力してください。";
+
+"Paste the configuration here" = "コンフィグレーションをここにペーストしてください。";
+
+"Invalid inputs" = "入力内容が無効です";
+
+"Invalid inputs, length does not match" = "入力内容が無効です。正しい長さの値を入力してください。";

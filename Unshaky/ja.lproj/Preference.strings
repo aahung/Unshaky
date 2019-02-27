@@ -1,0 +1,64 @@
+/* 
+  Preference.strings
+  Unshaky
+
+  Created by forgazer on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
+"3Kr-1X-5AZ.title" = "インポート";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
+"5My-Lz-UmR.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
+"BTT-FQ-Yii.title" = "コピー";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
+"CUy-rX-LgD.title" = "キャンセル";
+
+/* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
+"Dr8-2D-to4.title" = "エクスポート";
+
+/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
+"I7x-fY-0vx.title" = "CMD+SPACEが機能しない不具合を修正します (実験)";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
+"IhC-d3-H6r.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
+"JiA-hI-REz.headerCell.title" = "ディレイ (ms), 推奨値40";
+
+/* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
+"KI8-Ox-xeb.title" = "Unshaky 環境設定";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
+"NxQ-OB-lir.title" = "-";
+
+/* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
+"Qnt-tS-QWb.title" = "全てのディレイを設定します (ms)";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
+"Vl3-75-cL7.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
+"Zqq-UB-oIK.title" = "アグレッシブモード (実験)";
+
+/* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
+"acO-QS-DTH.title" = "ペースト";
+
+/* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "asf-bP-xrf"; */
+"asf-bP-xrf.headerCell.title" = "キー";
+
+/* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
+"dE9-oM-Tqa.title" = "外付けのキーボードを無視します (実験)";
+
+/* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
+"juW-NR-znR.title" = "適用";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
+"mDf-Gh-GmX.title" = "キャンセル";
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
+"yJt-he-X2q.title" = "インポート";

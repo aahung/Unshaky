@@ -1,0 +1,25 @@
+/* 
+  MainMenu.strings
+  Unshaky
+
+  Created by forgazer on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+/* Class = "NSMenuItem"; title = "Open debug window"; ObjectID = "Iv3-MX-v73"; */
+"Iv3-MX-v73.title" = "デバッグ画面を開きます";
+
+/* Class = "NSMenuItem"; title = "-"; ObjectID = "T9Q-qI-cKF"; */
+"T9Q-qI-cKF.title" = "-";
+
+/* Class = "NSMenuItem"; title = "Configure"; ObjectID = "TGg-Zy-iYa"; */
+"TGg-Zy-iYa.title" = "設定";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "f5l-nJ-ecO"; */
+"f5l-nJ-ecO.title" = "アプデートを確認...";
+
+/* Class = "NSMenuItem"; title = "-"; ObjectID = "sJ6-3Q-q9Z"; */
+"sJ6-3Q-q9Z.title" = "-";
+
+/* Class = "NSMenuItem"; title = "Quit"; ObjectID = "ypt-Mu-uzT"; */
+"ypt-Mu-uzT.title" = "終了";
