@@ -37,7 +37,7 @@
 "NxQ-OB-lir.title" = "-";
 
 /* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
-"Qnt-tS-QWb.title" = "全てを(ms)に設定します";
+"Qnt-tS-QWb.title" = "全てのディレイを設定します (ms)";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
 "Vl3-75-cL7.title" = "-";
