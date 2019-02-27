@@ -10,7 +10,7 @@
 
 "Overall Statistic" = "二重入力の取り消し %d 回";
 
-"Configuration Window Title" = "Unshaky コンフィグ";
+"Configuration Window Title" = "Unshakyの設定";
 
 "Accessibility Help" = "アクセス権限が必要です。只今、Unshakyが設定画面を開こうとしています。 開かない場合、システム環境設定 -> セキュリティとプライバシー -> プライバシー -> アクセシビリティで Unshaky.app をリストに追加し、許可にしてください。 ";
 
