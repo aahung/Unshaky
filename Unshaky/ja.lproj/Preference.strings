@@ -22,7 +22,7 @@
 "Dr8-2D-to4.title" = "エクスポート";
 
 /* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
-"I7x-fY-0vx.title" = "CMD+SPACEの不具合をフィックスします (试行)";
+"I7x-fY-0vx.title" = "CMD+SPACEが機能しない不具合を修正します (実験)";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
 "IhC-d3-H6r.title" = "-";
