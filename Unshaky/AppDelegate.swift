@@ -87,7 +87,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var debugWindowController: NSWindowController!
     @IBAction func debugClicked(_ sender: Any) {
         let windowStyleMaskRawValue = NSWindow.StyleMask.closable.rawValue | NSWindow.StyleMask.titled.rawValue | NSWindow.StyleMask.resizable.rawValue
-        let windowFrame = NSMakeRect(100, 100, 400, 400)
+        let windowFrame = NSMakeRect(100, 100, 600, 400)
         let window = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
         debugWindowController = NSWindowController(window: window)
         

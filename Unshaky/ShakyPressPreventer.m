@@ -136,7 +136,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
-            if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:YES];
+            if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp
+                                                                keyCode:keyCode
+                                                              eventType:eventType
+                                            eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
+                                                              dismissed:YES];
             dismissNextEvent[keyCode] = NO;
             if (aggressiveMode) lastPressedTimestamps[keyCode] = currentTimestamp;
             return nil;
@@ -151,7 +155,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                 cmdSpaceAllowance = NO;
             } else {
                 // dismiss the keydown event if it follows keyup event too soon
-                if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:YES];
+                if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp
+                                                                    keyCode:keyCode
+                                                                  eventType:eventType
+                                                eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
+                                                                  dismissed:YES];
 
                 if (shakyPressDismissedHandler != nil) {
                     shakyPressDismissedHandler();
@@ -166,7 +174,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     lastPressedEventTypes[keyCode] = eventType;
     if (keyCode == 49) lastEventFlagsAboutModifierKeysForSpace = eventFlagsAboutModifierKeys;
     
-    if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp keyCode:keyCode eventType:eventType dismissed:NO];
+    if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp
+                                                        keyCode:keyCode
+                                                      eventType:eventType
+                                    eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
+                                                      dismissed:NO];
     return event;
 }
 
@@ -198,18 +210,30 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 
 - (void)appendToDebugTextView:(NSString*)text {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSAttributedString* attr = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [NSColor textColor]}];
+        NSAttributedString* attr = [[NSAttributedString alloc]
+                                    initWithString:text
+                                    attributes:@{
+                                                 NSForegroundColorAttributeName: [NSColor textColor],
+                                                 NSFontAttributeName: [NSFont fontWithName:@"Courier New" size:10]
+                                                 }];
         
         [[self.debugTextView textStorage] insertAttributedString:attr atIndex:0];
     });
 }
 
-- (void)appendEventToDebugTextview:(double)timestamp keyCode:(CGKeyCode)keyCode eventType:(CGEventType)eventType dismissed:(BOOL)dismissed {
+- (void)appendEventToDebugTextview:(double)timestamp
+                           keyCode:(CGKeyCode)keyCode
+                         eventType:(CGEventType)eventType
+       eventFlagsAboutModifierKeys:(CGEventFlags)eventFlagsAboutModifierKeys
+                         dismissed:(BOOL)dismissed {
     NSDictionary<NSNumber *, NSString *> *keyCodeToString = [ShakyPressPreventer keyCodeToString];
     NSString *keyDescription = keyCodeToString[[[NSNumber alloc] initWithInt:keyCode]];
-    NSString *eventString = [NSString stringWithFormat:@"%f\t Key(%d|%@|%d)\t Event(%d)", timestamp, keyCode, keyDescription, keyDelays[keyCode], eventType];
+    if (keyDescription == nil) keyDescription = @"Unknown";
+    NSString *eventString = [NSString stringWithFormat:@"%f Key(%3d|%14s|%10llu|%3d) E(%u)",
+                             timestamp, keyCode, [keyDescription UTF8String],
+                             eventFlagsAboutModifierKeys, keyDelays[keyCode], eventType];
     if (dismissed) {
-        eventString = [eventString stringByAppendingString:@"DISMISSED"];
+        eventString = [eventString stringByAppendingString:@" DISMISSED"];
     }
     [self appendToDebugTextView:[eventString stringByAppendingString:@"\n"]];
 }
