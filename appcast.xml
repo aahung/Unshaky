@@ -45,11 +45,25 @@
         </item>
         <item>
             <title>Version 0.3.2</title>
-            <pubDate>Mon, 21 Jan 2018 11:13:00 -0700</pubDate>
+            <pubDate>Mon, 21 Jan 2019 11:13:00 -0700</pubDate>
             <sparkle:releaseNotesLink>
                 https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.3.2
             </sparkle:releaseNotesLink>
             <enclosure url="https://github.com/aahung/Unshaky/releases/download/v0.3.2/Unshaky_v0.3.2.app.zip" sparkle:version="19" sparkle:shortVersionString="0.3.2" length="5152405" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        </item>
+        <item>
+            <title>Version 0.4.2</title>
+            <pubDate>Thu, 28 Feb 2019 10:57:00 -0700</pubDate>
+            <sparkle:releaseNotesLink>
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.4.2
+            </sparkle:releaseNotesLink>
+            <enclosure
+                url="https://github.com/aahung/Unshaky/releases/download/v0.4.2/Unshaky_v0.4.2.zip"
+                sparkle:version="25"
+                sparkle:shortVersionString="0.4.2"
+                length="5172287"
+                type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
     </channel>
