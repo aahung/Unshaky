@@ -44,6 +44,9 @@
 		5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakyPressPreventer.h; sourceTree = "<group>"; };
 		5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakyPressPreventer.m; sourceTree = "<group>"; };
 		5B31691220DBC43400185DE5 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		5B3AB4DE2228A6510088F06C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5B3AB4DF2228A6520088F06C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preference.strings; sourceTree = "<group>"; };
+		5B3AB4E02228A6520088F06C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
 		5B71184B222608B100B03575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
 		5B71184D222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 				"zh-HK",
 				"zh-Hant",
 				ja,
+				fr,
 			);
 			mainGroup = 5B3168DF20DB9CF100185DE5;
 			productRefGroup = 5B3168E920DB9CF100185DE5 /* Products */;
@@ -418,6 +422,7 @@
 				5B7118542226182500B03575 /* zh-HK */,
 				5B7118572226183400B03575 /* zh-Hant */,
 				5B71185D22261A2D00B03575 /* ja */,
+				5B3AB4DE2228A6510088F06C /* fr */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				5B7118552226182600B03575 /* zh-HK */,
 				5B7118582226183400B03575 /* zh-Hant */,
 				5B71185E22261A2E00B03575 /* ja */,
+				5B3AB4DF2228A6520088F06C /* fr */,
 			);
 			name = Preference.storyboard;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				5B7118562226182600B03575 /* zh-HK */,
 				5B7118592226183400B03575 /* zh-Hant */,
 				5B71185F22261A2E00B03575 /* ja */,
+				5B3AB4E02228A6520088F06C /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
