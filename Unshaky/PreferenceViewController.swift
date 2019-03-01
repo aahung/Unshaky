@@ -96,6 +96,12 @@ class PreferenceViewController: NSViewController,
         ShakyPressPreventer.sharedInstance()?.loadAggressiveMode()
     }
 
+    @IBAction func agressiveModeHelpPressed(_ sender: Any) {
+        if let url = URL(string: "https://github.com/aahung/Unshaky/wiki/Aggressive-mode") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+
     @IBOutlet weak var delayAllTextField: NSTextField!
     
     @IBAction func setAllDelays(_ sender: Any) {
