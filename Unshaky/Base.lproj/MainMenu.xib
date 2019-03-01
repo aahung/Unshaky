@@ -33,7 +33,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="0yM-fz-Cxq"/>
-                <menuItem title="Configure" id="TGg-Zy-iYa">
+                <menuItem title="Configuration" id="TGg-Zy-iYa">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="preferenceClicked:" target="Voe-Tx-rLC" id="jWl-yx-FFa"/>
