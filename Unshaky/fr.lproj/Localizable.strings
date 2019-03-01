@@ -2,7 +2,7 @@
   Localizable.strings
   Unshaky
 
-  Created by Xinhong LIU on 2/26/19.
+  Created by Xuesong Tu on 2/26/19.
   Copyright © 2019 Nested Error. All rights reserved.
 */
 
@@ -10,14 +10,14 @@
 
 "Overall Statistic" = "%d shaky presses ont été supprimées";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Configurer Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky a besoin d'une autorisation d'accessibilité pour fonctionner. Désormais, Unshaky tentera d'ouvrir ce panneau pour vous.  S'il ne s'ouvre pas automatiquement, vous devez aller: Préférences système -> Sécurité et confidentialité -> confidentialité (Tab) -> Accessibilité (Panneau gauche). \n\nLorsque le panneau est ouvert, ajoutez et vérifiez le fichier Unshaky.app. ";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" n'est pas un retard valide. Veuillez saisir une valeur entière.";
 
-"Paste Configuration here" = "Paste the configuration here";
+"Paste Configuration here" = "Coller la configuration ici";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Entrées invalides";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Entrées invalides, la longueur ne correspond pas";
