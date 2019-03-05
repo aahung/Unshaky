@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Version: %@";
+
+"Overall Statistic" = "%d shaky Eingaben verworfen";
+
+"Configuration Window Title" = "Unshaky konfigurieren";
+
+"Accessibility Help" = "Unshaky benötigt Bedienungshilfen-Berechtigungen um zu funktionieren. Unshaky wird nun versuchen diesen Dialog für Sie zu öffnen. Wenn dies nicht automatisch geschieht, müssten Sie es hier konfigurieren: Systemeinstellungen -> Sicherheit -> Privatsphäre (Tab) -> Bedienungshilfen (Linke Seite).\n\nWenn der Dialog geöffnet ist, auf Hinzufügen und Unshaky.app markieren.";
+
+"Invalid Delay" = "\"%@\" ist keine gültige Verzögerung. Bitte geben Sie eine Zahl ein.";
+
+"Paste Configuration here" = "Konfiguration hier einfügen";
+
+"Invalid inputs" = "Invalide Eingaben";
+
+"Invalid inputs, length does not match" = "Invalide Eingaben, Länge stimmt nicht überein";
