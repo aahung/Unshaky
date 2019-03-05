@@ -64,3 +64,4 @@ Please help to translate Unshaky into more languages. [Open an issue](https://gi
 
 - Main program, Chinese translation: [_sam](https://nestederror.com)
 - Japanese: forgazer (translation), [HackingGate](https://github.com/HackingGate) (proofreading)
+- German translation: [Felix Grund](https://github.com/ataraxie)
