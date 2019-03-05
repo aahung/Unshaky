@@ -8,16 +8,16 @@
 
 "Version" = "Version: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "%d shaky Eingaben verworfen";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Unshaky konfigurieren";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky benötigt Bedienungshilfen-Berechtigungen um zu funktionieren. Unshaky wird nun versuchen diesen Dialog für Sie zu öffnen. Wenn dies nicht automatisch geschieht, müssten Sie es hier konfigurieren: Systemeinstellungen -> Sicherheit -> Privatsphäre (Tab) -> Bedienungshilfen (Linke Seite).\n\nWenn der Dialog geöffnet ist, auf Hinzufügen und Unshaky.app markieren.";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" ist keine gültige Verzögerung. Bitte geben Sie eine Zahl ein.";
 
-"Paste Configuration here" = "Paste the configuration here";
+"Paste Configuration here" = "Konfiguration hier einfügen";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Invalide Eingaben";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Invalide Eingaben, Länge stimmt nicht überein";
