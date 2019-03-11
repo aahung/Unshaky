@@ -74,7 +74,7 @@ class ExportImportViewController: NSViewController {
         }
 
         // validate length
-        guard config.delays.count == 128 else {
+        guard config.delays.count == Int(N_VIRTUAL_KEY) else {
             let alert = NSAlert()
             alert.messageText = NSLocalizedString("Invalid inputs, length does not match", comment: "")
             alert.runModal()
