@@ -195,7 +195,8 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     CFRunLoopSourceRef runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
     CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
     CGEventTapEnable(eventTap, true);
-    
+    CFRelease(runLoopSource);
+
     return YES;
 }
 
