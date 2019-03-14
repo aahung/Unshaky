@@ -10,6 +10,8 @@
 #import <Carbon/Carbon.h>
 #import <Foundation/Foundation.h>
 #include <ApplicationServices/ApplicationServices.h>
+#import "DebugViewController.h"
+
 #define N_VIRTUAL_KEY 146
 
 typedef void (^Handler)(void);
@@ -17,7 +19,7 @@ typedef void (^Handler)(void);
 @interface ShakyPressPreventer : NSObject
 
 @property (class) NSDictionary<NSNumber *, NSString *> *keyCodeToString;
-@property (weak) NSTextView *debugTextView;
+@property DebugViewController *debugViewController;
 
 + (ShakyPressPreventer *)sharedInstance;
 - (BOOL)setupInputDeviceListener;

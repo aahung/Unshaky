@@ -86,11 +86,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //
     var debugWindowController: NSWindowController!
     @IBAction func debugClicked(_ sender: Any) {
-        // we use shakyPressPreventer.debugTextView == nil to track
+        // we use shakyPressPreventer.debugViewController == nil to track
         // whether a debug window is already open
         // so when the window is closed, we will
-        // update shakyPressPreventer.debugTextView to nil
-        if (shakyPressPreventer.debugTextView != nil) {
+        // update shakyPressPreventer.debugViewController to nil
+        if (shakyPressPreventer.debugViewController != nil) {
             return;
         }
 
@@ -99,22 +99,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let window = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
         debugWindowController = NSWindowController(window: window)
         window.delegate = self
-        
-        // scroll view
-        let scrollView = NSScrollView(frame: windowFrame)
-        scrollView.hasVerticalScroller = true
-        let scrollViewContentSize = scrollView.contentSize
-        
-        // text vieww
-        let textView = NSTextView(frame: NSMakeRect(0, 0, scrollViewContentSize.width, scrollViewContentSize.height))
-        textView.isEditable = false
-        textView.isVerticallyResizable = true
-        textView.isHorizontallyResizable = false
-        
-        scrollView.documentView = textView
-        window.contentView = scrollView
+
+        let debugPanelStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Debug"), bundle: nil)
+        let debugViewController = (debugPanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Debug")) as! DebugViewController)
+
+        window.contentView = debugViewController.view
         window.orderFrontRegardless()
-        shakyPressPreventer.debugTextView = textView
+        shakyPressPreventer.debugViewController = debugViewController
     }
     
     //
@@ -139,10 +130,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate: NSWindowDelegate {
-    // update shakyPressPreventer.debugTextView to nil
+    // update shakyPressPreventer.debugViewController to nil
     // when debug window is closed
-    // not sure why this is not set to nil automatically
     func windowWillClose(_ notification: Notification) {
-        shakyPressPreventer.debugTextView = nil
+        shakyPressPreventer.debugViewController = nil
     }
 }

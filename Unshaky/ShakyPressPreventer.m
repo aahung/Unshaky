@@ -112,6 +112,14 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                                                 kCGEventFlagMaskSecondaryFn) & CGEventGetFlags(event);
     double currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
+    if (_debugViewController != nil) {
+        [_debugViewController appendEventToDebugTextview:currentTimestamp
+                                                 keyCode:keyCode
+                                               eventType:eventType
+                             eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
+                                                   delay:keyDelays[keyCode]];
+    }
+
     if (lastPressedTimestamps[keyCode] != 0.0) {
         /** @ghost711: CMD+Space was pressed, which causes a duplicate pair of down/up
          keyEvents to occur 1-5 msecs after the "real" pair of events.
@@ -136,11 +144,10 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 
         if (dismissNextEvent[keyCode]) {
             // dismiss the corresponding keyup event
-            if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp
-                                                                keyCode:keyCode
-                                                              eventType:eventType
-                                            eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
-                                                              dismissed:YES];
+            if (_debugViewController != nil) {
+                [_debugViewController appendDismissed];
+            }
+
             dismissNextEvent[keyCode] = NO;
             if (aggressiveMode) lastPressedTimestamps[keyCode] = currentTimestamp;
             return nil;
@@ -155,11 +162,9 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                 cmdSpaceAllowance = NO;
             } else {
                 // dismiss the keydown event if it follows keyup event too soon
-                if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp
-                                                                    keyCode:keyCode
-                                                                  eventType:eventType
-                                                eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
-                                                                  dismissed:YES];
+                if (_debugViewController != nil) {
+                    [_debugViewController appendDismissed];
+                }
 
                 if (shakyPressDismissedHandler != nil) {
                     shakyPressDismissedHandler();
@@ -174,11 +179,6 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     lastPressedEventTypes[keyCode] = eventType;
     if (keyCode == 49) lastEventFlagsAboutModifierKeysForSpace = eventFlagsAboutModifierKeys;
     
-    if (_debugTextView != nil) [self appendEventToDebugTextview:currentTimestamp
-                                                        keyCode:keyCode
-                                                      eventType:eventType
-                                    eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys
-                                                      dismissed:NO];
     return event;
 }
 
@@ -207,36 +207,6 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 
 - (void)shakyPressDismissed:(Handler)handler {
     shakyPressDismissedHandler = handler;
-}
-
-- (void)appendToDebugTextView:(NSString*)text {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSAttributedString* attr = [[NSAttributedString alloc]
-                                    initWithString:text
-                                    attributes:@{
-                                                 NSForegroundColorAttributeName: [NSColor textColor],
-                                                 NSFontAttributeName: [NSFont fontWithName:@"Courier New" size:10]
-                                                 }];
-        
-        [[self.debugTextView textStorage] insertAttributedString:attr atIndex:0];
-    });
-}
-
-- (void)appendEventToDebugTextview:(double)timestamp
-                           keyCode:(CGKeyCode)keyCode
-                         eventType:(CGEventType)eventType
-       eventFlagsAboutModifierKeys:(CGEventFlags)eventFlagsAboutModifierKeys
-                         dismissed:(BOOL)dismissed {
-    NSDictionary<NSNumber *, NSString *> *keyCodeToString = [ShakyPressPreventer keyCodeToString];
-    NSString *keyDescription = keyCodeToString[[[NSNumber alloc] initWithInt:keyCode]];
-    if (keyDescription == nil) keyDescription = @"Unknown";
-    NSString *eventString = [NSString stringWithFormat:@"%f Key(%3d|%14s|%10llu|%3d) E(%u)",
-                             timestamp, keyCode, [keyDescription UTF8String],
-                             eventFlagsAboutModifierKeys, keyDelays[keyCode], eventType];
-    if (dismissed) {
-        eventString = [eventString stringByAppendingString:@" DISMISSED"];
-    }
-    [self appendToDebugTextView:[eventString stringByAppendingString:@"\n"]];
 }
 
 + (NSDictionary<NSNumber *, NSString *> *)keyCodeToString {

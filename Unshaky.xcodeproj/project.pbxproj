@@ -11,6 +11,8 @@
 		5B3168EE20DB9CF300185DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3168ED20DB9CF300185DE5 /* Assets.xcassets */; };
 		5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3168EF20DB9CF300185DE5 /* MainMenu.xib */; };
 		5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */; };
+		5B436148223AF6FF00B6E9E0 /* Debug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B436146223AF6FF00B6E9E0 /* Debug.storyboard */; };
+		5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43614C223B140400B6E9E0 /* DebugViewController.m */; };
 		5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50712421839D5400A65B81 /* ExportImportViewController.swift */; };
 		5B71184C222608B100B03575 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184A222608B100B03575 /* Preference.storyboard */; };
 		5B711851222610C400B03575 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184F222610C400B03575 /* Localizable.strings */; };
@@ -47,6 +49,9 @@
 		5B3AB4DE2228A6510088F06C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B3AB4DF2228A6520088F06C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preference.strings; sourceTree = "<group>"; };
 		5B3AB4E02228A6520088F06C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B436147223AF6FF00B6E9E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Debug.storyboard; sourceTree = "<group>"; };
+		5B43614B223B140400B6E9E0 /* DebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
+		5B43614C223B140400B6E9E0 /* DebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
 		5B71184B222608B100B03575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
 		5B71184D222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 				5B3168ED20DB9CF300185DE5 /* Assets.xcassets */,
 				5B3168EF20DB9CF300185DE5 /* MainMenu.xib */,
 				5B71184A222608B100B03575 /* Preference.storyboard */,
+				5B436146223AF6FF00B6E9E0 /* Debug.storyboard */,
 				5B3168F220DB9CF300185DE5 /* Info.plist */,
 				5B3168F320DB9CF300185DE5 /* Unshaky.entitlements */,
 				5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */,
@@ -129,6 +135,8 @@
 				5B50712421839D5400A65B81 /* ExportImportViewController.swift */,
 				5B3168F920DB9ED300185DE5 /* Unshaky-Bridging-Header.h */,
 				5B71184F222610C400B03575 /* Localizable.strings */,
+				5B43614B223B140400B6E9E0 /* DebugViewController.h */,
+				5B43614C223B140400B6E9E0 /* DebugViewController.m */,
 			);
 			path = Unshaky;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3168EE20DB9CF300185DE5 /* Assets.xcassets in Resources */,
+				5B436148223AF6FF00B6E9E0 /* Debug.storyboard in Resources */,
 				5B711851222610C400B03575 /* Localizable.strings in Resources */,
 				5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */,
 				5B71184C222608B100B03575 /* Preference.storyboard in Resources */,
@@ -394,6 +403,7 @@
 			files = (
 				5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */,
 				5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */,
+				5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */,
 				5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */,
 				5B3168EC20DB9CF100185DE5 /* AppDelegate.swift in Sources */,
 			);
@@ -430,6 +440,14 @@
 				5B711863222716E400B03575 /* de */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5B436146223AF6FF00B6E9E0 /* Debug.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B436147223AF6FF00B6E9E0 /* Base */,
+			);
+			name = Debug.storyboard;
 			sourceTree = "<group>";
 		};
 		5B71184A222608B100B03575 /* Preference.storyboard */ = {
@@ -589,6 +607,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92D95TWTWQ;
 				INFOPLIST_FILE = Unshaky/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -614,6 +633,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92D95TWTWQ;
 				INFOPLIST_FILE = Unshaky/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

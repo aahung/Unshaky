@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Debug View Controller-->
+        <scene sceneID="mT4-Kg-jhd">
+            <objects>
+                <viewController storyboardIdentifier="Debug" id="vk1-F0-GaW" customClass="DebugViewController" sceneMemberID="viewController">
+                    <view key="view" id="cUH-dH-S4S">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gf5-An-6qt">
+                                <rect key="frame" x="0.0" y="6" width="450" height="294"/>
+                                <subviews>
+                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuL-NE-LSa">
+                                        <rect key="frame" x="0.0" y="24" width="450" height="270"/>
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="cuR-ab-xTC">
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="abY-H5-Vsm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="minSize" width="450" height="270"/>
+                                                    <size key="maxSize" width="455" height="10000000"/>
+                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                </textView>
+                                            </subviews>
+                                        </clipView>
+                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="DSj-rl-7iz">
+                                            <rect key="frame" x="434" y="0.0" width="16" height="270"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="83" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihq-9C-6Vc">
+                                        <rect key="frame" x="124" y="0.0" width="203" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="krx-ip-NVd">
+                                                <rect key="frame" x="-6" y="-7" width="72" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0R5-gZ-Fp4">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="clearClicked:" target="vk1-F0-GaW" id="BgZ-Ew-7OV"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4tj-qb-DL5">
+                                                <rect key="frame" x="137" y="-7" width="72" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GtH-xA-uyU">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="copyClicked:" target="vk1-F0-GaW" id="Vey-o6-m6y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="gf5-An-6qt" firstAttribute="top" secondItem="cUH-dH-S4S" secondAttribute="top" id="Ydx-sH-iRC"/>
+                            <constraint firstAttribute="bottom" secondItem="gf5-An-6qt" secondAttribute="bottom" constant="6" id="eMi-Il-Tzj"/>
+                            <constraint firstItem="gf5-An-6qt" firstAttribute="leading" secondItem="cUH-dH-S4S" secondAttribute="leading" id="hMF-Ul-hcM"/>
+                            <constraint firstAttribute="trailing" secondItem="gf5-An-6qt" secondAttribute="trailing" id="sx9-JQ-ko8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="abY-H5-Vsm" id="bNf-JG-Uu6"/>
+                    </connections>
+                </viewController>
+                <customObject id="Mnp-SI-qt7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="118"/>
+        </scene>
+    </scenes>
+</document>
