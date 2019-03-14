@@ -86,10 +86,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //
     var debugWindowController: NSWindowController!
     @IBAction func debugClicked(_ sender: Any) {
+        // we use shakyPressPreventer.debugTextView == nil to track
+        // whether a debug window is already open
+        // so when the window is closed, we will
+        // update shakyPressPreventer.debugTextView to nil
+        if (shakyPressPreventer.debugTextView != nil) {
+            return;
+        }
+
         let windowStyleMaskRawValue = NSWindow.StyleMask.closable.rawValue | NSWindow.StyleMask.titled.rawValue | NSWindow.StyleMask.resizable.rawValue
         let windowFrame = NSMakeRect(100, 100, 600, 400)
         let window = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
         debugWindowController = NSWindowController(window: window)
+        window.delegate = self
         
         // scroll view
         let scrollView = NSScrollView(frame: windowFrame)
@@ -127,4 +136,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.activate(ignoringOtherApps: true)
     }
     
+}
+
+extension AppDelegate: NSWindowDelegate {
+    // update shakyPressPreventer.debugTextView to nil
+    // when debug window is closed
+    // not sure why this is not set to nil automatically
+    func windowWillClose(_ notification: Notification) {
+        shakyPressPreventer.debugTextView = nil
+    }
 }
