@@ -23,6 +23,7 @@ Apple made it difficult to replace only the keyboard and it costs hundreds of do
 - [Reddit: Anyone. with heir MBP 2018. keyboard. that. had. problems but is getting worse? Does a keyboard cover fix this?](https://www.reddit.com/r/macbookpro/comments/a1yul8/anyone_with_heir_mbp_2018_keyboard_that_had/)
 - [Reddit: 2018 Known Keyboard Issue - repeating/sticky keys, silicone covers, compressed air](https://www.reddit.com/r/macbookpro/comments/a5jzyu/2018_known_keyboard_issue_repeatingsticky_keys/)
 - [Apple Discussion: MacBook Pro 15" (2018) Keyboard "t" key repeating issue?](https://discussions.apple.com/thread/8536157) (55K have this question too on Feb 22, 2019)
+- [Reddit: MacBook Air 2018 keyboard problem](https://www.reddit.com/r/macbookair/comments/ak9ptt/macbook_air_2018_keyboard_problem/)
 
 ## How-To (Video Walkthrough)
 
