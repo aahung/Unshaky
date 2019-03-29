@@ -123,7 +123,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let preferencePanelStoryboard = NSStoryboard(name: "Preference", bundle: nil)
-        preferenceWindowController = preferencePanelStoryboard.instantiateController(withIdentifier: "Preference") as! NSWindowController
+        preferenceWindowController = (preferencePanelStoryboard.instantiateController(withIdentifier: "Preference") as! NSWindowController)
         preferenceWindowController.showWindow(self)
         NSApp.activate(ignoringOtherApps: true)
     }
