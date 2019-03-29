@@ -37,6 +37,7 @@
 }
 
 - (void)appendEventToDebugTextview:(double)timestamp
+                      keyboardType:(int64_t)keyboardType
                            keyCode:(CGKeyCode)keyCode
                          eventType:(CGEventType)eventType
        eventFlagsAboutModifierKeys:(CGEventFlags)eventFlagsAboutModifierKeys
@@ -44,8 +45,8 @@
     NSDictionary<NSNumber *, NSString *> *keyCodeToString = [ShakyPressPreventer keyCodeToString];
     NSString *keyDescription = keyCodeToString[[[NSNumber alloc] initWithInt:keyCode]];
     if (keyDescription == nil) keyDescription = @"Unknown";
-    NSString *eventString = [NSString stringWithFormat:@"%f Key(%3d|%14s|%10llu|%3d) E(%u)",
-                             timestamp, keyCode, [keyDescription UTF8String],
+    NSString *eventString = [NSString stringWithFormat:@"%f Key(%3lld|%3d|%14s|%10llu|%3d) E(%u)",
+                             timestamp, keyboardType, keyCode, [keyDescription UTF8String],
                              eventFlagsAboutModifierKeys, delay, eventType];
     [self appendToDebugTextView:[@"\n" stringByAppendingString:eventString]];
 }

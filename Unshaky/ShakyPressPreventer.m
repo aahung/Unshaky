@@ -96,8 +96,8 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
     // keyboard type, dismiss if it is not built-in keyboard
     if (ignoreExternalKeyboard) {
-        int64_t type = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
-        if (type != 58) return event;
+        int64_t keyboardType = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
+        if (keyboardType != 58) return event;
     }
 
     // The incoming keycode.
@@ -113,7 +113,9 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     double currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
     if (_debugViewController != nil) {
+        int64_t keyboardType = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
         [_debugViewController appendEventToDebugTextview:currentTimestamp
+                                            keyboardType:keyboardType
                                                  keyCode:keyCode
                                                eventType:eventType
                              eventFlagsAboutModifierKeys:eventFlagsAboutModifierKeys

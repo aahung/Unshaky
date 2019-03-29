@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DebugViewController : NSViewController
 
 - (void)appendEventToDebugTextview:(double)timestamp
+                      keyboardType:(int64_t)keyboardType
                            keyCode:(CGKeyCode)keyCode
                          eventType:(CGEventType)eventType
        eventFlagsAboutModifierKeys:(CGEventFlags)eventFlagsAboutModifierKeys
