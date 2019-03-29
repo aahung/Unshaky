@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let icon = NSImage(named: NSImage.Name(rawValue: "UnshakyTemplate"))
+        let icon = NSImage(named: "UnshakyTemplate")
         statusItem.image = icon
         
         statusItem.menu = menu
@@ -101,8 +101,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         debugWindowController = NSWindowController(window: debugWindow)
         debugWindow.delegate = self
 
-        let debugPanelStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Debug"), bundle: nil)
-        let debugViewController = (debugPanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Debug")) as! DebugViewController)
+        let debugPanelStoryboard = NSStoryboard(name: "Debug", bundle: nil)
+        let debugViewController = (debugPanelStoryboard.instantiateController(withIdentifier: "Debug") as! DebugViewController)
 
         debugWindow.contentView = debugViewController.view
         debugWindow.orderFrontRegardless()
@@ -122,8 +122,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        let preferencePanelStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Preference"), bundle: nil)
-        preferenceWindowController = preferencePanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Preference")) as! NSWindowController
+        let preferencePanelStoryboard = NSStoryboard(name: "Preference", bundle: nil)
+        preferenceWindowController = preferencePanelStoryboard.instantiateController(withIdentifier: "Preference") as! NSWindowController
         preferenceWindowController.showWindow(self)
         NSApp.activate(ignoringOtherApps: true)
     }

@@ -125,11 +125,11 @@ class PreferenceViewController: NSViewController,
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case NSStoryboard.SegueIdentifier(rawValue: "export"):
+        case "export":
             let destVC = segue.destinationController as! ExportImportViewController
             destVC.preferenceViewController = self
             destVC.mode = .Export
-        case NSStoryboard.SegueIdentifier(rawValue: "import"):
+        case "import":
             let destVC = segue.destinationController as! ExportImportViewController
             destVC.preferenceViewController = self
             destVC.mode = .Import
