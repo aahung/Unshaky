@@ -85,6 +85,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // DEBUG Function
     //
     var debugWindowController: NSWindowController!
+    var debugWindow: NSWindow!
     @IBAction func debugClicked(_ sender: Any) {
         // we use shakyPressPreventer.debugViewController == nil to track
         // whether a debug window is already open
@@ -96,15 +97,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let windowStyleMaskRawValue = NSWindow.StyleMask.closable.rawValue | NSWindow.StyleMask.titled.rawValue | NSWindow.StyleMask.resizable.rawValue
         let windowFrame = NSMakeRect(100, 100, 600, 400)
-        let window = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
-        debugWindowController = NSWindowController(window: window)
-        window.delegate = self
+        debugWindow = NSWindow(contentRect: windowFrame, styleMask: .init(rawValue: windowStyleMaskRawValue), backing: .buffered, defer: false)
+        debugWindowController = NSWindowController(window: debugWindow)
+        debugWindow.delegate = self
 
         let debugPanelStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Debug"), bundle: nil)
         let debugViewController = (debugPanelStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Debug")) as! DebugViewController)
 
-        window.contentView = debugViewController.view
-        window.orderFrontRegardless()
+        debugWindow.contentView = debugViewController.view
+        debugWindow.orderFrontRegardless()
         shakyPressPreventer.debugViewController = debugViewController
     }
     
@@ -134,5 +135,7 @@ extension AppDelegate: NSWindowDelegate {
     // when debug window is closed
     func windowWillClose(_ notification: Notification) {
         shakyPressPreventer.debugViewController = nil
+        debugWindowController = nil
+        debugWindow = nil
     }
 }
