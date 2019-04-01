@@ -42,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         statusItem.menu = menu
         statusItem.behavior = .removalAllowed
+        statusItem.menu?.delegate = self
         
         dismissCount = defaults.integer(forKey: "DISMISS_COUNT")
         updateDismissCountLabel()
@@ -50,26 +51,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionMenuItem.title = String(format: NSLocalizedString("Version", comment: ""), version)
 
-        // this following lines will add Unshaky.app to privacy->accessibility panel, unchecked
-        let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
-        let accessEnabled = AXIsProcessTrustedWithOptions([checkOptPrompt: false] as CFDictionary?)
-
-        if (!shakyPressPreventer.setupInputDeviceListener() || !accessEnabled) {
-            let alert = NSAlert()
-            alert.messageText = NSLocalizedString("Accessibility Help", comment: "")
-            alert.runModal()
-            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
-            NSApplication.shared.terminate(self)
-        }
         shakyPressPreventer.shakyPressDismissed {
             self.dismissCount += 1
             OperationQueue.main.addOperation {
                 self.updateDismissCountLabel()
             }
         }
+
+        setup()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
+        shakyPressPreventer.removeEventTap()
         defaults.set(dismissCount, forKey: "DISMISS_COUNT")
         defaults.synchronize()
     }
@@ -79,6 +72,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // show up again here.
     func applicationDidBecomeActive(_ notification: Notification) {
         statusItem.isVisible = true
+    }
+
+    //
+    // Basic
+    //
+    func setup() {
+        // this following lines will add Unshaky.app to privacy->accessibility panel, unchecked
+        let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
+        let accessEnabled = AXIsProcessTrustedWithOptions([checkOptPrompt: false] as CFDictionary?)
+
+        if (!shakyPressPreventer.setupEventTap() || !accessEnabled) {
+            let alert = NSAlert()
+            alert.messageText = NSLocalizedString("Accessibility Help", comment: "")
+            alert.runModal()
+            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
+            NSApplication.shared.terminate(self)
+        }
+    }
+
+    func recover() {
+        shakyPressPreventer.removeEventTap()
+        setup()
+    }
+
+    func checkAndRecoverIfNeeded() {
+        if !shakyPressPreventer.eventTapEnabled() {
+            print("Event tap is not enable, try to recover.")
+            recover()
+        }
     }
     
     //
@@ -137,5 +159,11 @@ extension AppDelegate: NSWindowDelegate {
         shakyPressPreventer.debugViewController = nil
         debugWindowController = nil
         debugWindow = nil
+    }
+}
+
+extension AppDelegate: NSMenuDelegate {
+    func menuWillOpen(_ menu: NSMenu) {
+        checkAndRecoverIfNeeded()
     }
 }

@@ -189,7 +189,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     return event;
 }
 
-- (BOOL)setupInputDeviceListener {
+- (BOOL)setupEventTap {
     
     CGEventMask eventMask = ((1 << kCGEventKeyDown) | (1 << kCGEventKeyUp) | (1 << kCGEventFlagsChanged));
     eventTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, 0,
@@ -207,7 +207,25 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     return YES;
 }
 
-CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
+- (void)removeEventTap {
+    if (eventTap == NULL) return;
+    @try {
+        CFMachPortInvalidate(eventTap);
+        CFRelease(eventTap);
+        eventTap = NULL;
+    }
+    @catch(NSException *exception) {
+        NSLog(@"Fail to remove event tap.");
+    }
+}
+
+- (BOOL)eventTapEnabled {
+    if (eventTap == NULL) return false;
+    if (CGEventTapIsEnabled(eventTap) == false) return false;
+    return true;
+}
+
+CGEventRef eventTapCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
     ShakyPressPreventer *kc = (__bridge ShakyPressPreventer*)refcon;
     return [kc filterShakyPressEvent: event];
 }

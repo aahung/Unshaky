@@ -22,7 +22,9 @@ typedef void (^Handler)(void);
 @property DebugViewController *debugViewController;
 
 + (ShakyPressPreventer *)sharedInstance;
-- (BOOL)setupInputDeviceListener;
+- (BOOL)setupEventTap;
+- (void)removeEventTap;
+- (BOOL)eventTapEnabled;
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event;
 - (void)shakyPressDismissed:(Handler)handler;
 - (void)loadKeyDelays;
