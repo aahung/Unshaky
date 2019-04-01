@@ -97,8 +97,9 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     // keyboard type, dismiss if it is not built-in keyboard
     if (ignoreExternalKeyboard) {
         int64_t keyboardType = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
-        if (keyboardType != 58) return event;
-        if (keyboardType != 59) return event; // MacBook Pro (15-inch, 2018) https://github.com/aahung/Unshaky/issues/40
+        // 58: seems to be the value for pre-2018 models
+        // 59: MacBook Pro (15-inch, 2018) https://github.com/aahung/Unshaky/issues/40
+        if (keyboardType != 58 && keyboardType != 59) return event;
     }
 
     // The incoming keycode.
