@@ -80,5 +80,19 @@
                 type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
+        <item>
+            <title>Version 0.4.6</title>
+            <pubDate>Thu, 31 Mar 2019 17:06:00 -0700</pubDate>
+            <sparkle:releaseNotesLink>
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.4.6
+            </sparkle:releaseNotesLink>
+            <enclosure
+                url="https://github.com/aahung/Unshaky/releases/download/v0.4.6/Unshaky_v0.4.6.zip"
+                sparkle:version="33"
+                sparkle:shortVersionString="0.4.6"
+                length="5188824"
+                type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
