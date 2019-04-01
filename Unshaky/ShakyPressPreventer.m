@@ -21,6 +21,8 @@
     int keyDelays[N_VIRTUAL_KEY];
     BOOL ignoreExternalKeyboard;
     Handler shakyPressDismissedHandler;
+
+    CFMachPortRef eventTap;
 }
 
 static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
@@ -37,6 +39,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 
 - (instancetype)init {
     if (self = [super init]) {
+        eventTap = NULL;
         [self loadKeyDelays];
         [self loadIgnoreExternalKeyboard];
         [self loadWorkaroundForCmdSpace];
@@ -189,8 +192,8 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 - (BOOL)setupInputDeviceListener {
     
     CGEventMask eventMask = ((1 << kCGEventKeyDown) | (1 << kCGEventKeyUp) | (1 << kCGEventFlagsChanged));
-    CFMachPortRef eventTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, 0,
-                                eventMask, myCGEventCallback, (__bridge void *)(self));
+    eventTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, 0,
+                                eventMask, eventTapCallback, (__bridge void *)(self));
     if (!eventTap) {
         NSLog(@"Permission issue");
         return NO;
