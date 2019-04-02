@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -8,16 +8,16 @@
 
 "Version" = "Version: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "Отклонено случайных нажатий: %d";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Настройки Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky необходимо получить разрешение на универсальный доступ. Сейчас Unshaky попытается открыть это окно для вас. Если оно не откроется автоматически, вам необходимо перейти в: Системные Настройки -> Защита и безопасность -> Конфиденциальность (Вкладка) -> Универсальный доступ (Панель слева). \n\nКогда у вас будет открыта данная панель, добавьте приложение Unshaky.app и установите галочку рядом с ним. ";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" не является корректным значением задержки. Пожалуйста, введите целое число.";
 
-"Paste Configuration here" = "Paste the configuration here";
+"Paste Configuration here" = "Вставьте конфигурацию сюда";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Некорректные данные";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Некорректные данные, длина не совпадает";
