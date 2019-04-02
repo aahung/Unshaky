@@ -1,0 +1,23 @@
+/*
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Version: %@";
+
+"Overall Statistic" = "Відхилено випадкових натискань: %d";
+
+"Configuration Window Title" = "Налаштування Unshaky";
+
+"Accessibility Help" = "Unshaky необхідно отримати дозвіл на універсальний доступ. Зараз Unshaky спробує відкрити це вікно для вас. Якщо воно не відкриється автоматично, вам необхідно перейти до: Системні параметри -> Захист і безпека -> Конфіденційність (Вкладка) -> Універсальний доступ (Панель зліва). \n\nКоли у вас буде відкрита дана панель, додайте додаток Unshaky.app і встановіть галочку поруч з ним. ";
+
+"Invalid Delay" = "\"%@\" не є коректним значенням затримки. Будь ласка, введіть ціле число.";
+
+"Paste Configuration here" = "Вставте конфігурацію сюди";
+
+"Invalid inputs" = "Некоректні дані";
+
+"Invalid inputs, length does not match" = "Некоректні дані, довжина не збігається";
