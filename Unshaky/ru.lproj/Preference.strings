@@ -1,6 +1,6 @@
 
-/* Class = "NSButtonCell"; title = "Импортировать"; ObjectID = "3Kr-1X-5AZ"; */
-"3Kr-1X-5AZ.title" = "Импортировать";
+/* Class = "NSButtonCell"; title = "Импорт"; ObjectID = "3Kr-1X-5AZ"; */
+"3Kr-1X-5AZ.title" = "Импорт";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
 "5My-Lz-UmR.title" = "-";
@@ -53,5 +53,5 @@
 /* Class = "NSButtonCell"; title = "Отменить"; ObjectID = "mDf-Gh-GmX"; */
 "mDf-Gh-GmX.title" = "Отменить";
 
-/* Class = "NSButtonCell"; title = "Импортировать"; ObjectID = "yJt-he-X2q"; */
-"yJt-he-X2q.title" = "Импортировать";
+/* Class = "NSButtonCell"; title = "Импорт"; ObjectID = "yJt-he-X2q"; */
+"yJt-he-X2q.title" = "Импорт";
