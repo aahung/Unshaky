@@ -1,57 +1,57 @@
 
-/* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
-"3Kr-1X-5AZ.title" = "Import";
+/* Class = "NSButtonCell"; title = "Импортировать"; ObjectID = "3Kr-1X-5AZ"; */
+"3Kr-1X-5AZ.title" = "Импортировать";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
 "5My-Lz-UmR.title" = "-";
 
-/* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
-"BTT-FQ-Yii.title" = "Copy";
+/* Class = "NSButtonCell"; title = "Копировать"; ObjectID = "BTT-FQ-Yii"; */
+"BTT-FQ-Yii.title" = "Копировать";
 
-/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
-"CUy-rX-LgD.title" = "Cancel";
+/* Class = "NSButtonCell"; title = "Отменить"; ObjectID = "CUy-rX-LgD"; */
+"CUy-rX-LgD.title" = "Отменить";
 
-/* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
-"Dr8-2D-to4.title" = "Export";
+/* Class = "NSButtonCell"; title = "Экспорт"; ObjectID = "Dr8-2D-to4"; */
+"Dr8-2D-to4.title" = "Экспорт";
 
-/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
-"I7x-fY-0vx.title" = "Fix if CMD+SPACE not work (experimental)";
+/* Class = "NSButtonCell"; title = "Исправить, если CMD+SPACE не работает (экспериментально)"; ObjectID = "I7x-fY-0vx"; */
+"I7x-fY-0vx.title" = "Исправить, если CMD+SPACE не работает (экспериментально)";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
 "IhC-d3-H6r.title" = "-";
 
-/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
-"JiA-hI-REz.headerCell.title" = "Delay (ms), suggest 40";
+/* Class = "NSTableColumn"; headerCell.title = "Задержка (мс), предположительно 40"; ObjectID = "JiA-hI-REz"; */
+"JiA-hI-REz.headerCell.title" = "Задержка (мс), предположительно 40";
 
-/* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
-"KI8-Ox-xeb.title" = "Unshaky Preference";
+/* Class = "NSWindow"; title = "Настройки Unshaky"; ObjectID = "KI8-Ox-xeb"; */
+"KI8-Ox-xeb.title" = "Настройки Unshaky";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
 "NxQ-OB-lir.title" = "-";
 
-/* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
-"Qnt-tS-QWb.title" = "Set ALL to (ms)";
+/* Class = "NSTextFieldCell"; title = "Установить ВСЕ на (мс)"; ObjectID = "Qnt-tS-QWb"; */
+"Qnt-tS-QWb.title" = "Установить ВСЕ на (мс)";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
 "Vl3-75-cL7.title" = "-";
 
-/* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
-"Zqq-UB-oIK.title" = "Aggressive mode (experimental)";
+/* Class = "NSButtonCell"; title = "Агрессивный режим (экспериментально)"; ObjectID = "Zqq-UB-oIK"; */
+"Zqq-UB-oIK.title" = "Агрессивный режим (экспериментально)";
 
-/* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
-"acO-QS-DTH.title" = "Paste";
+/* Class = "NSButtonCell"; title = "Вставить"; ObjectID = "acO-QS-DTH"; */
+"acO-QS-DTH.title" = "Вставить";
 
-/* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "asf-bP-xrf"; */
-"asf-bP-xrf.headerCell.title" = "Key";
+/* Class = "NSTableColumn"; headerCell.title = "Ключ"; ObjectID = "asf-bP-xrf"; */
+"asf-bP-xrf.headerCell.title" = "Ключ";
 
-/* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
-"dE9-oM-Tqa.title" = "Ignore external keyboard (experimental)";
+/* Class = "NSButtonCell"; title = "Игнорировать внешнюю клавиатуру (экспериментально)"; ObjectID = "dE9-oM-Tqa"; */
+"dE9-oM-Tqa.title" = "Игнорировать внешнюю клавиатуру (экспериментально)";
 
-/* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
-"juW-NR-znR.title" = "Set";
+/* Class = "NSButtonCell"; title = "Установить"; ObjectID = "juW-NR-znR"; */
+"juW-NR-znR.title" = "Установить";
 
-/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
-"mDf-Gh-GmX.title" = "Cancel";
+/* Class = "NSButtonCell"; title = "Отменить"; ObjectID = "mDf-Gh-GmX"; */
+"mDf-Gh-GmX.title" = "Отменить";
 
-/* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
-"yJt-he-X2q.title" = "Import";
+/* Class = "NSButtonCell"; title = "Импортировать"; ObjectID = "yJt-he-X2q"; */
+"yJt-he-X2q.title" = "Импортировать";
