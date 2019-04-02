@@ -8,7 +8,7 @@
 
 "Version" = "Version: %@";
 
-"Overall Statistic" = "Отклонено shaky нажатий: %d";
+"Overall Statistic" = "Отклонено ошибочных нажатий: %d";
 
 "Configuration Window Title" = "Настройки Unshaky";
 
