@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by forgazer on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "버전: %@";
+
+"Overall Statistic" = "전체 %d회 눌러짐";
+
+"Configuration Window Title" = "Unshaky 설정";
+
+"Accessibility Help" = "Unshaky가 작동하려면 권한이 필요합니다. 보안 및 개인정보 -> 개인 정보 보호 -> 손쉬운 사용에서 Unshaky 앱을 넣어주시고 체크를 해주세요";
+
+"Invalid Delay" = "\"%@\" 는 잘못된 지연값입니다. 정수를 넣어주세요.";
+
+"Paste the configuration here" = "여기에 환경설정을 붙여넣어주세요.";
+
+"Invalid inputs" = "잘못된 값입니다";
+
+"Invalid inputs, length does not match" = "잘못된 값입니다. 길이가 맞지 않습니다.";
