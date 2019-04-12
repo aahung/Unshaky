@@ -55,6 +55,9 @@
 		5B43614C223B140400B6E9E0 /* DebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
 		5B6F59732260121300889D13 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		5B6F59752260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5B6F59762260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Preference.strings; sourceTree = "<group>"; };
+		5B6F59772260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Debug.strings; sourceTree = "<group>"; };
 		5B71184B222608B100B03575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
 		5B71184D222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		5B71184E222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preference.strings"; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 				ru,
 				uk,
 				tr,
+				ko,
 			);
 			mainGroup = 5B3168DF20DB9CF100185DE5;
 			productRefGroup = 5B3168E920DB9CF100185DE5 /* Products */;
@@ -462,6 +466,7 @@
 				5B8DA9ED2253BA5D001BA090 /* ru */,
 				5B8DA9F12253BAAC001BA090 /* uk */,
 				5B8DA9E92253B9BF001BA090 /* tr */,
+				5B6F59752260177E00889D13 /* ko */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				5B8DA9EF2253BA5D001BA090 /* ru */,
 				5B8DA9F32253BAAC001BA090 /* uk */,
 				5B8DA9EB2253B9BF001BA090 /* tr */,
+				5B6F59772260177E00889D13 /* ko */,
 			);
 			name = Debug.storyboard;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				5B8DA9EE2253BA5D001BA090 /* ru */,
 				5B8DA9F22253BAAC001BA090 /* uk */,
 				5B8DA9EA2253B9BF001BA090 /* tr */,
+				5B6F59762260177E00889D13 /* ko */,
 			);
 			name = Preference.storyboard;
 			sourceTree = "<group>";
