@@ -11,8 +11,7 @@ import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
-    let defaults = UserDefaults.standard
+
     @IBOutlet weak var menu: NSMenu!
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     @IBOutlet weak var window: NSWindow!
@@ -21,19 +20,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var preferenceMenuItem: NSMenuItem!
     @IBOutlet weak var versionMenuItem: NSMenuItem!
     
-    private var dismissCount = 0
-    
     override init() {
         shakyPressPreventer = ShakyPressPreventer.sharedInstance()
         super.init()
     }
-    
+
+    @objc func updateStatLabel() {
+        dismissShakyPressCountMenuItem.title = Counter.shared.statString
+    }
+
     @IBAction func quitClicked(_ sender: Any) {
         NSApplication.shared.terminate(self)
-    }
-    
-    func updateDismissCountLabel() {
-        dismissShakyPressCountMenuItem.title = String(format: NSLocalizedString("Overall Statistic", comment: ""), dismissCount)
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -43,28 +40,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
         statusItem.behavior = .removalAllowed
         statusItem.menu?.delegate = self
-        
-        dismissCount = defaults.integer(forKey: "DISMISS_COUNT")
-        updateDismissCountLabel()
+
+        updateStatLabel()
 
         // show version number
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionMenuItem.title = String(format: NSLocalizedString("Version", comment: ""), version)
 
         shakyPressPreventer.shakyPressDismissed {
-            self.dismissCount += 1
-            OperationQueue.main.addOperation {
-                self.updateDismissCountLabel()
-            }
+            Counter.shared.increment()
         }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStatLabel), name: .counterUpdate, object: nil)
 
         setup()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         shakyPressPreventer.removeEventTap()
-        defaults.set(dismissCount, forKey: "DISMISS_COUNT")
-        defaults.synchronize()
+        NotificationCenter.default.removeObserver(self)
+        Counter.shared.save()
     }
 
     // applicationDidBecomeActive is only called if Unshaky is opened

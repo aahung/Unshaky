@@ -14,6 +14,7 @@
 		5B436148223AF6FF00B6E9E0 /* Debug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B436146223AF6FF00B6E9E0 /* Debug.storyboard */; };
 		5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43614C223B140400B6E9E0 /* DebugViewController.m */; };
 		5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50712421839D5400A65B81 /* ExportImportViewController.swift */; };
+		5B6F59742260121300889D13 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F59732260121300889D13 /* Counter.swift */; };
 		5B71184C222608B100B03575 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184A222608B100B03575 /* Preference.storyboard */; };
 		5B711851222610C400B03575 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184F222610C400B03575 /* Localizable.strings */; };
 		5BB68E1E21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */; };
@@ -53,6 +54,7 @@
 		5B43614B223B140400B6E9E0 /* DebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
 		5B43614C223B140400B6E9E0 /* DebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
+		5B6F59732260121300889D13 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		5B71184B222608B100B03575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
 		5B71184D222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		5B71184E222608F200B03575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preference.strings"; sourceTree = "<group>"; };
@@ -70,6 +72,10 @@
 		5B711863222716E400B03575 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B711864222716E400B03575 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Preference.strings; sourceTree = "<group>"; };
 		5B711865222716E400B03575 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B8DA9E92253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5B8DA9EA2253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Preference.strings; sourceTree = "<group>"; };
+		5B8DA9EB2253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Debug.strings; sourceTree = "<group>"; };
+		5B8DA9EC2253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B8DA9ED2253BA5D001BA090 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B8DA9EE2253BA5D001BA090 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Preference.strings; sourceTree = "<group>"; };
 		5B8DA9EF2253BA5D001BA090 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Debug.strings; sourceTree = "<group>"; };
@@ -78,10 +84,6 @@
 		5B8DA9F22253BAAC001BA090 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preference.strings; sourceTree = "<group>"; };
 		5B8DA9F32253BAAC001BA090 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Debug.strings; sourceTree = "<group>"; };
 		5B8DA9F42253BAAD001BA090 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5B8DA9E92253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		5B8DA9EA2253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Preference.strings; sourceTree = "<group>"; };
-		5B8DA9EB2253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Debug.strings; sourceTree = "<group>"; };
-		5B8DA9EC2253B9BF001BA090 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnshakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB68E1721A3413900CAA4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyPressPreventerSpec.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				5B3168F320DB9CF300185DE5 /* Unshaky.entitlements */,
 				5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */,
 				5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */,
+				5B6F59732260121300889D13 /* Counter.swift */,
 				5BCA730820F5B43300A1210E /* PreferenceViewController.swift */,
 				5B50712421839D5400A65B81 /* ExportImportViewController.swift */,
 				5B3168F920DB9ED300185DE5 /* Unshaky-Bridging-Header.h */,
@@ -420,6 +423,7 @@
 			files = (
 				5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */,
 				5B3168FC20DB9ED300185DE5 /* ShakyPressPreventer.m in Sources */,
+				5B6F59742260121300889D13 /* Counter.swift in Sources */,
 				5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */,
 				5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */,
 				5B3168EC20DB9CF100185DE5 /* AppDelegate.swift in Sources */,

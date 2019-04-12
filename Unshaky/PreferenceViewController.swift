@@ -13,7 +13,7 @@ class PreferenceViewController: NSViewController,
                                 NSTableViewDelegate {
 
     @IBOutlet weak var tableView: NSTableView!
-    
+    @IBOutlet weak var statLabel: NSTextField!
     
     let defaults = UserDefaults.standard
     var delays: [Int]!
@@ -35,6 +35,9 @@ class PreferenceViewController: NSViewController,
         }).sorted { (a, b) -> Bool in
             return keyCodeToString[a]! < keyCodeToString[b]!
         }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStatLabel), name: .counterUpdate, object: nil)
+        updateStatLabel()
     }
 
     override func viewDidAppear() {
@@ -52,6 +55,10 @@ class PreferenceViewController: NSViewController,
         for i in 0..<nVirtualKey {
             self.delays[i] = i >= delays.count ? 0 : delays[i] as! Int
         }
+    }
+
+    @objc func updateStatLabel() {
+        statLabel.stringValue = Counter.shared.statString
     }
     
     // MARK: NSTableViewDataSource
@@ -141,5 +148,9 @@ class PreferenceViewController: NSViewController,
     func preferenceChanged(sender: Any?) {
         loadPreference()
         self.tableView.reloadData()
+    }
+
+    @IBAction func resetStat(_ sender: Any) {
+        Counter.shared.reset()
     }
 }
