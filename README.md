@@ -69,3 +69,4 @@ Please help to translate Unshaky into more languages. [Open an issue](https://gi
 - German translation: [Felix Grund](https://github.com/ataraxie)
 - Russian and Ukrainian translation: [Alexey Khromets](https://github.com/akhromets)
 - Turkish translation: [Hazar Ekinci](https://github.com/hazar-e)
+- Korean translation: [Woosuk Park](https://github.com/readingsnail)
