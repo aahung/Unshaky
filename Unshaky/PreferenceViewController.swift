@@ -36,13 +36,18 @@ class PreferenceViewController: NSViewController,
             return keyCodeToString[a]! < keyCodeToString[b]!
         }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateStatLabel), name: .counterUpdate, object: nil)
         updateStatLabel()
     }
 
     override func viewDidAppear() {
         super.viewDidAppear()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStatLabel), name: .counterUpdate, object: nil)
         view.window?.title = NSLocalizedString("Configuration Window Title", comment: "")
+    }
+
+    override func viewWillDisappear() {
+        NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear()
     }
     
     func loadPreference() {
