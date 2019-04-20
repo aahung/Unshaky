@@ -161,10 +161,10 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
             if (aggressiveMode) lastPressedTimestamps[keyCode] = currentTimestamp;
             return nil;
         }
-        float msElapsed = 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]);
+        float msElapsed;
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            && msElapsed > AUTO_EXPANSION_IGNORE_THRESHOLD
+            && (msElapsed = 1000 * (currentTimestamp - lastPressedTimestamps[keyCode])) > AUTO_EXPANSION_IGNORE_THRESHOLD
             && msElapsed < keyDelays[keyCode]) {
 
             // let it slip away if allowance is 1 for CMD+SPACE
