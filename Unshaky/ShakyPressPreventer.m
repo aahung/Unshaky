@@ -9,6 +9,7 @@
 #import "ShakyPressPreventer.h"
 
 #define AUTO_EXPANSION_IGNORE_THRESHOLD 5
+#define KEYCODE_SPACE 49
 
 @implementation ShakyPressPreventer {
     NSTimeInterval lastPressedTimestamps[N_VIRTUAL_KEY];
@@ -147,7 +148,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
         // So here we allow one double-press to slip away
 
         // reset allowance to 1
-        if (keyCode == 49 && eventFlagsAboutModifierKeys && 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]) >= keyDelays[keyCode]) {
+        if (keyCode == KEYCODE_SPACE && eventFlagsAboutModifierKeys && 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]) >= keyDelays[keyCode]) {
             cmdSpaceAllowance = YES;
         }
 
@@ -161,6 +162,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
             if (aggressiveMode) lastPressedTimestamps[keyCode] = currentTimestamp;
             return nil;
         }
+        
         float msElapsed;
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
@@ -168,7 +170,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
             && msElapsed < keyDelays[keyCode]) {
 
             // let it slip away if allowance is 1 for CMD+SPACE
-            if (keyCode == 49 && lastEventFlagsAboutModifierKeysForSpace &&
+            if (keyCode == KEYCODE_SPACE && lastEventFlagsAboutModifierKeysForSpace &&
                 eventFlagsAboutModifierKeys && workaroundForCmdSpace && cmdSpaceAllowance) {
                 cmdSpaceAllowance = NO;
             } else {
@@ -184,11 +186,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                 return nil;
             }
         }
-    } else if (keyCode == 49 && eventFlagsAboutModifierKeys) cmdSpaceAllowance = YES;
+    } else if (keyCode == KEYCODE_SPACE && eventFlagsAboutModifierKeys) cmdSpaceAllowance = YES;
 
     lastPressedTimestamps[keyCode] = currentTimestamp;
     lastPressedEventTypes[keyCode] = eventType;
-    if (keyCode == 49) lastEventFlagsAboutModifierKeysForSpace = eventFlagsAboutModifierKeys;
+    if (keyCode == KEYCODE_SPACE) lastEventFlagsAboutModifierKeysForSpace = eventFlagsAboutModifierKeys;
     
     return event;
 }
