@@ -8,6 +8,8 @@
 
 #import "ShakyPressPreventer.h"
 
+#define AUTO_EXPANSION_IGNORE_THRESHOLD 5
+
 @implementation ShakyPressPreventer {
     NSTimeInterval lastPressedTimestamps[N_VIRTUAL_KEY];
     CGEventType lastPressedEventTypes[N_VIRTUAL_KEY];
@@ -159,9 +161,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
             if (aggressiveMode) lastPressedTimestamps[keyCode] = currentTimestamp;
             return nil;
         }
+        float msElapsed = 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]);
         if (eventType == kCGEventKeyDown
             && lastPressedEventTypes[keyCode] == kCGEventKeyUp
-            && 1000 * (currentTimestamp - lastPressedTimestamps[keyCode]) < keyDelays[keyCode]) {
+            && msElapsed > AUTO_EXPANSION_IGNORE_THRESHOLD
+            && msElapsed < keyDelays[keyCode]) {
 
             // let it slip away if allowance is 1 for CMD+SPACE
             if (keyCode == 49 && lastEventFlagsAboutModifierKeysForSpace &&
