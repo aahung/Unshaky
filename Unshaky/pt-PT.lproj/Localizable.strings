@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Versão: %@";
+
+"Overall Statistic" = "%d cliques evitados";
+
+"Configuration Window Title" = "Preferências da Unshaky";
+
+"Accessibility Help" = "Para usar a Unshaky, é necessário conceder permissões de acessibilidade à aplicação. A Unshaky tentará abrir automaticamente a secção das Preferências do Sistema onde pode alterar as permissões de acessibilidade. Se a janela não for apresentada, abra manualmente as Preferências do Sistema > Segurança e Privacidade > Privacidade (separador) > Acessibilidade (barra lateral). \n\nQuando tiver esta secção aberta, adicione e selecione a Unshaky. ";
+
+"Invalid Delay" = "\"%@\" não é um intervalo de tempo válido. Por favor, digite um número inteiro.";
+
+"Paste Configuration here" = "Cole aqui a configuração";
+
+"Invalid inputs" = "Cliques inválidos";
+
+"Invalid inputs, length does not match" = "O total de cliques inválidos não corresponde";
+
+"Temporarily disabled by other software" = "Desativada temporariamente por outra aplicação";
+
+"Turn on" = "Ativar";
+
+"Turn off" = "Desativar";
