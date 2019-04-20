@@ -6,24 +6,24 @@
   Copyright © 2019 Nested Error. All rights reserved.
 */
 
-"Version" = "Version: %@";
+"Version" = "Versão: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "%d cliques evitados";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Preferências da Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Para usar a Unshaky, é necessário conceder permissões de acessibilidade à aplicação. A Unshaky tentará abrir automaticamente a secção das Preferências do Sistema onde pode alterar as permissões de acessibilidade. Se a janela não for apresentada, abra manualmente as Preferências do Sistema > Segurança e Privacidade > Privacidade (separador) > Acessibilidade (barra lateral). \n\nQuando tiver esta secção aberta, adicione e selecione a Unshaky. ";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" não é um intervalo de tempo válido. Por favor, digite um número inteiro.";
 
-"Paste Configuration here" = "Paste the configuration here";
+"Paste Configuration here" = "Cole aqui a configuração";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Cliques inválidos";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "O total de cliques inválidos não corresponde";
 
-"Temporarily disabled by other software" = "Temporarily disabled by other software";
+"Temporarily disabled by other software" = "Desativada temporariamente por outra aplicação";
 
-"Turn on" = "Turn on";
+"Turn on" = "Ativar";
 
-"Turn off" = "Turn off";
+"Turn off" = "Desativar";
