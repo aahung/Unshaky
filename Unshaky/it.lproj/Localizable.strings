@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -8,21 +8,21 @@
 
 "Version" = "Versione: %@";
 
-"Overall Statistic" = "Ignorate %d digitazioni accidentali";
+"Overall Statistic" = "%d digitazioni accidentali ignorate";
 
 "Configuration Window Title" = "Configura Unshaky";
 
-"Accessibility Help" = "Unshaky richiede permessi di accessibilità per funzionare. Adesso Unshaky tenterà di aprire tale pannello. Se non si aprirà automaticamente, devi andare in: Preferenze di Sistema -> Sicurezza e Privacy -> Privacy (scheda) -> Accessibilità (pannello a sinistra). \n\nUna volta aperto il pannello, aggiungi e seleziona Unshaky.app. ";
+"Accessibility Help" = "Unshaky richiede permessi di accessibilità per funzionare. Unshaky tenterà di aprire il pannello di assegnazione permessi. Se non accade, vai in: Preferenze di Sistema -> Sicurezza e Privacy -> Privacy (scheda) -> Accessibilità (pannello a sinistra). \n\nUna volta aperto il pannello, aggiungi e seleziona Unshaky.app. ";
 
-"Invalid Delay" = "\"%@\" non è un ritardo valido. Inserire un valore intero.";
+"Invalid Delay" = "\"%@\" non è valido. Inserire un valore intero positivo.";
 
 "Paste Configuration here" = "Incolla qui la configurazione";
 
 "Invalid inputs" = "Input non valido";
 
-"Invalid inputs, length does not match" = "Input non valido, le lunghezze non corrispondono";
+"Invalid inputs, length does not match" = "Input non valido, lunghezza errata";
 
-"Temporarily disabled by other software" = "Disabilitato temporaneamente by other software";
+"Temporarily disabled by other software" = "Temporaneamente disabilitato da altro software";
 
 "Turn on" = "Abilita";
 
