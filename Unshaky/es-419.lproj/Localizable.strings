@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Version: %@";
+
+"Overall Statistic" = "Dismissed %d shaky presses";
+
+"Configuration Window Title" = "Configure Unshaky";
+
+"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+
+"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+
+"Paste Configuration here" = "Paste the configuration here";
+
+"Invalid inputs" = "Invalid inputs";
+
+"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+
+"Temporarily disabled by other software" = "Temporarily disabled by other software";
+
+"Turn on" = "Turn on";
+
+"Turn off" = "Turn off";
