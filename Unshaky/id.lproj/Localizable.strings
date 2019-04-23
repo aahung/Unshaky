@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Versi: %@";
+
+"Overall Statistic" = "Mecegah %d ketikan ganda";
+
+"Configuration Window Title" = "Atur Unshaky";
+
+"Accessibility Help" = "Unshaky perlu mengakses izin aksesibilitas agar dapat berjalan. Unshaky akan mencoba membuka layar ini untuk anda. Jika tidak terbuka secara otomatis, anda dapat membuka Preferensi Sistem -> Keamanan & Privasi -> Privasi (Tab) -> aksesibilitas (panel kiri). \n\n Ketika panel terbuka, tambahkan dan pilih centang pada Unshaky.app.";
+
+"Invalid Delay" = "\"%@\" bukan jeda yang valid. Silahkan masukkan angka";
+
+"Paste Configuration here" = "Tempelkan pengaturan disini";
+
+"Invalid inputs" = "Masukkan tidak valid";
+
+"Invalid inputs, length does not match" = "Masukkan tidak valid, jumlah nilai tidak sesuai;
+
+"Temporarily disabled by other software" = "Dimatikan sementara oleh perangkat lunak lain";
+
+"Turn on" = "Nyalakan";
+
+"Turn off" = "Matikan";
