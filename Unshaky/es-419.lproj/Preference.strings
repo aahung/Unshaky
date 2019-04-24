@@ -1,0 +1,60 @@
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
+"3Kr-1X-5AZ.title" = "Importar";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
+"5My-Lz-UmR.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
+"BTT-FQ-Yii.title" = "Copiar";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
+"CUy-rX-LgD.title" = "Cancelar";
+
+/* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
+"Dr8-2D-to4.title" = "Exportar";
+
+/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
+"I7x-fY-0vx.title" = "Solucionar CMD+SPACE si no funciona (experimental)";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
+"IhC-d3-H6r.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
+"JiA-hI-REz.headerCell.title" = "Retraso (ms), sugerido 40";
+
+/* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
+"KI8-Ox-xeb.title" = "Configuración de Unshaky";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
+"NxQ-OB-lir.title" = "-";
+
+/* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
+"Qnt-tS-QWb.title" = "Establecer TODOS en (ms)";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
+"Vl3-75-cL7.title" = "-";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "XR7-Cp-qwZ"; */
+"XR7-Cp-qwZ.title" = "Etiqueta";
+
+/* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
+"Zqq-UB-oIK.title" = "Modo agresivo (experimental)";
+
+/* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
+"acO-QS-DTH.title" = "Pegar";
+
+/* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "asf-bP-xrf"; */
+"asf-bP-xrf.headerCell.title" = "Tecla";
+
+/* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
+"dE9-oM-Tqa.title" = "Ignorar teclado externo (experimental)";
+
+/* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
+"juW-NR-znR.title" = "Establecer";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
+"mDf-Gh-GmX.title" = "Cancelar";
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
+"yJt-he-X2q.title" = "Importar";

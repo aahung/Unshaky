@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Versión: %@";
+
+"Overall Statistic" = "Descartados %d tecleos dobles";
+
+"Configuration Window Title" = "Configurar Unshaky";
+
+"Accessibility Help" = "Unshaky necesita permisos de Accesibilidad para funcionar. Ahora, Unshaky tratará de abrir este panel para usted. Si no se abre automáticamente, tiene que ir a: Preferencias del sistema -> Seguridad & privacidad -> Privacidad (Pestaña) -> Accesibilidad (Panel izquierdo). \n\nCuando esté la ventana abierta, agregue y active la aplicación Unshaky.app. ";
+
+"Invalid Delay" = "\"%@\" no es un retraso válido. Por favor ingrese un número entero.";
+
+"Paste Configuration here" = "Pegar la configuración aquí";
+
+"Invalid inputs" = "Entradas inválidas";
+
+"Invalid inputs, length does not match" = "Entradas inválidas, la longitud no coincide";
+
+"Temporarily disabled by other software" = "Temporalmente desactivado por otro software";
+
+"Turn on" = "Activar";
+
+"Turn off" = "Desactivar";
