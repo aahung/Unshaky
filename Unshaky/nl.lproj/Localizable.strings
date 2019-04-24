@@ -1,0 +1,29 @@
+/*
+  Localizable.strings
+  Unshaky
+
+  Created by Siebrand Mazeland on 2019-04-24.
+  CC BY 4.0 Siebrand Mazeland
+*/
+
+"Version" = "Versie: %@";
+
+"Overall Statistic" = "%d shaky toetsaanslagen genegeerd";
+
+"Configuration Window Title" = "Unshaky instellingen";
+
+"Accessibility Help" = "Unshaky heeft toegankelijkheidsrechten nodig om te kunnen werken. Unshaky probeert dat venster voor u te openen. Als dat niet automatisch gebeurt, doet u het volgende: ga naar Systeemvoorkeuren -> Beveiliging en privacy -> Privacy (tabblad) -> Toegankelijkheid (paneel links).\n\nVoeg na het openen van het paneel Unshaky.app toe en vink het aan.";
+
+"Invalid Delay" = "\"%@\" is geen geldige vertraging. Voer een heel getal in.";
+
+"Paste Configuration here" = "Plak hier de instellingen";
+
+"Invalid inputs" = "Ongeldige invoer";
+
+"Invalid inputs, length does not match" = "Ongeldige invoer; de lengte klopt niet";
+
+"Temporarily disabled by other software" = "Tijdelijk uitgeschakeld door andere software";
+
+"Turn on" = "Inschakelen";
+
+"Turn off" = "Uitschakelen";
