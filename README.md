@@ -73,3 +73,4 @@ Please help to translate Unshaky into more languages. [Open an issue](https://gi
 - Portuguese (Portugal) translation: [Gonçalo Matos](https://github.com/GoncaloCdM)
 - Italian translation: [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
 - Indonesian translation: [Elmo Tanu Miharja](https://github.com/elmotan95)
+- Spanish (Latin America) translation: [jadraker](https://github.com/jadraker)
