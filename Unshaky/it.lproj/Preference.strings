@@ -15,22 +15,22 @@
 "Dr8-2D-to4.title" = "Esporta";
 
 /* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
-"I7x-fY-0vx.title" = "Ripara se CMD+SPACE non funziona (sperimentale)";
+"I7x-fY-0vx.title" = "Ripara se ⌘+SPACE non funziona (sperimentale)";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
 "IhC-d3-H6r.title" = "-";
 
 /* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
-"JiA-hI-REz.headerCell.title" = "Ritardo in ms, suggerito 40";
+"JiA-hI-REz.headerCell.title" = "Ritardo (in ms), suggerito 40";
 
 /* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
-"KI8-Ox-xeb.title" = "Preferenze di Unshaky";
+"KI8-Ox-xeb.title" = "Preferenze";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
 "NxQ-OB-lir.title" = "-";
 
 /* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
-"Qnt-tS-QWb.title" = "Imposta TUTTO a (ms)";
+"Qnt-tS-QWb.title" = "Imposta TUTTO a (espresso in ms)";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
 "Vl3-75-cL7.title" = "-";
