@@ -64,11 +64,12 @@ I don't think there is a universal delay value for all people. If you type very 
 Please help to translate Unshaky into more languages. [Open an issue](https://github.com/aahung/Unshaky/issues/new/choose) to propose a new translation if you are interested.
 
 - Main program, Chinese translation: [_sam](https://nestederror.com)
-- Japanese: forgazer (translation), [HackingGate](https://github.com/HackingGate) (proofreading)
+- Japanese: forgazer (translation), [HackingGate](https://github.com/HackingGate)
 - French translation: [xuesongTU](https://github.com/xuesongTU)
 - German translation: [Felix Grund](https://github.com/ataraxie)
 - Russian and Ukrainian translation: [Alexey Khromets](https://github.com/akhromets)
 - Turkish translation: [Hazar Ekinci](https://github.com/hazar-e)
 - Korean translation: [Woosuk Park](https://github.com/readingsnail)
 - Portuguese (Portugal) translation: [Gonçalo Matos](https://github.com/GoncaloCdM)
-- Italian translation: [valepert](https://github.com/valepert)
+- Italian translation: [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
+- Indonesian translation: [Elmo Tanu Miharja](https://github.com/elmotan95)
