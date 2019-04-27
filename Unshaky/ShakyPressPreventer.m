@@ -180,7 +180,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                 }
 
                 if (shakyPressDismissedHandler != nil) {
-                    shakyPressDismissedHandler();
+                    shakyPressDismissedHandler(keyCode);
                 }
                 dismissNextEvent[keyCode] = YES;
                 return nil;

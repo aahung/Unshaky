@@ -14,7 +14,7 @@
 
 #define N_VIRTUAL_KEY 146
 
-typedef void (^Handler)(void);
+typedef void (^Handler)(int);
 
 @interface ShakyPressPreventer : NSObject
 

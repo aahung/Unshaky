@@ -12,7 +12,14 @@ class Counter: NSObject {
     static let shared = Counter()
 
     let defaults = UserDefaults.standard
+
+    static let TOTAL_COUNT_KEY = "DISMISS_COUNT"
+    static let DETAIL_COUNT_KEY = "DISMISS_COUNT_DETAIL"
+
+    let nVirtualKey = Int(N_VIRTUAL_KEY)
+
     private var dismissCount = 0
+    private var dismissCountDetail: [Int] = [Int]()
     var statString: String {
         get {
             return String(format: NSLocalizedString("Overall Statistic", comment: ""), dismissCount)
@@ -22,12 +29,14 @@ class Counter: NSObject {
     override init() {
         super.init()
 
-        dismissCount = defaults.integer(forKey: "DISMISS_COUNT")
+        dismissCount = defaults.integer(forKey: Counter.TOTAL_COUNT_KEY)
+        dismissCountDetail = defaults.array(forKey: Counter.DETAIL_COUNT_KEY) as? [Int] ?? Array(repeating: 0, count: nVirtualKey)
         notifyObservers()
     }
 
-    func increment() {
+    func increment(keyCode: Int32) {
         dismissCount += 1
+        dismissCountDetail[Int(keyCode)] += 1
         notifyObservers()
     }
 
@@ -37,7 +46,8 @@ class Counter: NSObject {
     }
 
     func save() {
-        defaults.set(dismissCount, forKey: "DISMISS_COUNT")
+        defaults.set(dismissCount, forKey: Counter.TOTAL_COUNT_KEY)
+        defaults.set(dismissCountDetail, forKey: Counter.DETAIL_COUNT_KEY)
         defaults.synchronize()
     }
 

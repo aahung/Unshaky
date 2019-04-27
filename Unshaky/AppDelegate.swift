@@ -47,8 +47,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionMenuItem.title = String(format: NSLocalizedString("Version", comment: ""), version)
 
-        shakyPressPreventer.shakyPressDismissed {
-            Counter.shared.increment()
+        shakyPressPreventer.shakyPressDismissed { (keyCode: Int32) in
+            Counter.shared.increment(keyCode: keyCode)
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateStatLabel), name: .counterUpdate, object: nil)
