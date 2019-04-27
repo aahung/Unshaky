@@ -14,6 +14,8 @@
 		5B436148223AF6FF00B6E9E0 /* Debug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B436146223AF6FF00B6E9E0 /* Debug.storyboard */; };
 		5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43614C223B140400B6E9E0 /* DebugViewController.m */; };
 		5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50712421839D5400A65B81 /* ExportImportViewController.swift */; };
+		5B56C1FC22744DBC00F3383F /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B56C1FA22744DBC00F3383F /* Counter.storyboard */; };
+		5B56C1FE2274510000F3383F /* CounterViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56C1FD2274510000F3383F /* CounterViewControler.swift */; };
 		5B6F59742260121300889D13 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F59732260121300889D13 /* Counter.swift */; };
 		5B71184C222608B100B03575 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184A222608B100B03575 /* Preference.storyboard */; };
 		5B711851222610C400B03575 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184F222610C400B03575 /* Localizable.strings */; };
@@ -54,6 +56,8 @@
 		5B43614B223B140400B6E9E0 /* DebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
 		5B43614C223B140400B6E9E0 /* DebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
+		5B56C1FB22744DBC00F3383F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Counter.storyboard; sourceTree = "<group>"; };
+		5B56C1FD2274510000F3383F /* CounterViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewControler.swift; sourceTree = "<group>"; };
 		5B6F59732260121300889D13 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		5B6F59752260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B6F59762260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Preference.strings; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				5B3168EF20DB9CF300185DE5 /* MainMenu.xib */,
 				5B71184A222608B100B03575 /* Preference.storyboard */,
 				5B436146223AF6FF00B6E9E0 /* Debug.storyboard */,
+				5B56C1FA22744DBC00F3383F /* Counter.storyboard */,
 				5B3168F220DB9CF300185DE5 /* Info.plist */,
 				5B3168F320DB9CF300185DE5 /* Unshaky.entitlements */,
 				5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */,
@@ -171,6 +176,7 @@
 				5B6F59732260121300889D13 /* Counter.swift */,
 				5BCA730820F5B43300A1210E /* PreferenceViewController.swift */,
 				5B50712421839D5400A65B81 /* ExportImportViewController.swift */,
+				5B56C1FD2274510000F3383F /* CounterViewControler.swift */,
 				5B3168F920DB9ED300185DE5 /* Unshaky-Bridging-Header.h */,
 				5B71184F222610C400B03575 /* Localizable.strings */,
 				5B43614B223B140400B6E9E0 /* DebugViewController.h */,
@@ -320,6 +326,7 @@
 				5B711851222610C400B03575 /* Localizable.strings in Resources */,
 				5B3168F120DB9CF300185DE5 /* MainMenu.xib in Resources */,
 				5B71184C222608B100B03575 /* Preference.storyboard in Resources */,
+				5B56C1FC22744DBC00F3383F /* Counter.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +462,7 @@
 				5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */,
 				5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */,
 				5B3168EC20DB9CF100185DE5 /* AppDelegate.swift in Sources */,
+				5B56C1FE2274510000F3383F /* CounterViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +524,14 @@
 				5BF4F703226D43AA009F53B0 /* es-419 */,
 			);
 			name = Debug.storyboard;
+			sourceTree = "<group>";
+		};
+		5B56C1FA22744DBC00F3383F /* Counter.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B56C1FB22744DBC00F3383F /* Base */,
+			);
+			name = Counter.storyboard;
 			sourceTree = "<group>";
 		};
 		5B71184A222608B100B03575 /* Preference.storyboard */ = {

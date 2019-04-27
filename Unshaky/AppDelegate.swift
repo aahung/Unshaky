@@ -144,7 +144,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         preferenceWindowController.showWindow(self)
         NSApp.activate(ignoringOtherApps: true)
     }
-    
+
+    //
+    // Counter
+    //
+    var counterWindowController: NSWindowController!
+    @IBAction func statClicked(_ sender: Any) {
+        let counterPanelStoryboard = NSStoryboard(name: "Counter", bundle: nil)
+        counterWindowController = (counterPanelStoryboard.instantiateController(withIdentifier: "Counter") as! NSWindowController)
+        counterWindowController.showWindow(self)
+        NSApp.activate(ignoringOtherApps: true)
+    }
 }
 
 extension AppDelegate: NSWindowDelegate {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -23,8 +23,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="WVM-FA-xFs">
             <items>
-                <menuItem title="-" enabled="NO" id="sJ6-3Q-q9Z">
+                <menuItem title="-" id="sJ6-3Q-q9Z">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="statClicked:" target="Voe-Tx-rLC" id="1L2-Dh-9vE"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Open debug window" id="Iv3-MX-v73">
                     <modifierMask key="keyEquivalentModifierMask"/>
