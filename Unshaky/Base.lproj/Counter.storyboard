@@ -54,7 +54,7 @@
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p2B-ix-PTn">
                                         <rect key="frame" x="22" y="1" width="260" height="14"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="7Iz-QE-8qd">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" id="7Iz-QE-8qd">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

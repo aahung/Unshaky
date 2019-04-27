@@ -58,6 +58,9 @@
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
 		5B56C1FB22744DBC00F3383F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Counter.storyboard; sourceTree = "<group>"; };
 		5B56C1FD2274510000F3383F /* CounterViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewControler.swift; sourceTree = "<group>"; };
+		5B56C20222745AC000F3383F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Counter.strings"; sourceTree = "<group>"; };
+		5B56C20422745B0A00F3383F /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Counter.strings"; sourceTree = "<group>"; };
+		5B56C20622745B0B00F3383F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Counter.strings"; sourceTree = "<group>"; };
 		5B6F59732260121300889D13 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		5B6F59752260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B6F59762260177E00889D13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Preference.strings; sourceTree = "<group>"; };
@@ -530,6 +533,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B56C1FB22744DBC00F3383F /* Base */,
+				5B56C20222745AC000F3383F /* zh-Hans */,
+				5B56C20422745B0A00F3383F /* zh-HK */,
+				5B56C20622745B0B00F3383F /* zh-Hant */,
 			);
 			name = Counter.storyboard;
 			sourceTree = "<group>";
