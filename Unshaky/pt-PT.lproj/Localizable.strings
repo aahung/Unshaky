@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -16,7 +16,7 @@
 
 "Invalid Delay" = "\"%@\" não é um intervalo de tempo válido. Por favor, digite um número inteiro.";
 
-"Paste Configuration here" = "Cole aqui a configuração";
+"Paste the configuration here" = "Cole aqui a configuração";
 
 "Invalid inputs" = "Cliques inválidos";
 

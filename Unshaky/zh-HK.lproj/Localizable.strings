@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -16,7 +16,7 @@
 
 "Invalid Delay" = "\"%@\" 不是一個有效的延遲，請輸入一個整數。";
 
-"Paste Configuration here" = "把設置粘貼在這裏";
+"Paste the configuration here" = "把設置粘貼在這裏";
 
 "Invalid inputs" = "無效的輸入。";
 

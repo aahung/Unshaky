@@ -16,7 +16,7 @@
 
 "Invalid Delay" = "\"%@\" не є коректним значенням затримки. Будь ласка, введіть ціле число.";
 
-"Paste Configuration here" = "Вставте конфігурацію сюди";
+"Paste the configuration here" = "Вставте конфігурацію сюди";
 
 "Invalid inputs" = "Некоректні дані";
 

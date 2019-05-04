@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -16,7 +16,7 @@
 
 "Invalid Delay" = "\"%@\" geçerli bir gecikme değil. Lütfen bir tamsayı giriniz.";
 
-"Paste Configuration here" = "Yapılandırmayı buraya yapıştır";
+"Paste the configuration here" = "Yapılandırmayı buraya yapıştır";
 
 "Invalid inputs" = "Geçersiz girdiler";
 
