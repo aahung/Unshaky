@@ -43,6 +43,7 @@
 		5B229352227D6A0E00266B84 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Preference.strings; sourceTree = "<group>"; };
 		5B229353227D6A0E00266B84 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Debug.strings; sourceTree = "<group>"; };
 		5B229354227D6A1400266B84 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B229355227D6F2400266B84 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Counter.strings; sourceTree = "<group>"; };
 		5B3168E820DB9CF100185DE5 /* Unshaky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unshaky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3168EB20DB9CF100185DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B3168ED20DB9CF300185DE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -543,6 +544,7 @@
 				5B56C20222745AC000F3383F /* zh-Hans */,
 				5B56C20422745B0A00F3383F /* zh-HK */,
 				5B56C20622745B0B00F3383F /* zh-Hant */,
+				5B229355227D6F2400266B84 /* nl */,
 			);
 			name = Counter.storyboard;
 			sourceTree = "<group>";
