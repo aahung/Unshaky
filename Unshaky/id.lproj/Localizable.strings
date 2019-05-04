@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -16,7 +16,7 @@
 
 "Invalid Delay" = "\"%@\" bukan jeda yang valid. Silahkan masukkan angka";
 
-"Paste Configuration here" = "Tempelkan pengaturan disini";
+"Paste the configuration here" = "Tempelkan pengaturan disini";
 
 "Invalid inputs" = "Masukkan tidak valid";
 

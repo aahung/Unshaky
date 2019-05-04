@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Unshaky
 
@@ -16,7 +16,7 @@
 
 "Invalid Delay" = "\"%@\" ist keine gültige Verzögerung. Bitte geben Sie eine Zahl ein.";
 
-"Paste Configuration here" = "Konfiguration hier einfügen";
+"Paste the configuration here" = "Konfiguration hier einfügen";
 
 "Invalid inputs" = "Invalide Eingaben";
 
