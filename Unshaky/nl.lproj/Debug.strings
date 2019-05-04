@@ -1,13 +1,6 @@
-/*
-  Debug.strings
-  Unshaky
-
-  Created by Siebrand Mazeland on 2019-04-24.
-  CC BY 4.0 Siebrand Mazeland
-*/
 
 /* Class = "NSButtonCell"; title = "Clear"; ObjectID = "0R5-gZ-Fp4"; */
-"0R5-gZ-Fp4.title" = "Annuleren";
+"0R5-gZ-Fp4.title" = "Clear";
 
 /* Class = "NSButtonCell"; title = "Copy"; ObjectID = "GtH-xA-uyU"; */
-"GtH-xA-uyU.title" = "Kopiëren";
+"GtH-xA-uyU.title" = "Copy";
