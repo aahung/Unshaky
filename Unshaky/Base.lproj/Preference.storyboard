@@ -167,7 +167,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-6U-DVj">
-                                                <rect key="frame" x="90" y="2" width="299" height="16"/>
+                                                <rect key="frame" x="90" y="2" width="296" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Xe6-LV-3Se">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="J1t-Zg-ksZ"/>
                                                     <font key="font" metaFont="miniSystem"/>
@@ -176,10 +176,10 @@
                                                 </textFieldCell>
                                             </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X88-XW-4rD">
-                                                <rect key="frame" x="391" y="-7" width="55" height="32"/>
+                                                <rect key="frame" x="388" y="-7" width="58" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="juW-NR-znR">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="miniSystem"/>
+                                                    <font key="font" metaFont="smallSystem"/>
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="setAllDelays:" target="3EX-qe-haT" id="BOb-pB-nbT"/>
