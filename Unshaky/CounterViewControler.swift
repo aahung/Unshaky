@@ -12,16 +12,10 @@ class CounterViewControler: NSViewController, NSTableViewDelegate, NSTableViewDa
 
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var statLabel: NSTextField!
-    
-    var keyCodeToString = [Int: String]()
+
     var keyCounters = [Counter.KeyCounter]()
 
     override func viewDidLoad() {
-        // sync ShakyPressPreventer.keyCodeToString to keyCodeToString
-        for entry in ShakyPressPreventer.keyCodeToString {
-            keyCodeToString[entry.key.intValue] = entry.value
-        }
-
         super.viewDidLoad()
 
         updateCounters()
@@ -38,7 +32,7 @@ class CounterViewControler: NSViewController, NSTableViewDelegate, NSTableViewDa
     }
 
     func loadKeyCounters() {
-        keyCounters = Counter.shared.keyCounters.filter { keyCodeToString[$0.keyCode] != nil }
+        keyCounters = Counter.shared.keyCounters.filter { KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: $0.keyCode)] != nil }
     }
 
     // MARK: NSTableViewDataSource
@@ -50,7 +44,7 @@ class CounterViewControler: NSViewController, NSTableViewDelegate, NSTableViewDa
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         let keyCounter = keyCounters[row]
         if (tableColumn?.identifier)!.rawValue == "key" {
-            return keyCodeToString[keyCounter.keyCode]!
+            return KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: keyCounter.keyCode)]!
         }
         if (tableColumn?.identifier)!.rawValue == "delay" {
             return "\(keyCounter.count)"

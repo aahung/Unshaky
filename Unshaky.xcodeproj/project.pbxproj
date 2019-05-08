@@ -21,6 +21,7 @@
 		5B711851222610C400B03575 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184F222610C400B03575 /* Localizable.strings */; };
 		5BB68E1E21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */; };
 		5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA730820F5B43300A1210E /* PreferenceViewController.swift */; };
+		5BE661592283726B00B2A886 /* KeyboardLayouts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE661582283726B00B2A886 /* KeyboardLayouts.m */; };
 		5DDFCCEF1C53414916147497 /* Pods_UnshakyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C30C977EAB3365268D080 /* Pods_UnshakyTests.framework */; };
 		8A8865A9A724FA97AF9FE132 /* Pods_Unshaky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210D714B742F537687136CC /* Pods_Unshaky.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,8 @@
 		5BB68E1721A3413900CAA4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyPressPreventerSpec.swift; sourceTree = "<group>"; };
 		5BCA730820F5B43300A1210E /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		5BE661572283726B00B2A886 /* KeyboardLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardLayouts.h; sourceTree = "<group>"; };
+		5BE661582283726B00B2A886 /* KeyboardLayouts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardLayouts.m; sourceTree = "<group>"; };
 		5BF4F6FC226D4296009F53B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Debug.strings"; sourceTree = "<group>"; };
 		5BF4F6FD226D429A009F53B0 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Debug.strings"; sourceTree = "<group>"; };
 		5BF4F6FE226D429C009F53B0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Debug.strings"; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				5B71184F222610C400B03575 /* Localizable.strings */,
 				5B43614B223B140400B6E9E0 /* DebugViewController.h */,
 				5B43614C223B140400B6E9E0 /* DebugViewController.m */,
+				5BE661572283726B00B2A886 /* KeyboardLayouts.h */,
+				5BE661582283726B00B2A886 /* KeyboardLayouts.m */,
 			);
 			path = Unshaky;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				5B43614D223B140400B6E9E0 /* DebugViewController.m in Sources */,
 				5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */,
 				5B3168EC20DB9CF100185DE5 /* AppDelegate.swift in Sources */,
+				5BE661592283726B00B2A886 /* KeyboardLayouts.m in Sources */,
 				5B56C1FE2274510000F3383F /* CounterViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

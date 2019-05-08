@@ -8,6 +8,7 @@
 
 #import "DebugViewController.h"
 #import "ShakyPressPreventer.h"
+#import "KeyboardLayouts.h"
 
 @interface DebugViewController ()
 
@@ -42,7 +43,7 @@
                          eventType:(CGEventType)eventType
        eventFlagsAboutModifierKeys:(CGEventFlags)eventFlagsAboutModifierKeys
                              delay:(int)delay {
-    NSDictionary<NSNumber *, NSString *> *keyCodeToString = [ShakyPressPreventer keyCodeToString];
+    NSDictionary<NSNumber *, NSString *> *keyCodeToString = [[KeyboardLayouts shared] keyCodeToString];
     NSString *keyDescription = keyCodeToString[[[NSNumber alloc] initWithInt:keyCode]];
     if (keyDescription == nil) keyDescription = @"Unknown";
     NSString *eventString = [NSString stringWithFormat:@"%f Key(%3lld|%3d|%14s|%10llu|%3d) E(%u)",

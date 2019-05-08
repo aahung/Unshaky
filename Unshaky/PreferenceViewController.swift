@@ -13,26 +13,24 @@ class PreferenceViewController: NSViewController,
                                 NSTableViewDelegate {
 
     @IBOutlet weak var tableView: NSTableView!
-    
+    @IBOutlet weak var keyboardLayoutsSelect: NSPopUpButton!
+
     let defaults = UserDefaults.standard
     var delays: [Int]!
     var keyCodes: [Int]!
     let nVirtualKey = Int(N_VIRTUAL_KEY)
-    var keyCodeToString = [Int: String]()
     
     override func viewDidLoad() {
+        keyboardLayoutsSelect.removeAllItems()
+        keyboardLayoutsSelect.addItems(withTitles: KeyboardLayouts.availableKeyboardLayouts());
+
         loadPreference()
         super.viewDidLoad()
 
-        // sync ShakyPressPreventer.keyCodeToString to keyCodeToString
-        for entry in ShakyPressPreventer.keyCodeToString {
-            keyCodeToString[entry.key.intValue] = entry.value
-        }
-
         keyCodes = Array(0..<nVirtualKey).filter({ (i) -> Bool in
-            return keyCodeToString[i] != nil
+            return KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: i)] != nil
         }).sorted { (a, b) -> Bool in
-            return keyCodeToString[a]! < keyCodeToString[b]!
+            return KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: a)]! < KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: b)]!
         }
     }
 
@@ -61,7 +59,7 @@ class PreferenceViewController: NSViewController,
     // MARK: NSTableViewDelegate
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         if (tableColumn?.identifier)!.rawValue == "key" {
-            guard let keyString = keyCodeToString[keyCodes[row]] else {
+            guard let keyString = KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: keyCodes[row])] else {
                 return "UNDEFINED KEY"
             }
             return keyString
@@ -99,6 +97,14 @@ class PreferenceViewController: NSViewController,
         if let url = URL(string: "https://github.com/aahung/Unshaky/wiki/Aggressive-mode") {
             NSWorkspace.shared.open(url)
         }
+    }
+    
+    @IBAction func keyboardLayoutChanged(_ sender: Any) {
+        guard let selectedTitle = keyboardLayoutsSelect.selectedItem?.title else {
+            return
+        }
+        KeyboardLayouts.shared().setKeyboardLayout(selectedTitle)
+        tableView.reloadData()
     }
 
     @IBOutlet weak var delayAllTextField: NSTextField!
