@@ -53,7 +53,7 @@
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn identifier="key" editable="NO" width="116" minWidth="40" maxWidth="1000" id="asf-bP-xrf">
+                                                        <tableColumn identifier="key" editable="NO" width="160" minWidth="160" maxWidth="1000" id="asf-bP-xrf">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Key">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
