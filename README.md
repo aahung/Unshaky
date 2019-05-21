@@ -76,3 +76,4 @@ Please help to translate Unshaky into more languages. [Open an issue](https://gi
 - Italian translation: [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
 - Indonesian translation: [Elmo Tanu Miharja](https://github.com/elmotan95)
 - Spanish (Latin America) translation: [jadraker](https://github.com/jadraker)
+- Dutch translation: [Siebrand Mazeland](https://github.com/siebrand) and [Zandor Smith](https://github.com/Zandor300)
