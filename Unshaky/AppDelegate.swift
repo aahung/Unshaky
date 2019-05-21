@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func updateStatLabel() {
-        dismissShakyPressCountMenuItem.title = Counter.shared.statString
+        dismissShakyPressCountMenuItem.title = "☚ \(Counter.shared.statString)..."
     }
 
     @IBAction func quitClicked(_ sender: Any) {
