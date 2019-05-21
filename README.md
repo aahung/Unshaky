@@ -10,6 +10,7 @@ Apple made it difficult to replace only the keyboard and it costs hundreds of do
 ![How Unshaky works](README/how-unshaky-works.png)
 
 [June 2018] Good news, Apple launched a [Keyboard Service Program for MacBook and MacBook Pro](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/), and go get your keyboard fixed, maybe temporarily.
+[May 2019] Apple extends [the service program](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/) to cover all MacBook (Air & Pro) with 3rd gen butterfly keyboards.
 
 ## Complaints about this issue
 
