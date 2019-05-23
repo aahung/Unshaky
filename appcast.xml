@@ -122,5 +122,19 @@
                 type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
+        <item>
+            <title>Version 0.5.4</title>
+            <pubDate>Thu, 23 May 2019 15:03:00 -0700</pubDate>
+            <sparkle:releaseNotesLink>
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.5.4
+            </sparkle:releaseNotesLink>
+            <enclosure
+                url="https://github.com/aahung/Unshaky/releases/download/v0.5.4/Unshaky_v0.5.4.zip"
+                sparkle:version="40"
+                sparkle:shortVersionString="0.5.4"
+                length="5256066"
+                type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
