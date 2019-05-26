@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define KL_RU "Russian (experimental)"
 #define KL_ABC_QWERTZ "ABC - QWERTZ (experimental)"
 #define KL_ABC_AZERTY "ABC - AZERTY (experimental)"
+#define KL_TURKISH_Q "Turkish Q (experimental)"
 
 @interface KeyboardLayouts : NSObject
 

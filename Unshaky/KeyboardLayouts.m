@@ -26,7 +26,8 @@
              @KL_US,
              @KL_RU,
              @KL_ABC_QWERTZ,
-             @KL_ABC_AZERTY
+             @KL_ABC_AZERTY,
+             @KL_TURKISH_Q
              ];
 }
 
@@ -53,6 +54,8 @@
         overwrite = KeyboardLayouts.ABC_QWERTZ;
     } else if ([keyboardLayout isEqualToString:@KL_ABC_AZERTY]) {
         overwrite = KeyboardLayouts.ABC_AZERTY;
+    } else if ([keyboardLayout isEqualToString:@KL_TURKISH_Q]) {
+        overwrite = KeyboardLayouts.TURKISH_Q;
     }
     if (overwrite != nil) {
         for (id key in overwrite) {
@@ -280,6 +283,22 @@
              @25: @"ç", // <-> 9
              @50: @"<", // <-> Grave `
              @27: @")", // <-> Minus -
+             @24: @"-", // <-> Equals =
+             };
+}
+
++(NSDictionary<NSNumber *, NSString *> *)TURKISH_Q {
+    return @{
+             @33: @"Ğ", // <-> LeftBracket [
+             @30: @"Ü", // <-> RightBracket ]
+             @42: @",", // <-> Backslash
+             @43: @"Ö", // <-> Comma ,
+             @47: @"Ç", // <-> Period .
+             @44: @".", // <-> Slash /
+             @41: @"Ş", // <-> Semicolon ;
+             @39: @"İ", // <-> Quote '
+             @50: @"<", // <-> Grave `
+             @27: @"*", // <-> Minus -
              @24: @"-", // <-> Equals =
              };
 }
