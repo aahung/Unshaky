@@ -63,17 +63,17 @@ I don't think there is a universal delay value for all people. If you type very 
 
 ## Contributors
 
-Please help to translate Unshaky into more languages. [Open an issue](https://github.com/aahung/Unshaky/issues/new/choose) to propose a new translation if you are interested.
+Please help to translate Unshaky into more languages. [Open an issue](https://github.com/aahung/Unshaky/issues/new/choose) to propose one if you are interested.
 
-- Main program, Chinese translation: [_sam](https://nestederror.com)
-- Japanese: forgazer (translation), [HackingGate](https://github.com/HackingGate)
-- French translation: [xuesongTU](https://github.com/xuesongTU)
-- German translation: [Felix Grund](https://github.com/ataraxie)
-- Russian and Ukrainian translation: [Alexey Khromets](https://github.com/akhromets)
-- Turkish translation: [Hazar Ekinci](https://github.com/hazar-e)
-- Korean translation: [Woosuk Park](https://github.com/readingsnail)
-- Portuguese (Portugal) translation: [Gonçalo Matos](https://github.com/GoncaloCdM)
-- Italian translation: [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
-- Indonesian translation: [Elmo Tanu Miharja](https://github.com/elmotan95)
-- Spanish (Latin America) translation: [jadraker](https://github.com/jadraker)
-- Dutch translation: [Siebrand Mazeland](https://github.com/siebrand) and [Zandor Smith](https://github.com/Zandor300)
+- Main program, Chinese localization: [_sam](https://nestederror.com)
+- Japanese: forgazer (localization), [HackingGate](https://github.com/HackingGate)
+- French localization: [xuesongTU](https://github.com/xuesongTU)
+- German localization: [Felix Grund](https://github.com/ataraxie)
+- Russian and Ukrainian localization: [Alexey Khromets](https://github.com/akhromets)
+- Turkish localization: [Hazar Ekinci](https://github.com/hazar-e)
+- Korean localization: [Woosuk Park](https://github.com/readingsnail)
+- Portuguese (Portugal) localization: [Gonçalo Matos](https://github.com/GoncaloCdM)
+- Italian localization: [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
+- Indonesian localization: [Elmo Tanu Miharja](https://github.com/elmotan95)
+- Spanish (Latin America) localization: [jadraker](https://github.com/jadraker)
+- Dutch localization: [Siebrand Mazeland](https://github.com/siebrand) and [Zandor Smith](https://github.com/Zandor300)
