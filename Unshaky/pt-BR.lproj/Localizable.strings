@@ -6,24 +6,24 @@
   Copyright © 2019 Nested Error. All rights reserved.
 */
 
-"Version" = "Version: %@";
+"Version" = "Versão: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "%d apertos de tecla ignorados";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Configurar Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky requer permissão de acessibilidade para funcionar. Unshaky tentará abrir esse painel agora. Se ele não abrir automaticamente, navegue para: Configurações do Sistema -> Segurança & Privacidade -> Privacidade (Aba) -> Acessibilidade (Painel esquerdo). \n\nQuando abrir o painel, adicione e marque o item Unshaky.app. ";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" não é um atraso válido. Por favor coloque um valor inteiro.";
 
-"Paste the configuration here" = "Paste the configuration here";
+"Paste the configuration here" = "Cole a configuração aqui";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Entradas inválidas";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Entradas inválidas, tamanho incorreto";
 
-"Temporarily disabled by other software" = "Temporarily disabled by other software";
+"Temporarily disabled by other software" = "Temporariamente desligado por outro software";
 
-"Turn on" = "Turn on";
+"Turn on" = "Ligar";
 
-"Turn off" = "Turn off";
+"Turn off" = "Desligar";
