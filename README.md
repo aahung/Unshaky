@@ -77,3 +77,4 @@ Please help to translate Unshaky into more languages. [Open an issue](https://gi
 - Indonesian localization: [Elmo Tanu Miharja](https://github.com/elmotan95)
 - Spanish (Latin America) localization: [jadraker](https://github.com/jadraker)
 - Dutch localization: [Siebrand Mazeland](https://github.com/siebrand) and [Zandor Smith](https://github.com/Zandor300)
+- Portuguese (Brazil) localization: [Délisson Junio](https://github.com/delissonjunio)
