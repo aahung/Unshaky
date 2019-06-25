@@ -61,20 +61,27 @@ Click Unshaky icon in the menu bar and select "Configure" to configure delays fo
 
 I don't think there is a universal delay value for all people. If you type very fast, you might want to have a shorter delay. I use 40 ms since I am a fast typer. With a long delay, I cannot type "apple" because the second "p" is likely to be blocked. Some users found 60 ms a sweet spot and some have no issue with 80 ms. My suggestion is to start with a short delay (like 40 ms) and gradually increase it.
 
-## Contributors
+## Community Localization Contributors
 
-Please help to translate Unshaky into more languages. [Open an issue](https://github.com/aahung/Unshaky/issues/new/choose) to propose one if you are interested.
+If you can help translate Unshaky into more languages, [open an issue here](https://github.com/aahung/Unshaky/issues/new/choose) so I can prepare related files for translation.
 
-- Main program, Chinese localization: [_sam](https://nestederror.com)
-- Japanese: forgazer (localization), [HackingGate](https://github.com/HackingGate)
-- French localization: [xuesongTU](https://github.com/xuesongTU)
-- German localization: [Felix Grund](https://github.com/ataraxie)
-- Russian and Ukrainian localization: [Alexey Khromets](https://github.com/akhromets)
-- Turkish localization: [Hazar Ekinci](https://github.com/hazar-e)
-- Korean localization: [Woosuk Park](https://github.com/readingsnail)
-- Portuguese (Portugal) localization: [Gonçalo Matos](https://github.com/GoncaloCdM)
-- Italian localization: [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
-- Indonesian localization: [Elmo Tanu Miharja](https://github.com/elmotan95)
-- Spanish (Latin America) localization: [jadraker](https://github.com/jadraker)
-- Dutch localization: [Siebrand Mazeland](https://github.com/siebrand) and [Zandor Smith](https://github.com/Zandor300)
-- Portuguese (Brazil) localization: [Délisson Junio](https://github.com/delissonjunio)
+Your contributions are valuable and make Unshaky accessible to more users.
+
+**Big _Thank You_ to these community contributors who provide translations.**
+
+| Language | Contributors |
+| -------- | ------------ |
+| Chinese  | [_sam](https://nestederror.com) |
+| Japanese | forgazer, [HackingGate](https://github.com/HackingGate) |
+| French | [xuesongTU](https://github.com/xuesongTU) |
+| German | [Felix Grund](https://github.com/ataraxie) |
+| Russian | [Alexey Khromets](https://github.com/akhromets) |
+| Ukrainian | [Alexey Khromets](https://github.com/akhromets) |
+| Turkish | [Hazar Ekinci](https://github.com/hazar-e) |
+| Korean | [Woosuk Park](https://github.com/readingsnail) |
+| Portuguese (Portugal) | [Gonçalo Matos](https://github.com/GoncaloCdM) |
+| Italian | [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
+| Indonesian | [Elmo Tanu Miharja](https://github.com/elmotan95)
+| Spanish (Latin America) | [jadraker](https://github.com/jadraker) |
+| Dutch | [Siebrand Mazeland](https://github.com/siebrand), [Zandor Smith](https://github.com/Zandor300)
+| Portuguese (Brazil) | [Délisson Junio](https://github.com/delissonjunio) |
