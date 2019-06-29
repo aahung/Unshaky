@@ -6,24 +6,24 @@
   Copyright © 2019 Nested Error. All rights reserved.
 */
 
-"Version" = "Version: %@";
+"Version" = "Versjon: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "Forhindret %d shaky trykk";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Konfigurer Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky trenger tilgjengelighetstillatelse for å fungere, og vil nå forsøke å åpne dette panelet for deg. Dersom det ikke åpnes automatisk, gå til: Systemvalg -> Sikkerhet og personvern -> Personvern (tab) -> Tilgjengelighet (venstre panel). \n\nNår du har panelet åpent, legg til og huk av Unshaky.app. ";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" er ikke en gyldig forsinkelse. Vennligst oppgi en heltallsverdi.";
 
-"Paste the configuration here" = "Paste the configuration here";
+"Paste the configuration here" = "Lim inn konfigurasjonen her";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Ugyldige inndata";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Ugyldig inndata, lengde stemmer ikke";
 
-"Temporarily disabled by other software" = "Temporarily disabled by other software";
+"Temporarily disabled by other software" = "Midlertidig deaktivert av annen programvare";
 
-"Turn on" = "Turn on";
+"Turn on" = "Skru på";
 
-"Turn off" = "Turn off";
+"Turn off" = "Skru av";
