@@ -62,6 +62,11 @@
 		5B43614B223B140400B6E9E0 /* DebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
 		5B43614C223B140400B6E9E0 /* DebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		5B50712421839D5400A65B81 /* ExportImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportViewController.swift; sourceTree = "<group>"; };
+		5B54A49B22B489AD00DAB2E1 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5B54A49C22B489AD00DAB2E1 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Preference.strings; sourceTree = "<group>"; };
+		5B54A49D22B489AD00DAB2E1 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Debug.strings; sourceTree = "<group>"; };
+		5B54A49E22B489AD00DAB2E1 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Counter.strings; sourceTree = "<group>"; };
+		5B54A49F22B489AD00DAB2E1 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B56C1FB22744DBC00F3383F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Counter.storyboard; sourceTree = "<group>"; };
 		5B56C1FD2274510000F3383F /* CounterViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewControler.swift; sourceTree = "<group>"; };
 		5B56C20222745AC000F3383F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Counter.strings"; sourceTree = "<group>"; };
@@ -323,6 +328,7 @@
 				id,
 				"es-419",
 				nl,
+				nb,
 				"pt-BR",
 			);
 			mainGroup = 5B3168DF20DB9CF100185DE5;
@@ -525,6 +531,7 @@
 				5BF4F704226D91F9009F53B0 /* id */,
 				5BF4F701226D43AA009F53B0 /* es-419 */,
 				5B229351227D6A0E00266B84 /* nl */,
+				5B54A49B22B489AD00DAB2E1 /* nb */,
 				5BD2D6EC22B81CFC00FD5E52 /* pt-BR */,
 			);
 			name = MainMenu.xib;
@@ -546,6 +553,7 @@
 				5BF4F706226D91F9009F53B0 /* id */,
 				5BF4F703226D43AA009F53B0 /* es-419 */,
 				5B229353227D6A0E00266B84 /* nl */,
+				5B54A49D22B489AD00DAB2E1 /* nb */,
 				5BD2D6EE22B81CFC00FD5E52 /* pt-BR */,
 			);
 			name = Debug.storyboard;
@@ -559,6 +567,7 @@
 				5B56C20422745B0A00F3383F /* zh-HK */,
 				5B56C20622745B0B00F3383F /* zh-Hant */,
 				5B229355227D6F2400266B84 /* nl */,
+				5B54A49E22B489AD00DAB2E1 /* nb */,
 				5BD2D6EF22B81CFC00FD5E52 /* pt-BR */,
 			);
 			name = Counter.storyboard;
@@ -583,6 +592,7 @@
 				5BF4F705226D91F9009F53B0 /* id */,
 				5BF4F702226D43AA009F53B0 /* es-419 */,
 				5B229352227D6A0E00266B84 /* nl */,
+				5B54A49C22B489AD00DAB2E1 /* nb */,
 				5BD2D6ED22B81CFC00FD5E52 /* pt-BR */,
 			);
 			name = Preference.storyboard;
@@ -607,6 +617,7 @@
 				5BF4F707226D91F9009F53B0 /* id */,
 				5BF4F700226D43AA009F53B0 /* es-419 */,
 				5B229354227D6A1400266B84 /* nl */,
+				5B54A49F22B489AD00DAB2E1 /* nb */,
 				5BD2D6F022B81CFC00FD5E52 /* pt-BR */,
 			);
 			name = Localizable.strings;

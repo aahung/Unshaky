@@ -1,0 +1,29 @@
+/*
+  Localizable.strings
+  Unshaky
+
+  Created by Xinhong LIU on 2/26/19.
+  Copyright © 2019 Nested Error. All rights reserved.
+*/
+
+"Version" = "Versjon: %@";
+
+"Overall Statistic" = "Forhindret %d shaky trykk";
+
+"Configuration Window Title" = "Konfigurer Unshaky";
+
+"Accessibility Help" = "Unshaky trenger tilgjengelighetstillatelse for å fungere, og vil nå forsøke å åpne dette panelet for deg. Dersom det ikke åpnes automatisk, gå til: Systemvalg -> Sikkerhet og personvern -> Personvern (tab) -> Tilgjengelighet (venstre panel). \n\nNår du har panelet åpent, legg til og huk av Unshaky.app. ";
+
+"Invalid Delay" = "\"%@\" er ikke en gyldig forsinkelse. Vennligst oppgi en heltallsverdi.";
+
+"Paste the configuration here" = "Lim inn konfigurasjonen her";
+
+"Invalid inputs" = "Ugyldige inndata";
+
+"Invalid inputs, length does not match" = "Ugyldig inndata, lengde stemmer ikke";
+
+"Temporarily disabled by other software" = "Midlertidig deaktivert av annen programvare";
+
+"Turn on" = "Skru på";
+
+"Turn off" = "Skru av";

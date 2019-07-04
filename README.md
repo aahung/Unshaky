@@ -85,3 +85,4 @@ Your contributions are valuable and make Unshaky accessible to more users.
 | Spanish (Latin America) | [jadraker](https://github.com/jadraker) |
 | Dutch | [Siebrand Mazeland](https://github.com/siebrand), [Zandor Smith](https://github.com/Zandor300)
 | Portuguese (Brazil) | [Délisson Junio](https://github.com/delissonjunio) |
+| Norwegian | [Runar Skaare Tveiten](https://github.com/runar) |
