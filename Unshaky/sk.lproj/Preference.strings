@@ -1,0 +1,66 @@
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
+"3Kr-1X-5AZ.title" = "Import";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
+"5My-Lz-UmR.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
+"BTT-FQ-Yii.title" = "Kopírovať";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
+"CUy-rX-LgD.title" = "Zrušiť";
+
+/* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
+"Dr8-2D-to4.title" = "Export";
+
+/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
+"I7x-fY-0vx.title" = "Opraviť nefunkčnú kombináciu CMD+SPACE (experimentálne)";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
+"IhC-d3-H6r.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
+"JiA-hI-REz.headerCell.title" = "Oneskorenie (ms), odporúčané 40";
+
+/* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
+"KI8-Ox-xeb.title" = "Unshaky nastavenie";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
+"NxQ-OB-lir.title" = "-";
+
+/* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
+"Qnt-tS-QWb.title" = "Nastaviť VŠETKO na (ms)";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "VCg-rU-JrG"; */
+"VCg-rU-JrG.title" = "Položka 3";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
+"Vl3-75-cL7.title" = "-";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "WY9-It-Jdo"; */
+"WY9-It-Jdo.title" = "Položka 1";
+
+/* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
+"Zqq-UB-oIK.title" = "Agresívny režim (experimentalní)";
+
+/* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
+"acO-QS-DTH.title" = "Vložiť";
+
+/* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "asf-bP-xrf"; */
+"asf-bP-xrf.headerCell.title" = "Klávesa";
+
+/* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
+"dE9-oM-Tqa.title" = "Ignorovať externú klávesnicu (experimentálne)";
+
+/* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
+"juW-NR-znR.title" = "Nastaviť";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
+"mDf-Gh-GmX.title" = "Zrušiť";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "psD-gB-aHV"; */
+"psD-gB-aHV.title" = "Položka 2";
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
+"yJt-he-X2q.title" = "Import";
