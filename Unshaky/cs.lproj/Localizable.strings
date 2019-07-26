@@ -6,24 +6,24 @@
   Copyright © 2019 Nested Error. All rights reserved.
 */
 
-"Version" = "Version: %@";
+"Version" = "Verze: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "Zabráněno %d proklikům";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Nastavení Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky vyžaduje ke své funkčnosti funkce Zpřístupnění. Aplikace se pokusí otevřít panel s nastavením. Pokud se neotevře automaticky, otevřete aplikaci Předvolby systému -> Zabezpečení a soukromí -> Soukromí (panel) -> Zpřístupnění (levý sloupec).\n\nPo otevření panelu přidejte aplikaci Unshaky.app do seznamu a zaškrtněte.";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "\"%@\" není platná hodnota prodlevy. Zadejte prosím celočíselnou hodnotu.";
 
-"Paste the configuration here" = "Paste the configuration here";
+"Paste the configuration here" = "Zde vložte konfiguraci";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Neplatný vstup";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Neplatný vstup, délka neodpovídá";
 
-"Temporarily disabled by other software" = "Temporarily disabled by other software";
+"Temporarily disabled by other software" = "Dočasně blokováno jiným programem";
 
-"Turn on" = "Turn on";
+"Turn on" = "Zapnout";
 
-"Turn off" = "Turn off";
+"Turn off" = "Vypnout";
