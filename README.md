@@ -1,7 +1,7 @@
-# Unshaky
+# <img src="README/logo.web.png" alt="Unshaky" height="40"> Unshaky
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JLLGBFQKTTX9W&source=url) [![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases) [![Build Status](https://travis-ci.org/aahung/Unshaky.svg?branch=master)](https://travis-ci.org/aahung/Unshaky)
 
-<img src="https://raw.githubusercontent.com/aahung/Unshaky/master/README/menubar.png" alt="Menubar" height="250">
+<img src="README/menubar.png" alt="Menubar" height="250">
 
 **Unshaky** tries to address an issue on the butterfly keyboard (Macbook, Macbook Air 2018 & MacBook Pro 2016 and later): Double Key Press (See "[User complaints](#complaints-about-this-issue)" below). 
 
