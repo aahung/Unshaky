@@ -6,13 +6,13 @@
 "T9Q-qI-cKF.title" = "-";
 
 /* Class = "NSMenuItem"; title = "Configuration"; ObjectID = "TGg-Zy-iYa"; */
-"TGg-Zy-iYa.title" = "Configuration";
+"TGg-Zy-iYa.title" = "وضعیت";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "f5l-nJ-ecO"; */
-"f5l-nJ-ecO.title" = "Check for Updates...";
+"f5l-nJ-ecO.title" = "بررسی برای بروزرسانی...";
 
 /* Class = "NSMenuItem"; title = "-"; ObjectID = "sJ6-3Q-q9Z"; */
 "sJ6-3Q-q9Z.title" = "-";
 
 /* Class = "NSMenuItem"; title = "Quit"; ObjectID = "ypt-Mu-uzT"; */
-"ypt-Mu-uzT.title" = "Quit";
+"ypt-Mu-uzT.title" = "خارج شو";
