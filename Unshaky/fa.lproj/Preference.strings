@@ -6,10 +6,10 @@
 "5My-Lz-UmR.title" = "-";
 
 /* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
-"BTT-FQ-Yii.title" = "Copy";
+"BTT-FQ-Yii.title" = "کپی";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
-"CUy-rX-LgD.title" = "Cancel";
+"CUy-rX-LgD.title" = "لغو";
 
 /* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
 "Dr8-2D-to4.title" = "Export";
@@ -57,7 +57,7 @@
 "juW-NR-znR.title" = "Set";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
-"mDf-Gh-GmX.title" = "Cancel";
+"mDf-Gh-GmX.title" = "لغو";
 
 /* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "psD-gB-aHV"; */
 "psD-gB-aHV.title" = "Item 2";
