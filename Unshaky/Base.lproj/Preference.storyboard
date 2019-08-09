@@ -94,7 +94,7 @@
                                                             </prototypeCellViews>
                                                         </tableColumn>
                                                         <tableColumn identifier="delay" width="356" minWidth="40" maxWidth="1000" id="JiA-hI-REz">
-                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Delay (ms), suggest 40">
+                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Delay (ms), suggested: 40">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -227,7 +227,7 @@
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3iQ-NN-mBR">
                                         <rect key="frame" x="18" y="176" width="464" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Fix if CMD+SPACE not work (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="I7x-fY-0vx">
+                                        <buttonCell key="cell" type="check" title="Fix if CMD+SPACE does not work (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="I7x-fY-0vx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
