@@ -85,6 +85,10 @@ class PreferenceViewController: NSViewController,
         ShakyPressPreventer.sharedInstance()?.loadIgnoreExternalKeyboard()
     }
 
+    @IBAction func ignoreInternalKeyboardToggled(_ sender: Any) {
+        ShakyPressPreventer.sharedInstance()?.loadIgnoreInternalKeyboard()
+    }
+
     @IBAction func workaroundForCmdSpaceToggled(_ sender: Any) {
         ShakyPressPreventer.sharedInstance()?.loadWorkaroundForCmdSpace()
     }

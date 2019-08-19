@@ -24,6 +24,7 @@
     BOOL dismissNextEvent[N_VIRTUAL_KEY];
     int keyDelays[N_VIRTUAL_KEY];
     BOOL ignoreExternalKeyboard;
+    BOOL ignoreInternalKeyboard;
     Handler shakyPressDismissedHandler;
 
     CFMachPortRef eventTap;
@@ -46,6 +47,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
         eventTap = NULL;
         [self loadKeyDelays];
         [self loadIgnoreExternalKeyboard];
+        [self loadIgnoreInternalKeyboard];
         [self loadWorkaroundForCmdSpace];
         [self loadAggressiveMode];
         for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
@@ -90,6 +92,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     ignoreExternalKeyboard = [defaults boolForKey:@"ignoreExternalKeyboard"]; // default No
 }
 
+- (void)loadIgnoreInternalKeyboard {
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+    ignoreInternalKeyboard = [defaults boolForKey:@"ignoreInternalKeyboard"]; // default No
+}
+
 - (void)loadWorkaroundForCmdSpace {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     workaroundForCmdSpace = [defaults boolForKey:@"workaroundForCmdSpace"]; // default No
@@ -101,12 +108,13 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 }
 
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
-    // keyboard type, dismiss if it is not built-in keyboard
-    if (ignoreExternalKeyboard) {
+    // keyboard type, used if user specify ignore-external or ignore-internal
+    if (ignoreExternalKeyboard || ignoreInternalKeyboard) {
         int64_t keyboardType = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);
         // 58: seems to be the value for pre-2018 models
         // 59: MacBook Pro (15-inch, 2018) https://github.com/aahung/Unshaky/issues/40
-        if (keyboardType != 58 && keyboardType != 59) return event;
+        if (ignoreExternalKeyboard && keyboardType != 58 && keyboardType != 59) return event;
+        if (ignoreInternalKeyboard && (keyboardType == 58 || keyboardType == 59)) return event;
     }
 
     // The incoming keycode.

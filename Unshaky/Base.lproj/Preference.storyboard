@@ -156,7 +156,7 @@
                                         </tableHeaderView>
                                     </scrollView>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bCy-mv-pMe">
-                                        <rect key="frame" x="18" y="279" width="445" height="25"/>
+                                        <rect key="frame" x="18" y="284" width="445" height="25"/>
                                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WY9-It-Jdo" id="fLv-pA-Ipd">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
@@ -173,10 +173,10 @@
                                         </connections>
                                     </popUpButton>
                                     <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yre-7S-CXv">
-                                        <rect key="frame" x="20" y="243" width="440" height="21"/>
+                                        <rect key="frame" x="20" y="251" width="440" height="21"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-Mi-E0w">
-                                                <rect key="frame" x="-2" y="3" width="86" height="14"/>
+                                                <rect key="frame" x="-2" y="4" width="86" height="14"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Set ALL to (ms)" id="Qnt-tS-QWb">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -184,7 +184,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-6U-DVj">
-                                                <rect key="frame" x="90" y="2" width="296" height="16"/>
+                                                <rect key="frame" x="90" y="3" width="296" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Xe6-LV-3Se">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="J1t-Zg-ksZ"/>
                                                     <font key="font" metaFont="miniSystem"/>
@@ -215,7 +215,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T9y-cb-sJ7">
-                                        <rect key="frame" x="18" y="208" width="444" height="18"/>
+                                        <rect key="frame" x="18" y="221" width="444" height="18"/>
                                         <buttonCell key="cell" type="check" title="Ignore external keyboard (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="dE9-oM-Tqa">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -225,8 +225,19 @@
                                             <binding destination="0Xq-bq-pSr" name="value" keyPath="values.ignoreExternalKeyboard" id="GMd-iZ-EV7"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ygG-kP-DBY">
+                                        <rect key="frame" x="18" y="192" width="444" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Ignore internal keyboard (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="i3V-xH-iv6">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="ignoreInternalKeyboardToggled:" target="3EX-qe-haT" id="OMP-MZ-1TF"/>
+                                            <binding destination="0Xq-bq-pSr" name="value" keyPath="values.ignoreInternalKeyboard" id="RF3-ml-4Ia"/>
+                                        </connections>
+                                    </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3iQ-NN-mBR">
-                                        <rect key="frame" x="18" y="176" width="464" height="18"/>
+                                        <rect key="frame" x="18" y="164" width="464" height="18"/>
                                         <buttonCell key="cell" type="check" title="Fix if CMD+SPACE does not work (experimental)" bezelStyle="regularSquare" imagePosition="left" alignment="justified" state="on" inset="2" id="I7x-fY-0vx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -237,7 +248,7 @@
                                         </connections>
                                     </button>
                                     <stackView orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltb-3G-ShL">
-                                        <rect key="frame" x="20" y="59" width="460" height="100"/>
+                                        <rect key="frame" x="20" y="51" width="460" height="100"/>
                                         <beginningViews>
                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-13-i8C">
                                                 <rect key="frame" x="-2" y="41" width="192" height="18"/>
@@ -271,7 +282,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="jD9-QU-ZMw">
-                                        <rect key="frame" x="0.0" y="38" width="480" height="5"/>
+                                        <rect key="frame" x="0.0" y="34" width="480" height="5"/>
                                     </box>
                                     <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrU-5N-05g">
                                         <rect key="frame" x="20" y="0.0" width="440" height="21"/>
@@ -312,8 +323,10 @@
                                     <constraint firstAttribute="width" constant="480" id="6gX-hh-XK8"/>
                                     <constraint firstItem="jD9-QU-ZMw" firstAttribute="width" secondItem="6xP-AJ-FNM" secondAttribute="width" id="KMx-eQ-cXp"/>
                                     <constraint firstItem="3iQ-NN-mBR" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="LIM-mY-EZY"/>
+                                    <constraint firstItem="ygG-kP-DBY" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="OYf-g3-ptO"/>
                                     <constraint firstAttribute="trailing" secondItem="Yre-7S-CXv" secondAttribute="trailing" constant="20" symbolic="YES" id="WvH-wJ-eCH"/>
                                     <constraint firstAttribute="trailing" secondItem="wrU-5N-05g" secondAttribute="trailing" constant="20" symbolic="YES" id="fLr-4t-Ydd"/>
+                                    <constraint firstItem="ygG-kP-DBY" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="gcS-cf-3HS"/>
                                     <constraint firstItem="ltb-3G-ShL" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="icl-e7-a5O"/>
                                     <constraint firstItem="T9y-cb-sJ7" firstAttribute="centerX" secondItem="6xP-AJ-FNM" secondAttribute="centerX" id="ikj-eM-NFa"/>
                                     <constraint firstItem="T9y-cb-sJ7" firstAttribute="leading" secondItem="6xP-AJ-FNM" secondAttribute="leading" constant="20" symbolic="YES" id="jx5-kT-dcd"/>
@@ -334,8 +347,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
