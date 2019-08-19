@@ -16,6 +16,7 @@ class PreferenceViewController: NSViewController,
     @IBOutlet weak var keyboardLayoutsSelect: NSPopUpButton!
 
     let defaults = UserDefaults.standard
+    var enableds: [Bool]!
     var delays: [Int]!
     var keyCodes: [Int]!
     let nVirtualKey = Int(N_VIRTUAL_KEY)
@@ -45,9 +46,17 @@ class PreferenceViewController: NSViewController,
             loadPreference()
             return
         }
+        guard let enableds = defaults.array(forKey: "enableds") else {
+            defaults.set([Bool](repeating: true, count: nVirtualKey), forKey: "enableds")
+            loadPreference()
+            return
+        }
+
         self.delays = [Int](repeating: 0, count: nVirtualKey)
+        self.enableds = [Bool](repeating: true, count: nVirtualKey)
         for i in 0..<nVirtualKey {
             self.delays[i] = i >= delays.count ? 0 : delays[i] as! Int
+            self.enableds[i] = i >= enableds.count ? true : enableds[i] as! Bool
         }
     }
     
@@ -58,6 +67,9 @@ class PreferenceViewController: NSViewController,
     
     // MARK: NSTableViewDelegate
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        if (tableColumn?.identifier)!.rawValue == "enabled" {
+            return enableds[keyCodes[row]]
+        }
         if (tableColumn?.identifier)!.rawValue == "key" {
             guard let keyString = KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: keyCodes[row])] else {
                 return "UNDEFINED KEY"
@@ -69,7 +81,7 @@ class PreferenceViewController: NSViewController,
         }
         return nil
     }
-    
+
     @IBAction func delayEdited(_ sender: NSTextField) {
         let row = tableView.selectedRow
         guard let delayValue = Int(sender.stringValue) else {
@@ -78,6 +90,14 @@ class PreferenceViewController: NSViewController,
         }
         self.delays[keyCodes[row]] = delayValue
         defaults.set(self.delays, forKey: "delays")
+        ShakyPressPreventer.sharedInstance().loadKeyDelays()
+    }
+
+    @IBAction func enabledEdited(_ sender: NSButton) {
+        let row = tableView.row(for: sender)
+        let enabledValue = Bool(sender.state == .on)
+        self.enableds[keyCodes[row]] = enabledValue
+        defaults.set(self.enableds, forKey: "enableds")
         ShakyPressPreventer.sharedInstance().loadKeyDelays()
     }
 

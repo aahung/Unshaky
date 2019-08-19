@@ -78,11 +78,27 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 - (void)loadKeyDelays {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     NSArray *delays = [defaults arrayForKey:@"delays"];
+
+    // load enableds first
+    int keyEnableds[N_VIRTUAL_KEY];
+    NSArray *enableds = [defaults arrayForKey:@"enableds"];
+    if (enableds == nil) {
+        for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
+            keyEnableds[i] = true;
+        }
+    } else {
+        for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
+            keyEnableds[i] = i >= [enableds count] ? true : [(NSNumber *)[enableds objectAtIndex:i] boolValue];
+        }
+    }
+
+    // set delays
     if (delays == nil) {
         memset(keyDelays, 0, N_VIRTUAL_KEY * sizeof(int));
     } else {
         for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
-            keyDelays[i] = i >= [delays count] ? 0 : [(NSNumber *)[delays objectAtIndex:i] intValue];
+            keyDelays[i] = (i >= [delays count] || keyEnableds[i] == false) ?
+                0 : [(NSNumber *)[delays objectAtIndex:i] intValue];
         }
     }
 }
