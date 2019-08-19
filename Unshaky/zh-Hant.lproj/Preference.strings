@@ -2,7 +2,7 @@
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
 "3Kr-1X-5AZ.title" = "導入";
 
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "5My-Lz-UmR"; */
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
 "5My-Lz-UmR.title" = "-";
 
 /* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
@@ -14,25 +14,25 @@
 /* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
 "Dr8-2D-to4.title" = "導出";
 
-/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
+/* Class = "NSButtonCell"; title = "Fix if CMD+SPACE does not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
 "I7x-fY-0vx.title" = "解決 CMD+SPACE 失效問題 (實驗)";
 
-/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "IhC-d3-H6r"; */
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
 "IhC-d3-H6r.title" = "-";
 
-/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggest 40"; ObjectID = "JiA-hI-REz"; */
+/* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggested: 40"; ObjectID = "JiA-hI-REz"; */
 "JiA-hI-REz.headerCell.title" = "延遲 (毫秒), 推薦值: 40";
 
 /* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
 "KI8-Ox-xeb.title" = "配置 Unshaky";
 
-/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "NxQ-OB-lir"; */
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
 "NxQ-OB-lir.title" = "-";
 
 /* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
 "Qnt-tS-QWb.title" = "設置所有延遲 (毫秒)";
 
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Vl3-75-cL7"; */
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
 "Vl3-75-cL7.title" = "-";
 
 /* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
@@ -55,3 +55,18 @@
 
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
 "yJt-he-X2q.title" = "導入";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "VCg-rU-JrG"; */
+"VCg-rU-JrG.title" = "Item 3";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "WY9-It-Jdo"; */
+"WY9-It-Jdo.title" = "Item 1";
+
+/* Class = "NSButtonCell"; title = "Ignore internal keyboard (experimental)"; ObjectID = "i3V-xH-iv6"; */
+"i3V-xH-iv6.title" = "無視內置鍵盤 (實驗)";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "psD-gB-aHV"; */
+"psD-gB-aHV.title" = "Item 2";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "zy0-50-9m7"; */
+"zy0-50-9m7.title" = "Text Cell";

@@ -2,16 +2,16 @@
 /* Class = "NSMenuItem"; title = "Open debug window"; ObjectID = "Iv3-MX-v73"; */
 "Iv3-MX-v73.title" = "打開調試窗口";
 
-/* Class = "NSMenuItem"; title = "Item"; ObjectID = "T9Q-qI-cKF"; */
+/* Class = "NSMenuItem"; title = "-"; ObjectID = "T9Q-qI-cKF"; */
 "T9Q-qI-cKF.title" = "-";
 
-/* Class = "NSMenuItem"; title = "Configure"; ObjectID = "TGg-Zy-iYa"; */
+/* Class = "NSMenuItem"; title = "Configuration"; ObjectID = "TGg-Zy-iYa"; */
 "TGg-Zy-iYa.title" = "配置 Unshaky";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "f5l-nJ-ecO"; */
 "f5l-nJ-ecO.title" = "檢查更新...";
 
-/* Class = "NSMenuItem"; title = "Item"; ObjectID = "sJ6-3Q-q9Z"; */
+/* Class = "NSMenuItem"; title = "-"; ObjectID = "sJ6-3Q-q9Z"; */
 "sJ6-3Q-q9Z.title" = "-";
 
 /* Class = "NSMenuItem"; title = "Quit"; ObjectID = "ypt-Mu-uzT"; */
