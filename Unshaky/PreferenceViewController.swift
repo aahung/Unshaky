@@ -22,9 +22,7 @@ class PreferenceViewController: NSViewController,
     let nVirtualKey = Int(N_VIRTUAL_KEY)
     
     override func viewDidLoad() {
-        keyboardLayoutsSelect.removeAllItems()
-        keyboardLayoutsSelect.addItems(withTitles: KeyboardLayouts.availableKeyboardLayouts());
-
+        loadKeyloadLayouts()
         loadPreference()
         super.viewDidLoad()
 
@@ -38,6 +36,14 @@ class PreferenceViewController: NSViewController,
     override func viewDidAppear() {
         super.viewDidAppear()
         view.window?.title = NSLocalizedString("Configuration Window Title", comment: "")
+    }
+
+    func loadKeyloadLayouts() {
+        keyboardLayoutsSelect.removeAllItems()
+        keyboardLayoutsSelect.addItems(withTitles: KeyboardLayouts.availableKeyboardLayouts());
+        let selectedKeyboardLayout = defaults.string(forKey: "keyboardLayout") ?? KL_US
+        keyboardLayoutsSelect.selectItem(withTitle: selectedKeyboardLayout)
+        KeyboardLayouts.shared().setKeyboardLayout(selectedKeyboardLayout)
     }
     
     func loadPreference() {
@@ -124,10 +130,11 @@ class PreferenceViewController: NSViewController,
     }
     
     @IBAction func keyboardLayoutChanged(_ sender: Any) {
-        guard let selectedTitle = keyboardLayoutsSelect.selectedItem?.title else {
+        guard let selectedKeyboardLayout = keyboardLayoutsSelect.selectedItem?.title else {
             return
         }
-        KeyboardLayouts.shared().setKeyboardLayout(selectedTitle)
+        defaults.set(selectedKeyboardLayout, forKey: "keyboardLayout")
+        KeyboardLayouts.shared().setKeyboardLayout(selectedKeyboardLayout)
         tableView.reloadData()
     }
 
