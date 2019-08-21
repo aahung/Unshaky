@@ -8,29 +8,17 @@
 
 import Cocoa
 
-class PreferenceViewController: NSViewController,
-                                NSTableViewDataSource,
-                                NSTableViewDelegate {
+class PreferenceViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var keyboardLayoutsSelect: NSPopUpButton!
+    @IBOutlet weak var delayAllTextField: NSTextField!
 
-    let defaults = UserDefaults.standard
-    var enableds: [Bool]!
-    var delays: [Int]!
-    var keyCodes: [Int]!
-    let nVirtualKey = Int(N_VIRTUAL_KEY)
-    
+    let preference = Preference()
+
     override func viewDidLoad() {
         loadKeyloadLayouts()
-        loadPreference()
         super.viewDidLoad()
-
-        keyCodes = Array(0..<nVirtualKey).filter({ (i) -> Bool in
-            return KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: i)] != nil
-        }).sorted { (a, b) -> Bool in
-            return KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: a)]! < KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: b)]!
-        }
     }
 
     override func viewDidAppear() {
@@ -41,52 +29,38 @@ class PreferenceViewController: NSViewController,
     func loadKeyloadLayouts() {
         keyboardLayoutsSelect.removeAllItems()
         keyboardLayoutsSelect.addItems(withTitles: KeyboardLayouts.availableKeyboardLayouts());
-        let selectedKeyboardLayout = defaults.string(forKey: "keyboardLayout") ?? KL_US
-        keyboardLayoutsSelect.selectItem(withTitle: selectedKeyboardLayout)
-        KeyboardLayouts.shared().setKeyboardLayout(selectedKeyboardLayout)
+        keyboardLayoutsSelect.selectItem(withTitle: preference.keyboardLayout)
     }
-    
-    func loadPreference() {
-        guard let delays = defaults.array(forKey: "delays") else {
-            defaults.set([Int](repeating: 0, count: nVirtualKey), forKey: "delays")
-            loadPreference()
-            return
-        }
-        guard let enableds = defaults.array(forKey: "enableds") else {
-            defaults.set([Bool](repeating: true, count: nVirtualKey), forKey: "enableds")
-            loadPreference()
-            return
-        }
 
-        self.delays = [Int](repeating: 0, count: nVirtualKey)
-        self.enableds = [Bool](repeating: true, count: nVirtualKey)
-        for i in 0..<nVirtualKey {
-            self.delays[i] = i >= delays.count ? 0 : delays[i] as! Int
-            self.enableds[i] = i >= enableds.count ? true : enableds[i] as! Bool
+    // used by delayEdited(:)
+    func alertInvalidValue(invalidValue: String) {
+        let alert = NSAlert()
+        alert.messageText = String(format: NSLocalizedString("Invalid Delay", comment: ""), invalidValue)
+        alert.runModal()
+    }
+
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "export":
+            let destVC = segue.destinationController as! ExportImportViewController
+            destVC.preferenceViewController = self
+            destVC.mode = .Export
+        case "import":
+            let destVC = segue.destinationController as! ExportImportViewController
+            destVC.preferenceViewController = self
+            destVC.mode = .Import
+        default:
+            break
         }
     }
-    
-    // MARK: NSTableViewDataSource
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return keyCodes.count
+
+    func preferenceChanged(sender: Any?) {
+        self.tableView.reloadData()
     }
-    
-    // MARK: NSTableViewDelegate
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        if (tableColumn?.identifier)!.rawValue == "enabled" {
-            return enableds[keyCodes[row]]
-        }
-        if (tableColumn?.identifier)!.rawValue == "key" {
-            guard let keyString = KeyboardLayouts.shared().keyCodeToString()[NSNumber(value: keyCodes[row])] else {
-                return "UNDEFINED KEY"
-            }
-            return keyString
-        }
-        if (tableColumn?.identifier)!.rawValue == "delay" {
-            return delays[keyCodes[row]]
-        }
-        return nil
-    }
+}
+
+// IBActions
+extension PreferenceViewController {
 
     @IBAction func delayEdited(_ sender: NSTextField) {
         let row = tableView.selectedRow
@@ -94,17 +68,13 @@ class PreferenceViewController: NSViewController,
             alertInvalidValue(invalidValue: sender.stringValue)
             return
         }
-        self.delays[keyCodes[row]] = delayValue
-        defaults.set(self.delays, forKey: "delays")
-        ShakyPressPreventer.sharedInstance().loadKeyDelays()
+        preference.setDelay(delay: delayValue, code: preference.keyCodes[row])
     }
 
     @IBAction func enabledEdited(_ sender: NSButton) {
         let row = tableView.row(for: sender)
         let enabledValue = Bool(sender.state == .on)
-        self.enableds[keyCodes[row]] = enabledValue
-        defaults.set(self.enableds, forKey: "enableds")
-        ShakyPressPreventer.sharedInstance().loadKeyDelays()
+        preference.setEnabled(enabled: enabledValue, code: preference.keyCodes[row])
     }
 
     @IBAction func ignoreExternalKeyboardToggled(_ sender: Any) {
@@ -128,54 +98,47 @@ class PreferenceViewController: NSViewController,
             NSWorkspace.shared.open(url)
         }
     }
-    
+
     @IBAction func keyboardLayoutChanged(_ sender: Any) {
-        guard let selectedKeyboardLayout = keyboardLayoutsSelect.selectedItem?.title else {
+        guard let keyboardLayout = keyboardLayoutsSelect.selectedItem?.title else {
             return
         }
-        defaults.set(selectedKeyboardLayout, forKey: "keyboardLayout")
-        KeyboardLayouts.shared().setKeyboardLayout(selectedKeyboardLayout)
+        preference.setKeyboardLayout(keyboardLayout: keyboardLayout)
         tableView.reloadData()
     }
 
-    @IBOutlet weak var delayAllTextField: NSTextField!
-    
     @IBAction func setAllDelays(_ sender: Any) {
-        guard let delayFoAll = Int(delayAllTextField.stringValue) else {
+        guard let delay = Int(delayAllTextField.stringValue) else {
             alertInvalidValue(invalidValue: delayAllTextField.stringValue)
             return
         }
-        for i in 0..<self.delays.count {
-            self.delays[i] = delayFoAll
-        }
+        preference.setDelayforAll(delay: delay)
         self.tableView.reloadData()
-        defaults.set(self.delays, forKey: "delays")
-        ShakyPressPreventer.sharedInstance().loadKeyDelays()
+    }
+}
+
+// TableView
+extension PreferenceViewController: NSTableViewDataSource, NSTableViewDelegate {
+    // MARK: NSTableViewDataSource
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return preference.keyCodes.count
     }
 
-    func alertInvalidValue(invalidValue: String) {
-        let alert = NSAlert()
-        alert.messageText = String(format: NSLocalizedString("Invalid Delay", comment: ""), invalidValue)
-        alert.runModal()
-    }
-
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "export":
-            let destVC = segue.destinationController as! ExportImportViewController
-            destVC.preferenceViewController = self
-            destVC.mode = .Export
-        case "import":
-            let destVC = segue.destinationController as! ExportImportViewController
-            destVC.preferenceViewController = self
-            destVC.mode = .Import
-        default:
-            break
+    // MARK: NSTableViewDelegate
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        if (tableColumn?.identifier)!.rawValue == "enabled" {
+            return preference.enableds[preference.keyCodes[row]]
         }
-    }
-
-    func preferenceChanged(sender: Any?) {
-        loadPreference()
-        self.tableView.reloadData()
+        if (tableColumn?.identifier)!.rawValue == "key" {
+            guard let keyString = KeyboardLayouts.shared().keyCodeToString()[NSNumber(
+                value: preference.keyCodes[row])] else {
+                    return "UNDEFINED KEY"
+            }
+            return keyString
+        }
+        if (tableColumn?.identifier)!.rawValue == "delay" {
+            return preference.delays[preference.keyCodes[row]]
+        }
+        return nil
     }
 }

@@ -19,6 +19,7 @@
 		5B6F59742260121300889D13 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F59732260121300889D13 /* Counter.swift */; };
 		5B71184C222608B100B03575 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184A222608B100B03575 /* Preference.storyboard */; };
 		5B711851222610C400B03575 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B71184F222610C400B03575 /* Localizable.strings */; };
+		5B93DF61230CC0340085CB9F /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93DF60230CC0340085CB9F /* Preference.swift */; };
 		5BB68E1E21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */; };
 		5BCA730920F5B43300A1210E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA730820F5B43300A1210E /* PreferenceViewController.swift */; };
 		5BE661592283726B00B2A886 /* KeyboardLayouts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE661582283726B00B2A886 /* KeyboardLayouts.m */; };
@@ -120,6 +121,7 @@
 		5B8DA9F22253BAAC001BA090 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preference.strings; sourceTree = "<group>"; };
 		5B8DA9F32253BAAC001BA090 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Debug.strings; sourceTree = "<group>"; };
 		5B8DA9F42253BAAD001BA090 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B93DF60230CC0340085CB9F /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		5BA2B55022695D6A004CC33E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5BA2B55122695D6A004CC33E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Preference.strings; sourceTree = "<group>"; };
 		5BA2B55222695D6A004CC33E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Debug.strings; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				5B3168FA20DB9ED300185DE5 /* ShakyPressPreventer.h */,
 				5B3168FB20DB9ED300185DE5 /* ShakyPressPreventer.m */,
 				5B6F59732260121300889D13 /* Counter.swift */,
+				5B93DF60230CC0340085CB9F /* Preference.swift */,
 				5BCA730820F5B43300A1210E /* PreferenceViewController.swift */,
 				5B50712421839D5400A65B81 /* ExportImportViewController.swift */,
 				5B56C1FD2274510000F3383F /* CounterViewControler.swift */,
@@ -507,6 +510,7 @@
 				5B50712521839D5400A65B81 /* ExportImportViewController.swift in Sources */,
 				5B3168EC20DB9CF100185DE5 /* AppDelegate.swift in Sources */,
 				5BE661592283726B00B2A886 /* KeyboardLayouts.m in Sources */,
+				5B93DF61230CC0340085CB9F /* Preference.swift in Sources */,
 				5B56C1FE2274510000F3383F /* CounterViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
