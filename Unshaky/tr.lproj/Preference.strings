@@ -47,6 +47,9 @@
 /* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
 "dE9-oM-Tqa.title" = "Harici klavyeyi yoksay (deneysel)";
 
+/* Class = "NSButtonCell"; title = "Ignore internal keyboard (experimental)"; ObjectID = "i3V-xH-iv6"; */
+"i3V-xH-iv6.title" = "Dahili klavyeyi yoksay (deneysel)";
+
 /* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
 "juW-NR-znR.title" = "Ayarla";
 
