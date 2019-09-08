@@ -52,7 +52,7 @@
 "asf-bP-xrf.headerCell.title" = "キー";
 
 /* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
-"dE9-oM-Tqa.title" = "外付けのキーボードを無視します (実験)";
+"dE9-oM-Tqa.title" = "外付けキーボードを無視します (実験)";
 
 /* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
 "juW-NR-znR.title" = "適用";
@@ -62,3 +62,18 @@
 
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
 "yJt-he-X2q.title" = "インポート";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "VCg-rU-JrG"; */
+"VCg-rU-JrG.title" = "Item 3";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "WY9-It-Jdo"; */
+"WY9-It-Jdo.title" = "Item 1";
+
+/* Class = "NSButtonCell"; title = "Ignore internal keyboard (experimental)"; ObjectID = "i3V-xH-iv6"; */
+"i3V-xH-iv6.title" = "内蔵キーボードを無視します (実験)";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "psD-gB-aHV"; */
+"psD-gB-aHV.title" = "Item 2";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "zy0-50-9m7"; */
+"zy0-50-9m7.title" = "Text Cell";
