@@ -1,0 +1,21 @@
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "8E2-Qi-cCa"; */
+"8E2-Qi-cCa.title" = "-";
+
+/* Class = "NSWindow"; title = "Statistics"; ObjectID = "QEc-T5-kPG"; */
+"QEc-T5-kPG.title" = "İstatistikler";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "UsH-UE-4NM"; */
+"UsH-UE-4NM.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "Y81-5k-LdE"; */
+"Y81-5k-LdE.headerCell.title" = "Tuş";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Yte-dc-JdH"; */
+"Yte-dc-JdH.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Dismissed"; ObjectID = "m7I-RF-TDD"; */
+"m7I-RF-TDD.headerCell.title" = "Engellendi";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "q47-Mf-fqt"; */
+"q47-Mf-fqt.title" = "-";
