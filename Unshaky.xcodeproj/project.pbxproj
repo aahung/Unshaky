@@ -130,6 +130,8 @@
 		5BA2B55522695E5F004CC33E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Preference.strings"; sourceTree = "<group>"; };
 		5BA2B55622695E5F004CC33E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Debug.strings"; sourceTree = "<group>"; };
 		5BA2B55722695E5F004CC33E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5BA5A51B23247A5900581914 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Counter.strings; sourceTree = "<group>"; };
+		5BA5A51D23247A6600581914 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Debug.strings; sourceTree = "<group>"; };
 		5BB68E1321A3413900CAA4B4 /* UnshakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnshakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB68E1721A3413900CAA4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB68E1D21A3423300CAA4B4 /* ShakyPressPreventerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyPressPreventerSpec.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 				5B22A71522E984150051813C /* cs */,
 				5B22A71A22E984470051813C /* sk */,
 				5B3B7A5B22FDF685008384E0 /* pl */,
+				5BA5A51D23247A6600581914 /* ja */,
 			);
 			name = Debug.storyboard;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				5B22A71622E984150051813C /* cs */,
 				5B22A71B22E984470051813C /* sk */,
 				5B3B7A5C22FDF685008384E0 /* pl */,
+				5BA5A51B23247A5900581914 /* ja */,
 			);
 			name = Counter.storyboard;
 			sourceTree = "<group>";
