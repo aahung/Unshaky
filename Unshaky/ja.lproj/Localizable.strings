@@ -8,7 +8,7 @@
 
 "Version" = "バージョン: %@";
 
-"Overall Statistic" = "二重入力の取り消し %d 回";
+"Overall Statistic" = "多重入力の抑制 %d 回";
 
 "Configuration Window Title" = "Unshakyの設定";
 
