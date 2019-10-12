@@ -6,24 +6,24 @@
   Copyright © 2019 Nested Error. All rights reserved.
 */
 
-"Version" = "Version: %@";
+"Version" = "Έκδοση: %@";
 
-"Overall Statistic" = "Dismissed %d shaky presses";
+"Overall Statistic" = "Αποφεύχθηκαν %d shaky πατήματα";
 
-"Configuration Window Title" = "Configure Unshaky";
+"Configuration Window Title" = "Διαμόρφωση Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Το Unshaky χρειάζεται άδεια Προσβασιμότητας για να λειτουργήσει. Για την ώρα, το Unshaky θα προσπαθήσει να ανοίξει το παράθυρο για εσάς. Εάν δεν ανοίξει αυτόματα, θα πρέπει να μεταβείτε: Προτιμήσεις Συστήματος -> Ασφάλεια και Απόρρητο -> Απόρρητο (Tab) -> Προσβασιμότητα (Αριστερό πάνελ). \n\nΌταν έχετε επιλέξει το πάνελ, προσθέστε και επιλέξτε το Unshaky.app. ";
 
-"Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
+"Invalid Delay" = "Το \"%@\" δεν είναι αποδεκτή τιμή καθυστέρησης. Παρακαλώ, εισάγετε έναν ακέραιο αριθμό .";
 
-"Paste the configuration here" = "Paste the configuration here";
+"Paste the configuration here" = "Επικόλληση της διαμόρφωσης εδώ";
 
-"Invalid inputs" = "Invalid inputs";
+"Invalid inputs" = "Λανθασμένη εισαγωγή";
 
-"Invalid inputs, length does not match" = "Invalid inputs, length does not match";
+"Invalid inputs, length does not match" = "Λανθασμένη εισαγωγή, το μήκος δεν ταιριάζει.";
 
-"Temporarily disabled by other software" = "Temporarily disabled by other software";
+"Temporarily disabled by other software" = "Προσωρινά απενεργοποιημένο από άλλη εφαρμογή.";
 
-"Turn on" = "Turn on";
+"Turn on" = "Ενεργοποίηση";
 
-"Turn off" = "Turn off";
+"Turn off" = "Απενεργοποίηση";
