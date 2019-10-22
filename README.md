@@ -61,6 +61,8 @@ Click Unshaky icon in the menu bar and select "Configure" to configure delays fo
 
 I don't think there is a universal delay value for all people. If you type very fast, you might want to have a shorter delay. I use 40 ms since I am a fast typer. With a long delay, I cannot type "apple" because the second "p" is likely to be blocked. Some users found 60 ms a sweet spot and some have no issue with 80 ms. My suggestion is to start with a short delay (like 40 ms) and gradually increase it.
 
+### For other FAQs, visit [the Wiki](https://github.com/aahung/Unshaky/wiki)
+
 ## Community Localization Contributors
 
 If you can help translate Unshaky into more languages, [open an issue here](https://github.com/aahung/Unshaky/issues/new/choose) so I can prepare related files for translation.
