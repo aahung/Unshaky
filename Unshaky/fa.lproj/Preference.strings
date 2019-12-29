@@ -1,72 +1,72 @@
 
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "3Kr-1X-5AZ"; */
-"3Kr-1X-5AZ.title" = "Import";
+"3Kr-1X-5AZ.title" = "وارد کردن تنظیمات";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "5My-Lz-UmR"; */
 "5My-Lz-UmR.title" = "-";
 
 /* Class = "NSButtonCell"; title = "Copy"; ObjectID = "BTT-FQ-Yii"; */
-"BTT-FQ-Yii.title" = "Copy";
+"BTT-FQ-Yii.title" = "کپی";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "CUy-rX-LgD"; */
-"CUy-rX-LgD.title" = "Cancel";
+"CUy-rX-LgD.title" = "لغو";
 
 /* Class = "NSButtonCell"; title = "Export"; ObjectID = "Dr8-2D-to4"; */
-"Dr8-2D-to4.title" = "Export";
+"Dr8-2D-to4.title" = "خروجی گرفتن از تنظیمات";
 
 /* Class = "NSButtonCell"; title = "Fix if CMD+SPACE does not work (experimental)"; ObjectID = "I7x-fY-0vx"; */
-"I7x-fY-0vx.title" = "Fix if CMD+SPACE does not work (experimental)";
+"I7x-fY-0vx.title" = "در صورت درست عمل نکردن(آزمایشی)CMD+SPACEتصحیح کردن عملکرد";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
 "IhC-d3-H6r.title" = "-";
 
 /* Class = "NSTableColumn"; headerCell.title = "Delay (ms), suggested: 40"; ObjectID = "JiA-hI-REz"; */
-"JiA-hI-REz.headerCell.title" = "Delay (ms), suggested: 40";
+"JiA-hI-REz.headerCell.title" = "مقدار تاخیر به میلی ثانیه ، پیشنهادی 40";
 
 /* Class = "NSWindow"; title = "Unshaky Preference"; ObjectID = "KI8-Ox-xeb"; */
-"KI8-Ox-xeb.title" = "Unshaky Preference";
+"KI8-Ox-xeb.title" = "Unshaky تنظیمات";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "NxQ-OB-lir"; */
 "NxQ-OB-lir.title" = "-";
 
 /* Class = "NSTextFieldCell"; title = "Set ALL to (ms)"; ObjectID = "Qnt-tS-QWb"; */
-"Qnt-tS-QWb.title" = "Set ALL to (ms)";
+"Qnt-tS-QWb.title" = "تنظیم همه به میلی ثانیه";
 
 /* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "VCg-rU-JrG"; */
-"VCg-rU-JrG.title" = "Item 3";
+"VCg-rU-JrG.title" = "آیتم 3";
 
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "Vl3-75-cL7"; */
 "Vl3-75-cL7.title" = "-";
 
 /* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "WY9-It-Jdo"; */
-"WY9-It-Jdo.title" = "Item 1";
+"WY9-It-Jdo.title" = "آیتم 1";
 
 /* Class = "NSButtonCell"; title = "Aggressive mode (experimental)"; ObjectID = "Zqq-UB-oIK"; */
-"Zqq-UB-oIK.title" = "Aggressive mode (experimental)";
+"Zqq-UB-oIK.title" = "برنامه به صورت همگانی عمل کند(آزمایشی)";
 
 /* Class = "NSButtonCell"; title = "Paste"; ObjectID = "acO-QS-DTH"; */
-"acO-QS-DTH.title" = "Paste";
+"acO-QS-DTH.title" = "چسباندن";
 
 /* Class = "NSTableColumn"; headerCell.title = "Key"; ObjectID = "asf-bP-xrf"; */
-"asf-bP-xrf.headerCell.title" = "Key";
+"asf-bP-xrf.headerCell.title" = "کلید";
 
 /* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
-"dE9-oM-Tqa.title" = "Ignore external keyboard (experimental)";
+"dE9-oM-Tqa.title" = "نادیده گرفتن کیبورد اکسترنال(آزمایشی)";
 
 /* Class = "NSButtonCell"; title = "Ignore internal keyboard (experimental)"; ObjectID = "i3V-xH-iv6"; */
-"i3V-xH-iv6.title" = "Ignore internal keyboard (experimental)";
+"i3V-xH-iv6.title" = "نادیده گرفتن کیبورد مک(آزمایشی)";
 
 /* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
-"juW-NR-znR.title" = "Set";
+"juW-NR-znR.title" = "تنظیم";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mDf-Gh-GmX"; */
-"mDf-Gh-GmX.title" = "Cancel";
+"mDf-Gh-GmX.title" = "لغو";
 
 /* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "psD-gB-aHV"; */
-"psD-gB-aHV.title" = "Item 2";
+"psD-gB-aHV.title" = "آیتم 2";
 
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
-"yJt-he-X2q.title" = "Import";
+"yJt-he-X2q.title" = "ورودی تنظیمات";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "zy0-50-9m7"; */
 "zy0-50-9m7.title" = "Text Cell";
