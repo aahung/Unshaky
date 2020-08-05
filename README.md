@@ -43,6 +43,8 @@ First, move the "Unshaky.app" to your "/Applications" folder.
 
 ### Grant Accessibility Permission
 
+[**Why "Input Monitoring" is not enough in Catalina?**](https://github.com/aahung/Unshaky/issues/157#issuecomment-669409152)
+
 Follow the instruction when you first open Unshaky. If the instruction does not work for you, go to System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel) and add "Unshaky.app." Make sure it is checked.
 
 ![Grant Accessibility Permission](README/how-to-1.png)
