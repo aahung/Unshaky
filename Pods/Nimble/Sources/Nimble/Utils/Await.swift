@@ -32,11 +32,7 @@ internal class AssertionWaitLock: WaitLock {
 
     func acquireWaitingLock(_ fnName: String, file: FileString, line: UInt) {
         let info = WaitingInfo(name: fnName, file: file, lineNumber: line)
-        #if canImport(Darwin)
-            let isMainThread = Thread.isMainThread
-        #else
-            let isMainThread = _CFIsMainThread()
-        #endif
+        let isMainThread = Thread.isMainThread
         nimblePrecondition(
             isMainThread,
             "InvalidNimbleAPIUsage",
@@ -102,7 +98,7 @@ internal enum AwaitResult<T> {
 
 /// Holds the resulting value from an asynchronous expectation.
 /// This class is thread-safe at receiving an "response" to this promise.
-internal class AwaitPromise<T> {
+internal final class AwaitPromise<T> {
     private(set) internal var asyncResult: AwaitResult<T> = .incomplete
     private var signal: DispatchSemaphore
 
@@ -305,11 +301,19 @@ internal class Awaiter {
             let timeoutSource = createTimerSource(timeoutQueue)
             var completionCount = 0
             let trigger = AwaitTrigger(timeoutSource: timeoutSource, actionSource: nil) {
-                try closure {
+                try closure { result in
                     completionCount += 1
                     if completionCount < 2 {
-                        if promise.resolveResult(.completed($0)) {
-                            CFRunLoopStop(CFRunLoopGetMain())
+                        func completeBlock() {
+                            if promise.resolveResult(.completed(result)) {
+                                CFRunLoopStop(CFRunLoopGetMain())
+                            }
+                        }
+
+                        if Thread.isMainThread {
+                            completeBlock()
+                        } else {
+                            DispatchQueue.main.async { completeBlock() }
                         }
                     } else {
                         fail("waitUntil(..) expects its completion closure to be only called once",
