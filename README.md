@@ -15,6 +15,8 @@ Apple made it difficult to replace only the keyboard and it costs hundreds of do
 
 [May 2019] Apple extends [the service program](https://www.apple.com/ca/support/keyboard-service-program-for-macbook-and-macbook-pro/) to cover all MacBook (Air & Pro) with 3rd gen butterfly keyboards.
 
+[May 2020] [The Verge: The saga of Apple’s bad butterfly MacBook keyboards is finally over](https://www.theverge.com/2020/5/4/21246223/macbook-keyboard-butterfly-magic-pro-apple-design).
+
 ## Complaints about this issue
 
 - [Keyboard 'B' key double hit problem](https://www.ifixit.com/Answers/View/402016/Keyboard+%27B%27+key+double+hit+problem)
