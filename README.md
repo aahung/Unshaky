@@ -1,7 +1,7 @@
 # <img src="README/logo.web.png" alt="Unshaky" height="40"> Unshaky
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JLLGBFQKTTX9W&source=url) [![Github All Releases](https://img.shields.io/github/downloads/aahung/Unshaky/total.svg)](https://github.com/aahung/Unshaky/releases) [![Build Status](https://travis-ci.org/aahung/Unshaky.svg?branch=master)](https://travis-ci.org/aahung/Unshaky)
 
-**It seems on macOS 10.15.6, Unshaky no longer works: [issue #166](https://github.com/aahung/Unshaky/issues/166)**
+**It seems on macOS 10.15.6, Unshaky no longer works unless by default, workaround: [issue #166](https://github.com/aahung/Unshaky/issues/166)**
 
 <img src="README/menubar.png" alt="Menubar" width="331">
 
