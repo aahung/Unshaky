@@ -69,7 +69,12 @@ I don't think there is a universal delay value for all people. If you type very 
 
 ### For other FAQs, visit [the Wiki](https://github.com/aahung/Unshaky/wiki)
 
-## Community Localization Contributors
+## Community Contributors
+
+- Alexei Molinari (@al3xmill3r74) for v2 Unshaky icon <img src="README/logo.v2.png" alt="Unshaky" height="20"> 
+- Hazar ([@hazarek](https://github.com/hazarek)) for v3 Unshaky icon <img src="README/logo.v3.png" alt="Unshaky" height="20"> 
+
+### Localization
 
 If you can help translate Unshaky into more languages, [open an issue here](https://github.com/aahung/Unshaky/issues/new/choose) so I can prepare related files for translation.
 
