@@ -12,7 +12,7 @@
 
 "Configuration Window Title" = "Configure Unshaky";
 
-"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. ";
+"Accessibility Help" = "Unshaky needs accessibility permission to work. Right now, Unshaky will attempt to open this panel for you. If it does not open automatically, you have to go to: System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel). \n\nWhen you have the panel open, add and check the Unshaky.app. \n\nOn Big Sur, you will need to do the same for Privacy (Tab) -> Input Monitoring (Left panel).";
 
 "Invalid Delay" = "\"%@\" is not a valid delay. Please input an integer value.";
 
