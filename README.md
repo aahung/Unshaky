@@ -51,6 +51,8 @@ First, move the "Unshaky.app" to your "/Applications" folder.
 
 Follow the instruction when you first open Unshaky. If the instruction does not work for you, go to System Preferences -> Security & Privacy -> Privacy (Tab) -> Accessibility (Left panel) and add "Unshaky.app." Make sure it is checked.
 
+**Since macOS 10.15.6, also add Unshaky to Privacy (Tab) -> Input Monitoring (Left panel), see [issue #166](https://github.com/aahung/Unshaky/issues/166)**
+
 ![Grant Accessibility Permission](README/how-to-1.png)
 
 ### Launch at Startup (Optional)
