@@ -136,5 +136,20 @@
                 type="application/octet-stream"/>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
+
+        <item>
+            <title>Version 0.6.3</title>
+            <pubDate>Thu, 09 Dec 2020 12:47:00 -0700</pubDate>
+            <sparkle:releaseNotesLink>
+                https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.6.3
+            </sparkle:releaseNotesLink>
+            <enclosure
+                url="https://github.com/aahung/Unshaky/releases/download/v0.6.3/Unshaky_v0.6.3.zip"
+                sparkle:version="47"
+                sparkle:shortVersionString="0.6.3"
+                length="6204535"
+                type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
