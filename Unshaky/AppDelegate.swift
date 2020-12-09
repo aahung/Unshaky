@@ -13,7 +13,7 @@ import ServiceManagement
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var menu: NSMenu!
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     @IBOutlet weak var window: NSWindow!
     private var shakyPressPreventer : ShakyPressPreventer
     @IBOutlet weak var dismissShakyPressCountMenuItem: NSMenuItem!
