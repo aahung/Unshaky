@@ -21,3 +21,7 @@
 "Invalid inputs" = "Geçersiz girdiler";
 
 "Invalid inputs, length does not match" = "Geçersiz girdiler, uzunluk eşleşmiyor";
+
+"🧹 Unshaky is enabled, click to disable" = "🧹 Unshaky etkin, durdurmak için tıkla";
+
+"💤 Unshaky is disabled, click to enable" = "💤 Unshaky devre dışı, etkinleştirmek için tıkla";
