@@ -115,6 +115,10 @@ extension PreferenceViewController {
         preference.setDelayforAll(delay: delay)
         self.tableView.reloadData()
     }
+
+    @IBAction func statisticsToggled(_ sender: Any) {
+        ShakyPressPreventer.sharedInstance()?.loadStatisticsDisabled()
+    }
 }
 
 // TableView

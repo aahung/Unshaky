@@ -61,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionMenuItem.title = String(format: NSLocalizedString("Version", comment: ""), version)
 
-        shakyPressPreventer.shakyPressDismissed { (keyCode: Int32) in
+        shakyPressPreventer.setStatisticsHandler { (keyCode: Int32) in
             Counter.shared.increment(keyCode: keyCode)
         }
 

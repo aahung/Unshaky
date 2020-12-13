@@ -20,12 +20,13 @@
     BOOL cmdSpaceAllowance;
     BOOL workaroundForCmdSpace;
     BOOL aggressiveMode;
+    BOOL statisticsDisabled;
 
     BOOL dismissNextEvent[N_VIRTUAL_KEY];
     int keyDelays[N_VIRTUAL_KEY];
     BOOL ignoreExternalKeyboard;
     BOOL ignoreInternalKeyboard;
-    Handler shakyPressDismissedHandler;
+    Handler statisticsHandler;
 
     CFMachPortRef eventTap;
 
@@ -52,6 +53,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
         [self loadIgnoreInternalKeyboard];
         [self loadWorkaroundForCmdSpace];
         [self loadAggressiveMode];
+        [self loadStatisticsDisabled];
         for (int i = 0; i < N_VIRTUAL_KEY; ++i) {
             lastPressedTimestamps[i] = 0.0;
             lastPressedEventTypes[i] = 0;
@@ -124,6 +126,11 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
 - (void)loadAggressiveMode {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     aggressiveMode = [defaults boolForKey:@"aggressiveMode"]; // default No
+}
+
+- (void)loadStatisticsDisabled {
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+    statisticsDisabled = [defaults boolForKey:@"statisticsDisabled"]; // default No
 }
 
 - (void)setDisabled:(BOOL)_disabled {
@@ -220,8 +227,8 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
                     [_debugViewController appendDismissed];
                 }
 
-                if (shakyPressDismissedHandler != nil) {
-                    shakyPressDismissedHandler(keyCode);
+                if (statisticsHandler != nil && !statisticsDisabled) {
+                    statisticsHandler(keyCode);
                 }
                 dismissNextEvent[keyCode] = YES;
                 return nil;
@@ -277,8 +284,8 @@ CGEventRef eventTapCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
     return [kc filterShakyPressEvent: event];
 }
 
-- (void)shakyPressDismissed:(Handler)handler {
-    shakyPressDismissedHandler = handler;
+- (void)setStatisticsHandler:(Handler)handler {
+    statisticsHandler = handler;
 }
 
 + (void)setKeyCodeToString:(NSDictionary<NSNumber *,NSString *> *)keyCodeToString {
