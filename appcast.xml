@@ -151,7 +151,7 @@
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
         <item>
-            <title>Version 0.6.3</title>
+            <title>Version 0.7.0</title>
             <pubDate>Thu, 12 Dec 2020 18:00:00 -0700</pubDate>
             <sparkle:releaseNotesLink>
                 https://github-release-note.nestederror.com/?owner=aahung&amp;repo=Unshaky&amp;tag=v0.7.0
