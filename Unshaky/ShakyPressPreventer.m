@@ -28,6 +28,8 @@
     Handler shakyPressDismissedHandler;
 
     CFMachPortRef eventTap;
+
+    BOOL disabled;
 }
 
 static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
@@ -55,6 +57,7 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
             lastPressedEventTypes[i] = 0;
             dismissNextEvent[i] = NO;
         }
+        disabled = NO;
     }
     return self;
 }
@@ -123,7 +126,20 @@ static NSDictionary<NSNumber *, NSString *> *_keyCodeToString;
     aggressiveMode = [defaults boolForKey:@"aggressiveMode"]; // default No
 }
 
+- (void)setDisabled:(BOOL)_disabled {
+    disabled = _disabled;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"enabled-toggled" object:nil];
+}
+
+- (BOOL)isDisabled {
+    return disabled;
+}
+
 - (CGEventRef)filterShakyPressEvent:(CGEventRef)event {
+    if (disabled) {
+        return event;
+    }
+
     // keyboard type, used if user specify ignore-external or ignore-internal
     if (ignoreExternalKeyboard || ignoreInternalKeyboard) {
         int64_t keyboardType = CGEventGetIntegerValueField(event, kCGKeyboardEventKeyboardType);

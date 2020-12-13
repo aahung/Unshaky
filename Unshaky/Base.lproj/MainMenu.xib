@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -15,6 +15,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Unshaky" customModuleProvider="target">
             <connections>
                 <outlet property="dismissShakyPressCountMenuItem" destination="sJ6-3Q-q9Z" id="DQr-5y-106"/>
+                <outlet property="isEnabledMenuItem" destination="UYX-0v-WnQ" id="DS3-61-z1C"/>
                 <outlet property="menu" destination="WVM-FA-xFs" id="O1F-jR-Mww"/>
                 <outlet property="preferenceMenuItem" destination="TGg-Zy-iYa" id="Huo-bB-LCR"/>
                 <outlet property="versionMenuItem" destination="T9Q-qI-cKF" id="k5A-dC-6oT"/>
@@ -27,6 +28,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="statClicked:" target="Voe-Tx-rLC" id="1L2-Dh-9vE"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Unshaky is enabled" id="UYX-0v-WnQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="enabledClicked:" target="Voe-Tx-rLC" id="arj-0M-ZSp"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Open debug window" id="Iv3-MX-v73">
@@ -60,6 +67,7 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="24" y="152"/>
         </menu>
         <customObject id="F8j-n0-Cdn" customClass="SUUpdater"/>
     </objects>

@@ -21,3 +21,7 @@
 "Invalid inputs" = "無效的輸入。";
 
 "Invalid inputs, length does not match" = "輸入無效，長度不符合要求。";
+
+"🧹 Unshaky is enabled, click to disable" = "🧹 Unshaky 正在運行，點擊即可暫停";
+
+"💤 Unshaky is disabled, click to enable" = "💤 Unshaky 暫停工作, 點擊即可恢復";
