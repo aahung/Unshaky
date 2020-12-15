@@ -58,3 +58,6 @@
 
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
 "yJt-he-X2q.title" = "Importa";
+
+/* Class = "NSButtonCell"; title = "Disable statistics"; ObjectID = "LSi-xf-baI"; */
+"LSi-xf-baI.title" = "Disabilita statistiche";
