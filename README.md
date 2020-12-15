@@ -95,7 +95,7 @@ Your contributions are valuable and make Unshaky accessible to more users.
 | Turkish | [Hazar Ekinci](https://github.com/hazar-e) |
 | Korean | [Woosuk Park](https://github.com/readingsnail) |
 | Portuguese (Portugal) | [Gonçalo Matos](https://github.com/GoncaloCdM) |
-| Italian | [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce)
+| Italian | [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce), [Daniele Torelli](https://github.com/danieletorelli)
 | Indonesian | [Elmo Tanu Miharja](https://github.com/elmotan95)
 | Spanish (Latin America) | [jadraker](https://github.com/jadraker) |
 | Dutch | [Siebrand Mazeland](https://github.com/siebrand), [Zandor Smith](https://github.com/Zandor300)
