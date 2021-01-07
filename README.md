@@ -92,7 +92,7 @@ Your contributions are valuable and make Unshaky accessible to more users.
 | German | [Felix Grund](https://github.com/ataraxie) |
 | Russian | [Alexey Khromets](https://github.com/akhromets) |
 | Ukrainian | [Alexey Khromets](https://github.com/akhromets) |
-| Turkish | [Hazar Ekinci](https://github.com/hazar-e) |
+| Turkish | [Hazar Ekinci](https://github.com/hazarek) |
 | Korean | [Woosuk Park](https://github.com/readingsnail) |
 | Portuguese (Portugal) | [Gonçalo Matos](https://github.com/GoncaloCdM) |
 | Italian | [valepert](https://github.com/valepert), [Domenico Corvasce](https://github.com/domcorvasce), [Daniele Torelli](https://github.com/danieletorelli)
