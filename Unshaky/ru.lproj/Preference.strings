@@ -20,8 +20,8 @@
 /* Class = "NSTextFieldCell"; title = "-"; ObjectID = "IhC-d3-H6r"; */
 "IhC-d3-H6r.title" = "-";
 
-/* Class = "NSTableColumn"; headerCell.title = "Задержка (мс), предположительно 40"; ObjectID = "JiA-hI-REz"; */
-"JiA-hI-REz.headerCell.title" = "Задержка (мс), предположительно 40";
+/* Class = "NSTableColumn"; headerCell.title = "Задержка (мс), оптимально: 40"; ObjectID = "JiA-hI-REz"; */
+"JiA-hI-REz.headerCell.title" = "Задержка (мс), оптимально: 40";
 
 /* Class = "NSWindow"; title = "Настройки Unshaky"; ObjectID = "KI8-Ox-xeb"; */
 "KI8-Ox-xeb.title" = "Настройки Unshaky";
