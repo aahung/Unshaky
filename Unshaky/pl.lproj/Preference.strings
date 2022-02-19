@@ -53,6 +53,9 @@
 /* Class = "NSButtonCell"; title = "Ignore external keyboard (experimental)"; ObjectID = "dE9-oM-Tqa"; */
 "dE9-oM-Tqa.title" = "Ignoruj zewnętrzną klawiaturę (eksperymentalnie)";
 
+/* Class = "NSButtonCell"; title = "Ignore internal keyboard (experimental)"; ObjectID = "i3V-xH-iv6"; */
+"i3V-xH-iv6.title" = "Ignoruj wewnętrzną klawiaturę (eksperymentalnie)";
+
 /* Class = "NSButtonCell"; title = "Set"; ObjectID = "juW-NR-znR"; */
 "juW-NR-znR.title" = "Ustaw";
 
@@ -64,3 +67,9 @@
 
 /* Class = "NSButtonCell"; title = "Import"; ObjectID = "yJt-he-X2q"; */
 "yJt-he-X2q.title" = "Zaimportuj";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "zy0-50-9m7"; */
+"zy0-50-9m7.title" = "Text Cell";
+
+/* Class = "NSButtonCell"; title = "Disable statistics"; ObjectID = "LSi-xf-baI"; */
+"LSi-xf-baI.title" = "Wyłącz statystyki";
