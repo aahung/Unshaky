@@ -103,4 +103,4 @@ Your contributions are valuable and make Unshaky accessible to more users.
 | Norwegian | [Runar Skaare Tveiten](https://github.com/runar) |
 | Czech | [Michal Zelinka](https://github.com/username0x0a) |
 | Slovak | [Michal Zelinka](https://github.com/username0x0a) |
-| Polish | [Blaze](https://github.com/blazeblazeblaze), [Artur Kondas](https://github.com/youshy) |
+| Polish | [Blaze](https://github.com/blazeblazeblaze), [Artur Kondas](https://github.com/youshy), [xpctnc](https://github.com/xpctnc) |
